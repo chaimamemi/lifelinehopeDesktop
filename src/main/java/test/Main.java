@@ -27,17 +27,28 @@ public class Main {
             Appointment newAppointment = new Appointment();
             newAppointment.setPatientId(62); // ID d'un patient existant
             newAppointment.setDateTime(LocalDateTime.now().plusDays(1));
-            newAppointment.setDescription("Consultation générale");
+            newAppointment.setDescription("Consultation ");
             newAppointment.setStatus("Pending");
             newAppointment.setDoctorId(63); // ID d'un docteur existant
 
             appointmentService.add(newAppointment, owner);
 
+            int newAppointmentId = 22; // Cet ID doit être défini correctement
+
+
+
+            User doctor = new User(); // Créez une instance pour un docteur
+            doctor.setId(63); // cet ID correspond à un docteur dans votre base de données
+            doctor.setRole("ROLE_DOCTOR"); // Définissez le rôle de l'utilisateur à docteur
+
+            // Appel de la méthode notifyDoctor
+            appointmentService.notifyDoctor(newAppointmentId, doctor);
+
             // Exemple d'affichage de tous les rendez-vous
-            //List<Appointment> appointments = appointmentService.getAll(owner);
-            //for (Appointment appointment : appointments) {
-            //  System.out.println(appointment);
-            //   }
+         List<Appointment> appointments = appointmentService.getAll(newAppointment, owner);
+          for (Appointment appointment : appointments) {
+            System.out.println(appointment);
+              }
 
             try {
                 connection.close();
@@ -49,5 +60,10 @@ public class Main {
         } else {
             System.out.println("La connexion à la base de données a échoué.");
         }
+
+
     }
-}
+
+    }
+
+

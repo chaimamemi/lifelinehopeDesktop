@@ -21,5 +21,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.25</version> <!-- Assurez-vous que cette version correspond à celle que vous souhaitez utiliser -->
         </dependency>
+
+
+
+
+
+
+
     </dependencies>
 </project>

@@ -6,13 +6,13 @@ import models.User;
 import connectionDB.DatabaseConnector;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AppointmentService implements IService<Appointment> {
 
     private final Connection cnx;
+
 
     public AppointmentService() {
         this.cnx = DatabaseConnector.getInstance().getCnx();
@@ -40,7 +40,7 @@ public class AppointmentService implements IService<Appointment> {
 
     @Override
     public List<Appointment> getAll(Appointment appointment, User user) {
-        if (!user.getRole().equals("OWNER")) {
+        if (!user.getRole().equals("ROLE_OWNER")) {
             System.out.println("Only owners can view all appointments.");
             return new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class AppointmentService implements IService<Appointment> {
 
     @Override
     public void update(Appointment appointment, User user) {
-        if (!user.getRole().equals("OWNER")) {
+        if (!user.getRole().equals("ROLE_OWNER")) {
             System.out.println("Only owners can update appointments.");
             return;
         }
@@ -79,7 +79,7 @@ public class AppointmentService implements IService<Appointment> {
 
     @Override
     public boolean delete(Appointment appointment, User user) {
-        if (!user.getRole().equals("OWNER")) {
+        if (!user.getRole().equals("ROLE_OWNER")) {
             System.out.println("Only owners can delete appointments.");
             return false;
         }
@@ -94,6 +94,57 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
+
+
+    public void notifyDoctor(int appointmentId, User doctor) {
+        if (!doctor.getRole().equals("ROLE_DOCTOR")) {
+            System.out.println("Seuls les docteurs peuvent recevoir des notifications de rendez-vous.");
+            return;
+        }
+        String sql = "SELECT * FROM appointment WHERE id = ? AND doctor_id = ? AND status = 'Pending'";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, appointmentId);
+            pstmt.setInt(2, doctor.getId());
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                // Le docteur a été notifié de la demande de rendez-vous en attente.
+                System.out.println("Le docteur a été notifié de la demande de rendez-vous.");
+            } else {
+                System.out.println("Aucun rendez-vous en attente trouvé pour ce docteur.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void respondToAppointment(int appointmentId, User doctor, String response) {
+        if (!doctor.getRole().equals("ROLE_DOCTOR")) {
+            System.out.println("Seuls les docteurs peuvent répondre aux rendez-vous.");
+            return;
+        }
+        if (!response.equals("Accepted") && !response.equals("Refused")) {
+            System.out.println("Réponse invalide. Les options sont 'Accepted' ou 'Refused'.");
+            return;
+        }
+        String sql = "UPDATE appointment SET status = ? WHERE id = ? AND doctor_id = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setString(1, response);
+            pstmt.setInt(2, appointmentId);
+            pstmt.setInt(3, doctor.getId());
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Le statut du rendez-vous a été mis à jour en: " + response);
+            } else {
+                System.out.println("Échec de la mise à jour du statut du rendez-vous ou le rendez-vous n'existe pas.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
     // Utility method to map ResultSet to Appointment object
     private Appointment mapToAppointment(ResultSet rs) throws SQLException {
         Appointment appointment = new Appointment();
@@ -107,4 +158,70 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-}
+
+
+
+
+
+    //autres metiers
+    @Override
+    public void confirmAppointment(int appointmentId, User patient) {
+        String sql = "UPDATE appointment SET is_confirmed = TRUE WHERE id = ? AND patient_id = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, appointmentId);
+            pstmt.setInt(2, patient.getId()); // Assurez-vous que le patient a un ID
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Le rendez-vous avec l'ID " + appointmentId + " a été confirmé par le patient avec l'ID " + patient.getId() + ".");
+            } else {
+                System.out.println("Échec de la confirmation du rendez-vous. Assurez-vous que le rendez-vous existe et correspond au patient.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void markAppointmentAsUrgent(int appointmentId) {
+        String sql = "UPDATE appointment SET is_urgent = TRUE WHERE id = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, appointmentId);
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Le rendez-vous avec l'ID " + appointmentId + " a été marqué comme urgent.");
+            } else {
+                System.out.println("Échec de marquer le rendez-vous comme urgent. Assurez-vous que le rendez-vous existe.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+    public List<Appointment> getAllPendingAppointments() {
+        List<Appointment> pendingAppointments = new ArrayList<>();
+        String sql = "SELECT * FROM appointment WHERE status = 'Pending'";
+        try (Statement stmt = cnx.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                pendingAppointments.add(mapToAppointment(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pendingAppointments;
+    }
+
+
+    }
+
+
+
+
+
+
+
+
+
