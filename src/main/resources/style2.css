@@ -1,0 +1,19 @@
+.nav-form{
+    -fx-background-color: linear-gradient(to bottom right,#449d6b,#633364
+    );
+}
+.nav-button{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER_LEFT;
+
+}
+.logout-button{
+    -fx-cursor-button:hand;
+    -fx-background-color:#28bb77;
+
+
+}

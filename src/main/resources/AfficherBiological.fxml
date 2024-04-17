@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AfficherBiological">
+   <children>
+      <TableView layoutX="19.0" layoutY="130.0" prefHeight="219.0" prefWidth="561.0" styleClass="side_ankerpane" stylesheets="@stylesheet.css">
+        <columns>
+          <TableColumn id="idb" prefWidth="75.0" text="id" />
+          <TableColumn id="FtM" prefWidth="94.4000244140625" text="measurementType" />
+            <TableColumn id="FtV" prefWidth="75.0" text="value" />
+            <TableColumn id="FtN" prefWidth="87.199951171875" text="PatientName" />
+            <TableColumn id="FtL" prefWidth="75.0" text="lastName" />
+            <TableColumn id="FtA" prefWidth="75.0" text="Age" />
+            <TableColumn id="FtD" prefWidth="75.0" text="disease" />
+        </columns>
+      </TableView>
+      <Label id="Lbd" layoutX="146.0" layoutY="71.0" prefHeight="18.0" prefWidth="97.0" stylesheets="@styles.css" text="Data" />
+   </children>
+</AnchorPane>

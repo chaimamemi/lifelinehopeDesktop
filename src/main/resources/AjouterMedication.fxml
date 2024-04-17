@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="466.0" prefWidth="790.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjouterMedication">
+   <children>
+      <TextField id="tfName" fx:id="tfName" layoutX="112.0" layoutY="55.0" prefHeight="30.0" prefWidth="204.0" />
+      <Text layoutX="2.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication" />
+      <TextField id="tfDosage" fx:id="tfDosage" layoutX="110.0" layoutY="103.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField id="tfDesc" fx:id="tfDesc" layoutX="110.0" layoutY="162.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField id="tfNote" fx:id="tfNote" layoutX="112.0" layoutY="215.0" prefHeight="30.0" prefWidth="204.0" />
+      <Text layoutX="17.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" wrappingWidth="60.251953125" />
+      <Text layoutX="17.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+      <Text layoutX="14.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicalnote" wrappingWidth="90.720703125" />
+       <Label id="Lbmedication" fx:id="lbmedication" layoutX="206.0" layoutY="14.0" prefHeight="20.0" prefWidth="234.0" styleClass="bold-text" text="Gestion Medicament" textAlignment="RIGHT" textFill="#406dc7">
+           <font>
+               <Font size="14.0" />
+           </font>
+       </Label>
+
+       <ButtonBar layoutX="40.0" layoutY="312.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.leftAnchor="40.0">
+        <buttons>
+            <Button id="btnajout" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="385.0" layoutY="17.0" mnemonicParsing="false" onAction="#ajouterMedication" text="Ajouter" textFill="#3e48d7">
+              </Button>
+            <Button id="btnaff" layoutX="214.0" layoutY="17.0" minWidth="0.0" mnemonicParsing="false" onAction="#affichierMedication" prefHeight="31.0" stylesheets="@style2.css" text="Afficher" />
+        </buttons>
+      </ButtonBar>
+      <Text layoutX="21.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="112.3206787109375" />
+      <TextField id="tfNote" layoutX="110.0" layoutY="268.0" prefHeight="30.0" prefWidth="204.0" />
+   </children>
+</AnchorPane>

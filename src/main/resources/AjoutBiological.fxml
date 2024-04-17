@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjoutBiological">
+   <children>
+      <VBox layoutX="14.0" layoutY="20.0" prefHeight="370.0" prefWidth="368.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="measurement_type">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="ftM" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Value">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="Ftv" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient_name">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="FtP" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="lastname">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="fTl" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="FtA" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="disease">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField id="Ftd" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <TextField id="idb" />
+         </children>
+      </VBox>
+      <Label id="lbBio" layoutX="361.0" layoutY="12.0" prefHeight="18.0" prefWidth="242.0" stylesheets="@styles.css" text="Biological Data" />
+      <Button id="btnadd" layoutX="416.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajouterBiological" prefHeight="26.0" prefWidth="112.0" text="Ajouter" textFill="#ead0d0">
+         <stylesheets>
+            <URL value="@styles.css" />
+            <URL value="@stylesheet.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="bold-text" />
+            <String fx:value="btn_workbench11" />
+         </styleClass></Button>
+      <Button id="btnshow" layoutX="547.0" layoutY="348.0" mnemonicParsing="false" onAction="#afficherBiological" prefHeight="26.0" prefWidth="112.0" styleClass="most_inner_pane" text="Afficher" textFill="#efefef">
+         <stylesheets>
+            <URL value="@styles.css" />
+            <URL value="@stylesheet.css" />
+         </stylesheets></Button>
+
+   </children>
+</AnchorPane>

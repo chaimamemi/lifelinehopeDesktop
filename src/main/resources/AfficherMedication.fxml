@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AfficherMedication">
+   <children>
+      <TextField layoutX="327.0" layoutY="64.0" prefHeight="26.0" prefWidth="228.0" promptText="search" />
+      <TableView layoutX="14.0" layoutY="108.0" prefHeight="266.0" prefWidth="566.0" styleClass="nav-form" stylesheets="@style2.css">
+        <columns>
+          <TableColumn id="tfName" prefWidth="112.0" text="Namemedication" />
+            <TableColumn id="tfDesc" prefWidth="87.199951171875" text="Description" />
+            <TableColumn id="tfNote" prefWidth="99.20001220703125" text="medicalNote" />
+            <TableColumn id="tfDosage" prefWidth="75.0" text="Dosage" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
