@@ -44,7 +44,7 @@
                   <Font size="14.0" />
                </font></Text>
             <TextField id="Ftd" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other_information" wrappingWidth="194.00738525390625" />
             <TextField id="idb" />
          </children>
       </VBox>

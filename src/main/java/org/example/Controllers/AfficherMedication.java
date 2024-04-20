@@ -50,7 +50,7 @@ public class AfficherMedication implements Initializable {
     }
 
     public void loadMedications() {
-        tableView.getItems().clear(); // Efface les anciennes données
+        tableView.getItems().clear();
         List<Medication> medications = serviceMedication.getAll();
         tableView.getItems().addAll(medications);
     }

@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lifelinehopeDesktop" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medication.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifelinehopeDesktop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medication_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/medication_details.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/img/Why-You-Shouldnt-Give-Your-Doctor-Your-Social-Security-Number-58608b23.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/Why-You-Shouldnt-Give-Your-Doctor-Your-Social-Security-Number-58608b23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/img/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjoutBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjoutBiological.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style2.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +68,15 @@
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.49080458&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
+      <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="org.example.Controlles" />
     </key>
@@ -122,6 +136,8 @@
       <workItem from="1713374992748" duration="4336000" />
       <workItem from="1713382513042" duration="4421000" />
       <workItem from="1713389022017" duration="40000" />
+      <workItem from="1713427981142" duration="5497000" />
+      <workItem from="1713610439598" duration="9019000" />
     </task>
     <servers />
   </component>
