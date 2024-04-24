@@ -5,45 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jensd/fx/glyphs/fontawesome/FontAwesomeIconView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/ItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/UpdateBiological.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/UpdateMedicationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UpdateBiological.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/Background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/data.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/doo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/female-6813278_1280.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/healthcare-8252835_1280.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medical-5459632_1280.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/téléchargement.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/wiss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/item.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test2.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UpdateMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medication_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/medication_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherBiological.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherBiological.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjoutBiological.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjoutBiological.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/BiologicalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/BiologicalData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjoutBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjoutBiological.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Doctor.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Test.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Doctor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Test.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test2.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +146,7 @@
       <workItem from="1713884300892" duration="20416000" />
       <workItem from="1713913995465" duration="89000" />
       <workItem from="1713957451082" duration="452000" />
-      <workItem from="1713964074296" duration="23311000" />
+      <workItem from="1713964074296" duration="23947000" />
     </task>
     <servers />
   </component>

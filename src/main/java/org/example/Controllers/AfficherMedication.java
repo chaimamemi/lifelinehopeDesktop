@@ -46,7 +46,7 @@ public class AfficherMedication {
     private Button btnsearch;
     public void initialize() {
         serviceMedication = new ServiceMedication();
-        allMedications = serviceMedication.getAll(); // récupérer toutes les médications ici
+        allMedications = serviceMedication.getAll();
         refreshListView();
         btndelete.setOnAction(event -> deleteSelectedItems());
         btnupdate.setOnAction(event -> updateSelectedMedication());
@@ -87,15 +87,15 @@ public class AfficherMedication {
 
     @FXML
     private void deleteSelectedItems() {
-        // Récupérer l'élément sélectionné dans la ListView
+
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
 
-        // Vérifier si un élément est sélectionné
+
         if (selectedItem != null) {
-            // Supprimer l'élément de la base de données
+
             serviceMedication.delete(selectedItem);
 
-            // Rafraîchir la ListView pour mettre à jour l'affichage
+
             refreshListView();
         }
     }
@@ -109,27 +109,27 @@ public class AfficherMedication {
 
     @FXML
     private void updateSelectedMedication() {
-        // Récupérer l'élément sélectionné dans la ListView
+
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
 
-        // Vérifier si un élément est sélectionné
+
         if (selectedItem != null) {
             try {
-                // Charger le fichier FXML de l'interface de mise à jour
+
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMedication.fxml"));
                 Parent root = loader.load();
 
-                // Passer la médication sélectionnée à l'interface de mise à jour
+
                 UpdateMedicationController updateMedicationController = loader.getController();
                 updateMedicationController.initData(selectedItem);
 
-                // Créer une nouvelle fenêtre pour afficher l'interface de mise à jour
+
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.setTitle("Update Medication");
                 stage.show();
             } catch (IOException e) {
-                e.printStackTrace(); // Gérer les éventuelles erreurs de chargement du fichier FXML
+                e.printStackTrace();
             }
         }
     }
