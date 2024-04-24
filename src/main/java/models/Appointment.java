@@ -10,7 +10,10 @@ public class Appointment {
     private String status;
     private int doctorId;
 
-    // Constructeurs, getters et setters
+    private boolean isConfirmed = false; // Valeur par défaut false
+    private boolean isUrgent = false; // Valeur par défaut false
+
+    // Constructeur par défaut
     public Appointment() {
     }
 
@@ -64,9 +67,30 @@ public class Appointment {
         this.doctorId = doctorId;
     }
 
+    // Setter pour isConfirmed
+    public void setIsConfirmed(boolean isConfirmed) {
+        this.isConfirmed = isConfirmed;
+    }
+
+    // Getter pour isConfirmed
+    public boolean getIsConfirmed() {
+        return isConfirmed;
+    }
+
+    // Setter pour isUrgent
+    public void setIsUrgent(boolean isUrgent) {
+        this.isUrgent = isUrgent;
+    }
+
+    // Getter pour isUrgent
+    public boolean getIsUrgent() {
+        return isUrgent;
+    }
+
     // toString method
     @Override
     public String toString() {
+        // Mettre à jour le toString pour inclure les nouveaux champs
         return "Appointment{" +
                 "id=" + id +
                 ", patientId=" + patientId +
@@ -74,6 +98,8 @@ public class Appointment {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", doctorId=" + doctorId +
+                ", isConfirmed=" + isConfirmed +
+                ", isUrgent=" + isUrgent +
                 '}';
     }
 }

@@ -14,7 +14,8 @@ public interface IService<T> {
     void notifyDoctor(int appointmentId, User doctor); //Ajout de methode pour assurer que le doctor peut accpetr ou refuser appoitment
     void confirmAppointment(int appointmentId, User patient);
     void markAppointmentAsUrgent(int appointmentId);
-   // public void sendNotifications();
+    void checkAppointmentsAndNotify() ;
+
 
 
 }

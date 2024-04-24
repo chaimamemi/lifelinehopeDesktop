@@ -13,29 +13,37 @@ public class AppointmentService implements IService<Appointment> {
 
     private final Connection cnx;
 
-
     public AppointmentService() {
         this.cnx = DatabaseConnector.getInstance().getCnx();
     }
 
-
     @Override
     public void add(Appointment appointment, User user) {
-        if (!user.getRole().equals("ROLE_OWNER")) {
-            System.out.println("Only owners can create appointments.");
+        if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_OWNER")) {
+            System.out.println("Invalid user or user role. Only owners can create appointments.");
             return;
         }
-        String sql = "INSERT INTO appointment (patient_id, date_time, description, status, doctor_id) VALUES (?, ?, ?, 'Pending', ?)";
+
+        String sql = "INSERT INTO appointment (patient_id, date_time, description, status, doctor_id, is_confirmed, is_urgent) VALUES (?, ?, ?, 'Pending', ?, ?, ?)";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
             pstmt.setInt(1, appointment.getPatientId());
             pstmt.setTimestamp(2, Timestamp.valueOf(appointment.getDateTime()));
             pstmt.setString(3, appointment.getDescription());
             pstmt.setInt(4, appointment.getDoctorId());
+
+            // Convertir les valeurs de isConfirmed et isUrgent en entiers (1 si vrai, 0 si faux)
+            int isConfirmedValue = appointment.getIsConfirmed() ? 1 : 0;
+            int isUrgentValue = appointment.getIsUrgent() ? 1 : 0;
+
+            pstmt.setInt(5, isConfirmedValue);
+            pstmt.setInt(6, isUrgentValue);
+
             pstmt.executeUpdate();
+            System.out.println("Appointment added successfully.");
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("Failed to add appointment.");
         }
-
     }
 
     @Override
@@ -94,8 +102,6 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
-
-
     public void notifyDoctor(int appointmentId, User doctor) {
         if (!doctor.getRole().equals("ROLE_DOCTOR")) {
             System.out.println("Seuls les docteurs peuvent recevoir des notifications de rendez-vous.");
@@ -107,8 +113,7 @@ public class AppointmentService implements IService<Appointment> {
             pstmt.setInt(2, doctor.getId());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                // Le docteur a été notifié de la demande de rendez-vous en attente.
-                System.out.println("Le docteur a été notifié de la demande de rendez-vous.");
+                System.out.println("Vous avez une demande de rendez-vous.");
             } else {
                 System.out.println("Aucun rendez-vous en attente trouvé pour ce docteur.");
             }
@@ -142,10 +147,6 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
-
-
-
-    // Utility method to map ResultSet to Appointment object
     private Appointment mapToAppointment(ResultSet rs) throws SQLException {
         Appointment appointment = new Appointment();
         appointment.setId(rs.getInt("id"));
@@ -157,19 +158,12 @@ public class AppointmentService implements IService<Appointment> {
         return appointment;
     }
 
-
-
-
-
-
-
-    //autres metiers
     @Override
     public void confirmAppointment(int appointmentId, User patient) {
         String sql = "UPDATE appointment SET is_confirmed = TRUE WHERE id = ? AND patient_id = ?";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
             pstmt.setInt(1, appointmentId);
-            pstmt.setInt(2, patient.getId()); // Assurez-vous que le patient a un ID
+            pstmt.setInt(2, patient.getId());
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Le rendez-vous avec l'ID " + appointmentId + " a été confirmé par le patient avec l'ID " + patient.getId() + ".");
@@ -197,12 +191,9 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
-
-
-
     public List<Appointment> getAllPendingAppointments() {
         List<Appointment> pendingAppointments = new ArrayList<>();
-        String sql = "SELECT * FROM appointment WHERE status = 'Pending'";
+        String sql = "SELECT * FROM appointment WHERE status = 'Pending' or  status = 'accepted' or  status = 'refused'";
         try (Statement stmt = cnx.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
@@ -215,13 +206,120 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
+
+
+
+    public void checkAppointmentsAndNotify() {
+        List<Appointment> pendingAppointments = getAllPendingAppointments();
+
+        for (Appointment appt : pendingAppointments) {
+            if (appt.getStatus().equals("Accepted")) {
+                System.out.println("Notification: Doctor ID " + appt.getDoctorId() +
+                        " - Your appointment with patient ID " + appt.getPatientId() + " has been accepted.");
+            } else if (appt.getStatus().equals("Pending")) {
+                System.out.println("Notification: Patient ID " + appt.getPatientId() +
+                        " - Your appointment request is still pending.");
+            }
+        }
+    }
+
+    public int getPatientIdByUserName(String patientName) throws SQLException {
+        String sql =  "SELECT id FROM user WHERE first_name = ? AND role = 'ROLE_OWNER'";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setString(1, patientName);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+
+    public int getDoctorIdByEmail(String doctorEmail) {
+        String sql = "SELECT id FROM user WHERE email = ? AND role = 'ROLE_DOCTOR'";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setString(1, doctorEmail);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public List<String> getAllDoctorEmails() {
+        List<String> doctorEmails = new ArrayList<>();
+        String sql = "SELECT email FROM user WHERE role = 'ROLE_DOCTOR'";
+        try (Statement stmt = cnx.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                String email = rs.getString("email");
+                doctorEmails.add(email);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return doctorEmails;
+    }
+
+
+    public String getRoleById(int userId) {
+        String role = "";
+        String sql = "SELECT role FROM user WHERE id = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                role = rs.getString("role");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return role;
     }
 
 
 
 
 
+    public String getPatientNameById(int patientId) {
+        String patientName = "";
+        String sql = "SELECT first_name, last_name FROM user WHERE id = ? AND role = 'ROLE_OWNER'";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, patientId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String firstName = rs.getString("first_name");
+                String lastName = rs.getString("last_name");
+                patientName = firstName + " " + lastName;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return patientName;
+    }
+
+    public String getDoctorEmailById(int doctorId) {
+        String doctorEmail = "";
+        String sql = "SELECT email FROM user WHERE id = ? AND role = 'ROLE_DOCTOR'";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, doctorId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                doctorEmail = rs.getString("email");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return doctorEmail;
+    }
 
 
-
-
+}
