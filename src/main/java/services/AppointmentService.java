@@ -358,4 +358,26 @@ public class AppointmentService implements IService<Appointment> {
         }
         return appointment;
     }
+
+
+
+    public List<Appointment> searchAppointments(String searchKeyword) {
+        List<Appointment> searchResults = new ArrayList<>();
+        String sql = "SELECT * FROM appointment WHERE description LIKE ? OR status LIKE ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setString(1, "%" + searchKeyword + "%");
+            pstmt.setString(2, "%" + searchKeyword + "%");
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                searchResults.add(mapToAppointment(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return searchResults;
+    }
+
+
+
 }

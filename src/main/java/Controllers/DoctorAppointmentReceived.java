@@ -2,10 +2,7 @@ package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ListCell;
+import javafx.scene.control.*;
 import javafx.scene.text.TextFlow;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
@@ -25,15 +22,28 @@ public class DoctorAppointmentReceived {
     private Button accept;
 
     @FXML
+    private TextField searchfx;
+
+    @FXML
     private ListView<Appointment> appointmentReceived;
 
     @FXML
     public void initialize() {
-        // Load pending appointments and display them in the list
+        // Charger les rendez-vous en attente et les afficher dans la liste
         List<Appointment> pendingAppointments = appointmentService.getAllPendingAppointments();
         appointmentReceived.getItems().addAll(pendingAppointments);
 
-        // Set custom cell for display in the ListView
+        // Définir un ChangeListener sur le champ de recherche
+        searchfx.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Effacer les éléments précédents de la liste
+            appointmentReceived.getItems().clear();
+
+            // Effectuer la recherche automatiquement lorsque le texte change
+            List<Appointment> searchResults = appointmentService.searchAppointments(newValue);
+            appointmentReceived.getItems().addAll(searchResults);
+        });
+
+        // Définir la cellule personnalisée pour l'affichage dans la ListView
         appointmentReceived.setCellFactory(listView -> new ListCell<Appointment>() {
             @Override
             protected void updateItem(Appointment item, boolean empty) {
@@ -84,24 +94,28 @@ public class DoctorAppointmentReceived {
         Appointment selectedAppointment = appointmentReceived.getSelectionModel().getSelectedItem();
         User currentUser = getCurrentUser(); // Method to get the current user
 
-        if (selectedAppointment != null) {
-            Button sourceButton = (Button) event.getSource();
-            String statusToUpdate = "";
-            if (sourceButton == accept) {
-                statusToUpdate = "Accepted";
-            } else {
-                statusToUpdate = "Refused";
-            }
+        if (selectedAppointment == null) {
+            // Display a warning message if no appointment is selected
+            showAlert("Attention", "No Appointment Selected", "Please select an appointment before proceeding.");
+            return; // Exit the method without processing the response
+        }
 
-            if (!statusToUpdate.isEmpty()) {
-                boolean updated = appointmentService.respondToAppointment(selectedAppointment.getId(), statusToUpdate, currentUser);
-                if (updated) {
-                    selectedAppointment.setStatus(statusToUpdate);
-                    appointmentReceived.refresh();
-                    showAlert("Success", "Appointment Updated", "Appointment status updated successfully.");
-                } else {
-                    showAlert("Error", "Appointment Update Failed", "Failed to update appointment status.");
-                }
+        Button sourceButton = (Button) event.getSource();
+        String statusToUpdate = "";
+        if (sourceButton == accept) {
+            statusToUpdate = "Accepted";
+        } else {
+            statusToUpdate = "Refused";
+        }
+
+        if (!statusToUpdate.isEmpty()) {
+            boolean updated = appointmentService.respondToAppointment(selectedAppointment.getId(), statusToUpdate, currentUser);
+            if (updated) {
+                selectedAppointment.setStatus(statusToUpdate);
+                appointmentReceived.refresh();
+                showAlert("Success", "Appointment Updated", "The appointment status has been updated successfully.");
+            } else {
+                showAlert("Error", "Failed to Update Appointment", "Unable to update the appointment status.");
             }
         }
     }
@@ -113,6 +127,7 @@ public class DoctorAppointmentReceived {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
 
     private User getCurrentUser() {
         User currentUser = new User();

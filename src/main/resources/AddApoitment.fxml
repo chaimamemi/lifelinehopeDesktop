@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="580.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddAppointmentController">
+<AnchorPane depthTest="ENABLE" prefHeight="580.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddAppointmentController">
    <children>
       <VBox layoutX="334.0" layoutY="518.0" prefHeight="54.0" prefWidth="250.0" stylesheets="@styleadd.css">
          <styleClass>
@@ -47,17 +47,30 @@
          <styleClass>
             <String fx:value="comboBox" />
             <String fx:value="shopping-online-card" />
+            <String fx:value="mouse-noved" />
          </styleClass></Button>
-      <TextField fx:id="nameTextField" blendMode="MULTIPLY" layoutX="175.0" layoutY="123.0" prefHeight="26.0" prefWidth="159.0" promptText="lifelinehope" styleClass="comboBox" stylesheets="@styleadd.css">
+      <TextField fx:id="nameTextField" blendMode="MULTIPLY" layoutX="175.0" layoutY="123.0" prefHeight="26.0" prefWidth="159.0" promptText="lifelinehope" stylesheets="@styleadd.css">
          <font>
             <Font name="Cambria Bold" size="12.0" />
          </font>
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="mouse-noved" />
+         </styleClass>
       </TextField>
-      <DatePicker fx:id="datePicker" blendMode="DARKEN" layoutX="175.0" layoutY="329.0" promptText="Choose a date" styleClass="comboBox" stylesheets="@styleadd.css" />
-      <TextArea fx:id="descriptionTextArea" layoutX="175.0" layoutY="402.0" prefHeight="70.0" prefWidth="123.0" promptText="Description" styleClass="comboBox" stylesheets="@styleadd.css">
+      <DatePicker fx:id="datePicker" blendMode="DARKEN" layoutX="175.0" layoutY="329.0" promptText="Choose a date" stylesheets="@styleadd.css">
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="mouse-noved" />
+         </styleClass></DatePicker>
+      <TextArea fx:id="descriptionTextArea" layoutX="175.0" layoutY="402.0" prefHeight="70.0" prefWidth="123.0" promptText="Description" stylesheets="@styleadd.css">
          <font>
             <Font name="Cambria Bold" size="12.0" />
-         </font></TextArea>
+         </font>
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="mouse-noved" />
+         </styleClass></TextArea>
       <CheckBox fx:id="isUrgentCheckBox" layoutX="497.0" layoutY="536.0" mnemonicParsing="false" stylesheets="@styleadd.css" text="Yes">
          <font>
             <Font name="Cambria" size="12.0" />
@@ -72,11 +85,19 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Text>
-      <ComboBox fx:id="doctorComboBox" layoutX="175.0" layoutY="255.0" prefHeight="28.0" prefWidth="271.0" promptText="choose your doctor" styleClass="comboBox" stylesheets="@styleadd.css" />
-      <TextField fx:id="emailTextField" blendMode="MULTIPLY" layoutX="175.0" layoutY="183.0" prefHeight="26.0" prefWidth="222.0" promptText="lifelinehope@gmail.com" styleClass="comboBox" stylesheets="@styleadd.css">
+      <ComboBox fx:id="doctorComboBox" cache="true" cacheHint="SPEED" depthTest="ENABLE" layoutX="175.0" layoutY="255.0" prefHeight="28.0" prefWidth="271.0" promptText="choose your doctor" stylesheets="@styleadd.css">
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="mouse-noved" />
+         </styleClass></ComboBox>
+      <TextField fx:id="emailTextField" blendMode="MULTIPLY" layoutX="175.0" layoutY="183.0" prefHeight="26.0" prefWidth="222.0" promptText="lifelinehope@gmail.com" stylesheets="@styleadd.css">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font></TextField>
+         </font>
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="mouse-noved" />
+         </styleClass></TextField>
       <AnchorPane layoutX="12.0" layoutY="14.0" prefHeight="94.0" prefWidth="930.0" style="-fx-background-color: #1E7FCB;" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
          <children>
             <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="196.0" layoutY="4.0" prefHeight="86.0" prefWidth="558.0" styleClass="title" text="Welcome! Ready to schedule your appointment?" textOverrun="CLIP">
@@ -165,6 +186,7 @@
          <styleClass>
             <String fx:value="comboBox" />
             <String fx:value="shopping-online-card" />
+            <String fx:value="mouse-noved" />
          </styleClass>
       </Button>
       <Text fill="WHITE" fontSmoothingType="LCD" layoutX="778.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back">
