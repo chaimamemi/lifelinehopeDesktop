@@ -6,8 +6,11 @@ import models.User;
 import connectionDB.DatabaseConnector;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+
 
 public class AppointmentService implements IService<Appointment> {
 
@@ -66,24 +69,55 @@ public class AppointmentService implements IService<Appointment> {
     }
 
     @Override
-    public void update(Appointment appointment, User user) {
-        if (!user.getRole().equals("ROLE_OWNER")) {
-            System.out.println("Only owners can update appointments.");
-            return;
+    public boolean update(Appointment appointment, User user) {
+        return false;
+    }
+
+    public boolean updateAppointment(int appointmentId, String patientName, String description, LocalDate date) throws SQLException {
+        int patientId = getPatientIdByUserName(patientName); // Vous devez avoir cette méthode.
+        if (patientId == -1) {
+            System.out.println("Le nom du patient n'a pas été trouvé.");
+            return false;
         }
-        String sql = "UPDATE appointment SET patient_id = ?, date_time = ?, description = ?, status = ?, doctor_id = ? WHERE id = ?";
+
+        // Convertissez LocalDate en LocalDateTime
+        LocalDateTime dateTime = date.atStartOfDay();
+
+        // Votre code pour mettre à jour le rendez-vous dans la base de données
+        String sql = "UPDATE appointment SET patient_id = ?, date_time = ?, description = ? WHERE id = ?";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
-            pstmt.setInt(1, appointment.getPatientId());
-            pstmt.setTimestamp(2, Timestamp.valueOf(appointment.getDateTime()));
-            pstmt.setString(3, appointment.getDescription());
-            pstmt.setString(4, appointment.getStatus());
-            pstmt.setInt(5, appointment.getDoctorId());
-            pstmt.setInt(6, appointment.getId());
-            pstmt.executeUpdate();
+            pstmt.setInt(1, patientId);
+            pstmt.setTimestamp(2, Timestamp.valueOf(dateTime));
+            pstmt.setString(3, description);
+            pstmt.setInt(4, appointmentId);
+
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
+            System.err.println("Une erreur SQL s'est produite lors de la mise à jour du rendez-vous: " + e.getMessage());
             e.printStackTrace();
+            return false;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean delete(Appointment appointment, User user) {
@@ -101,6 +135,13 @@ public class AppointmentService implements IService<Appointment> {
             return false;
         }
     }
+
+
+
+
+
+
+
 
     public void notifyDoctor(int appointmentId, User doctor) {
         if (!doctor.getRole().equals("ROLE_DOCTOR")) {
@@ -121,6 +162,8 @@ public class AppointmentService implements IService<Appointment> {
             e.printStackTrace();
         }
     }
+
+
 
     public void respondToAppointment(int appointmentId, User doctor, String response) {
         if (!doctor.getRole().equals("ROLE_DOCTOR")) {
@@ -147,6 +190,9 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
+
+
+
     private Appointment mapToAppointment(ResultSet rs) throws SQLException {
         Appointment appointment = new Appointment();
         appointment.setId(rs.getInt("id"));
@@ -157,6 +203,10 @@ public class AppointmentService implements IService<Appointment> {
         appointment.setDoctorId(rs.getInt("doctor_id"));
         return appointment;
     }
+
+
+
+
 
     @Override
     public void confirmAppointment(int appointmentId, User patient) {
@@ -175,6 +225,9 @@ public class AppointmentService implements IService<Appointment> {
         }
     }
 
+
+
+
     @Override
     public void markAppointmentAsUrgent(int appointmentId) {
         String sql = "UPDATE appointment SET is_urgent = TRUE WHERE id = ?";
@@ -190,6 +243,10 @@ public class AppointmentService implements IService<Appointment> {
             e.printStackTrace();
         }
     }
+
+
+
+
 
     public List<Appointment> getAllPendingAppointments() {
         List<Appointment> pendingAppointments = new ArrayList<>();
@@ -209,6 +266,8 @@ public class AppointmentService implements IService<Appointment> {
 
 
 
+
+
     public void checkAppointmentsAndNotify() {
         List<Appointment> pendingAppointments = getAllPendingAppointments();
 
@@ -222,6 +281,11 @@ public class AppointmentService implements IService<Appointment> {
             }
         }
     }
+
+
+
+
+
 
     public int getPatientIdByUserName(String patientName) throws SQLException {
         String sql =  "SELECT id FROM user WHERE first_name = ? AND role = 'ROLE_OWNER'";
@@ -320,6 +384,30 @@ public class AppointmentService implements IService<Appointment> {
         }
         return doctorEmail;
     }
+
+
+
+
+
+    public Appointment getAppointmentById(int appointmentId) {
+        Appointment appointment = null;
+        String sql = "SELECT * FROM appointment WHERE id = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, appointmentId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                appointment = mapToAppointment(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appointment;
+    }
+
+
+
+
+
 
 
 }

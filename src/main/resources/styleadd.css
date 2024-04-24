@@ -34,15 +34,26 @@
     -fx-background-radius: 30;
 }
 
+
+
 .comboBox{
     -fx-background-color: rgba(255,255,255,0.3);
     -fx-background-radius: 30;
 }
 
+
+
 .add-btn{
     -fx-background-color: #b8d7e1;
     -fx-background-radius: 100;
 }
+
+
+.add-btnn{
+    -fx-background-color: #62adbe;
+    -fx-background-radius: 100;
+}
+
 
 .free-delivery-card{
     -fx-background-color: #D3D3D3;
@@ -53,6 +64,16 @@
     -fx-background-color:  #1E7FCB;
     -fx-background-radius: 30;
 }
+
+.shopping{
+    -fx-background-color: #97cffa;
+    -fx-background-radius: 30;
+}
+
+
+
+
+
 
 .fruit-item{
     -fx-background-color: #FFFFFF;

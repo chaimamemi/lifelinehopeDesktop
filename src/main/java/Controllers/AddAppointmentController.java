@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -26,8 +28,6 @@ import java.time.LocalDate;
 
 import java.io.InputStream;
 import java.sql.SQLException;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import java.util.List;
 
 public class AddAppointmentController {
@@ -109,23 +109,23 @@ public class AddAppointmentController {
         User currentUser = getCurrentUser();
 
         if (patientName.isEmpty() || patientEmail.isEmpty() || doctorEmail == null || selectedDate == null) {
-            showAlert(AlertType.ERROR, "Erreur", "Champs obligatoires non saisis", "Veuillez remplir tous les champs obligatoires.");
+            showAlert(AlertType.ERROR, "Error", "Required Fields Not Filled", "Please fill in all required fields.");
             return;
         }
 
         if (!patientEmail.contains("@")) {
-            showAlert(AlertType.ERROR, "Erreur", "Email invalide", "L'email doit contenir le caractère '@'.");
+            showAlert(AlertType.ERROR, "Error", "Invalid Email", "Email must contain the character '@'.");
             return;
         }
 
         String description = descriptionTextArea.getText().trim();
         if (description.isEmpty()) {
-            showAlert(AlertType.ERROR, "Erreur", "Description manquante", "Veuillez fournir une description.");
+            showAlert(AlertType.ERROR, "Error", "Missing Description", "Please provide a description.");
             return;
         }
 
         if (!isConfirmedCheckBox.isSelected()) {
-            showAlert(AlertType.INFORMATION, "Information", "Confirmation requise", "Si vous souhaitez ajouter un rendez-vous, vous devez confirmer.");
+            showAlert(AlertType.INFORMATION, "Information", "Confirmation Required", "You must confirm if you want to add an appointment.");
             return;
         }
 
@@ -134,14 +134,14 @@ public class AddAppointmentController {
             String userRole = appointmentService.getRoleById(patientId);
 
             if (!userRole.equals("ROLE_OWNER")) {
-                showAlert(AlertType.ERROR, "Erreur", "Accès non autorisé", "Seuls les propriétaires peuvent créer des rendez-vous.");
+                showAlert(AlertType.ERROR, "Error", "Unauthorized Access", "Only owners can create appointments.");
                 return;
             }
 
             int doctorId = appointmentService.getDoctorIdByEmail(doctorEmail);
 
             if (patientId == -1 || doctorId == -1) {
-                showAlert(AlertType.ERROR, "Erreur", "Données invalides", "Nom du patient ou email du médecin invalide.");
+                showAlert(AlertType.ERROR, "Error", "Invalid Data", "Invalid patient name or doctor email.");
                 return;
             }
 
@@ -154,17 +154,17 @@ public class AddAppointmentController {
             appointment.setDoctorId(doctorId);
             appointment.setStatus("Pending");
 
-            appointment.setIsConfirmed(true); // Forcer la confirmation pour l'ajout
+            appointment.setIsConfirmed(true); // Force confirmation for addition
 
             appointment.setIsUrgent(isUrgentCheckBox.isSelected());
 
             appointmentService.add(appointment, currentUser);
 
-            showAlert(AlertType.INFORMATION, "Succès", "Rendez-vous ajouté", "Le rendez-vous a été ajouté avec succès.");
+            showAlert(AlertType.INFORMATION, "Success", "Appointment Added", "The appointment has been added successfully.");
 
         } catch (SQLException e) {
             e.printStackTrace();
-            showAlert(AlertType.ERROR, "Erreur", "Échec de l'ajout", "Impossible d'ajouter le rendez-vous.");
+            showAlert(AlertType.ERROR, "Error", "Addition Failed", "Failed to add the appointment.");
         }
     }
 
@@ -187,20 +187,19 @@ public class AddAppointmentController {
     @FXML
     void backAfficheAppointment(ActionEvent event) {
 
-        // Assurez-vous que le chemin de ressource est correct et que le fichier FXML est situé dans le dossier de ressources.
+        // Make sure the resource path is correct and the FXML file is located in the resources folder.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficheAppointement.fxml"));
         try {
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
-            Stage stage = (Stage) backaff.getScene().getWindow(); // Obtenez la fenêtre actuelle du bouton
-            stage.setScene(scene); // Définissez la nouvelle scène chargée pour la fenêtre
-            stage.show(); // Affichez la fenêtre avec la nouvelle scène
+            Stage stage = (Stage) backaff.getScene().getWindow(); // Get the current button's window
+            stage.setScene(scene); // Set the newly loaded scene for the window
+            stage.show(); // Show the window with the new scene
         } catch (IOException e) {
-            e.printStackTrace(); // Imprimez la trace de la pile d'exceptions pour le débogage.
-            // Ici, vous pouvez gérer l'exception, comme afficher une alerte à l'utilisateur.
+            e.printStackTrace(); // Print the exception stack trace for debugging.
+            // Here you can handle the exception, like showing an alert to the user.
         }
     }
 
-    }
-
+}
