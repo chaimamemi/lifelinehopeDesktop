@@ -5,64 +5,101 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjoutBiological">
+<AnchorPane prefHeight="513.0" prefWidth="864.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjoutBiological">
    <children>
-      <VBox layoutX="14.0" layoutY="20.0" prefHeight="370.0" prefWidth="368.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
+      <TextField fx:id="Ftm" layoutX="147.0" layoutY="107.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@style2.css" />
+      <TextField fx:id="Ftv" layoutX="147.0" layoutY="152.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="Ftn" layoutX="147.0" layoutY="196.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField id="Ftla" fx:id="Ftla" layoutX="147.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" />
+      <Text id="Ftm" fill="#231c1c" layoutX="14.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Measurment_type" wrappingWidth="118.67971801757812">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text id="Ftv" fill="#151212" layoutX="23.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" wrappingWidth="100.27969360351562">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text id="Ftn" fill="#181818" layoutX="9.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient_name" wrappingWidth="100.27969360351562">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text id="ftL" fill="#232323" layoutX="14.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient_lastname" wrappingWidth="118.67971801757812">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fta" layoutX="147.0" layoutY="288.0" prefHeight="26.0" prefWidth="182.0" />
+      <Text id="fta" fill="#131313" layoutX="23.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="100.27969360351562">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField id="FtD" fx:id="FtD" layoutX="147.0" layoutY="332.0" prefHeight="26.0" prefWidth="182.0" />
+      <Text id="ftd" fill="#151414" layoutX="23.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disease" wrappingWidth="100.27969360351562">
+         <font>
+            <Font name="Cambria Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField id="FtOth" fx:id="FtOth" layoutX="147.0" layoutY="378.0" prefHeight="30.0" prefWidth="182.0" />
+      <Text id="ftoth" fill="#1b1818" layoutX="6.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other_information" wrappingWidth="133.87973022460938">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Text>
+      <HBox layoutY="-3.0" prefHeight="68.0" prefWidth="864.0" styleClass="most_inner_pane" stylesheets="@style2.css">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="measurement_type">
+            <ImageView fitHeight="89.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="82.0" prefWidth="692.0" text="Welcome To LifeLine hope" textFill="#f7f7f7">
                <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="ftM" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Value">
-               <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="Ftv" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient_name">
-               <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="FtP" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="lastname">
-               <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="fTl" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
-               <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="FtA" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="disease">
-               <font>
-                  <Font size="14.0" />
-               </font></Text>
-            <TextField id="Ftd" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other_information" wrappingWidth="194.00738525390625" />
-            <TextField id="idb" />
+                  <Font name="Cambria Bold" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="411.0" layoutY="91.0" prefHeight="314.0" prefWidth="440.0">
+         <children>
+            <ImageView fitHeight="379.0" fitWidth="408.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/female-6813278_1280.png" />
+               </image>
+            </ImageView>
          </children>
       </VBox>
-      <Label id="lbBio" layoutX="361.0" layoutY="12.0" prefHeight="18.0" prefWidth="242.0" stylesheets="@styles.css" text="Biological Data" />
-      <Button id="btnadd" layoutX="416.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajouterBiological" prefHeight="26.0" prefWidth="112.0" text="Ajouter" textFill="#ead0d0">
-         <stylesheets>
-            <URL value="@styles.css" />
-            <URL value="@stylesheet.css" />
-         </stylesheets>
+      <Button id="btnadd" layoutX="73.0" layoutY="440.0" mnemonicParsing="false" onAction="#ajouterBiological" prefHeight="26.0" prefWidth="100.0" stylesheets="@style2.css" text="Ajouter" textFill="WHITE">
          <styleClass>
-            <String fx:value="bold-text" />
-            <String fx:value="btn_workbench11" />
-         </styleClass></Button>
-      <Button id="btnshow" layoutX="547.0" layoutY="348.0" mnemonicParsing="false" onAction="#afficherBiological" prefHeight="26.0" prefWidth="112.0" styleClass="most_inner_pane" text="Afficher" textFill="#efefef">
-         <stylesheets>
-            <URL value="@styles.css" />
-            <URL value="@stylesheet.css" />
-         </stylesheets></Button>
+            <String fx:value="inner_pane" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <Button id="btnshow" layoutX="219.0" layoutY="440.0" mnemonicParsing="false" onAction="#afficherBiological" prefHeight="30.0" prefWidth="111.0" stylesheets="@style2.css" text="Afficher" textFill="WHITE">
+         <styleClass>
+            <String fx:value="inner_pane" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
 
    </children>
+   <stylesheets>
+      <URL value="@stylesheet.css" />
+      <URL value="@style2.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="text-field" />
+      <String fx:value="chosen-medication-card" />
+   </styleClass>
 </AnchorPane>

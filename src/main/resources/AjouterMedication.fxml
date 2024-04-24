@@ -7,38 +7,66 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="466.0" prefWidth="790.0" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjouterMedication">
+<AnchorPane prefHeight="466.0" prefWidth="790.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjouterMedication">
    <children>
-      <TextField id="tfName" fx:id="tfName" layoutX="112.0" layoutY="55.0" prefHeight="30.0" prefWidth="204.0" />
-      <Text layoutX="2.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication" />
-      <TextField id="tfDosage" fx:id="tfDosage" layoutX="110.0" layoutY="103.0" prefHeight="30.0" prefWidth="204.0" stylesheets="@stylesheet.css" />
-      <TextField id="tfDesc" fx:id="tfDesc" layoutX="110.0" layoutY="162.0" prefHeight="30.0" prefWidth="204.0" />
-      <TextField id="tfNote" fx:id="tfNote" layoutX="112.0" layoutY="215.0" prefHeight="30.0" prefWidth="204.0" />
-      <Text layoutX="17.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" wrappingWidth="60.251953125" />
-      <Text layoutX="17.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-      <Text layoutX="14.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicalnote" wrappingWidth="90.720703125" />
-       <Label id="Lbmedication" fx:id="lbmedication" layoutX="206.0" layoutY="14.0" prefHeight="20.0" prefWidth="234.0" styleClass="bold-text" text="Gestion Medicament" textAlignment="RIGHT" textFill="#406dc7">
+      <TextField id="tfName" fx:id="tfName" layoutX="205.0" layoutY="134.0" prefHeight="30.0" prefWidth="212.0" promptText="entrer nom medicamnets" styleClass="shadow" stylesheets="@style2.css" />
+      <Text layoutX="34.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font></Text>
+      <TextField id="tfDosage" fx:id="tfDosage" layoutX="205.0" layoutY="202.0" prefHeight="30.0" prefWidth="212.0" promptText="Enter dosage" styleClass="shadow" stylesheets="@stylesheet.css" />
+      <Text layoutX="74.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" wrappingWidth="74.99999999999994">
+         <font>
+            <Font name="Cambria" size="23.0" />
+         </font></Text>
+      <Text layoutX="61.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font></Text>
+       <Label id="Lbmedication" fx:id="lbmedication" layoutX="216.0" layoutY="14.0" prefHeight="28.0" prefWidth="375.0" styleClass="bold-text" text="Gestion Medicament" textAlignment="RIGHT" textFill="#fbfcff">
            <font>
-               <Font size="14.0" />
+               <Font name="Cambria" size="35.0" />
            </font>
        </Label>
 
-       <ButtonBar layoutX="40.0" layoutY="312.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.leftAnchor="40.0">
-        <buttons>
-            <Button id="btnajout" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="385.0" layoutY="17.0" mnemonicParsing="false" onAction="#ajouterMedication" text="Ajouter" textFill="#3e48d7">
-              </Button>
-            <Button id="btnaff" layoutX="214.0" layoutY="17.0" minWidth="0.0" mnemonicParsing="false" onAction="#affichierMedication" prefHeight="31.0" stylesheets="@style2.css" text="Afficher" />
-        </buttons>
-      </ButtonBar>
-      <Text layoutX="21.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="112.3206787109375" />
-      <TextField id="tfNote" layoutX="110.0" layoutY="268.0" prefHeight="30.0" prefWidth="204.0" />
-      <ImageView fitHeight="292.0" fitWidth="362.0" layoutX="406.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+       <ButtonBar layoutX="176.0" layoutY="280.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.leftAnchor="176.0" />
+      <ImageView fitHeight="380.0" fitWidth="307.0" layoutX="484.0" layoutY="84.0">
          <image>
-            <Image url="@img/Why-You-Shouldnt-Give-Your-Doctor-Your-Social-Security-Number-58608b23.png" />
+            <Image url="@img/test.png" />
          </image>
       </ImageView>
+      <Button id="btnaff" layoutX="311.0" layoutY="408.0" minWidth="0.0" mnemonicParsing="false" onAction="#affichierMedication" prefHeight="34.0" prefWidth="126.0" styleClass="side_ankerpane" stylesheets="@stylesheet.css" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font></Button>
+      <Button id="btnajout" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="167.0" layoutY="407.0" mnemonicParsing="false" onAction="#ajouterMedication" prefHeight="30.0" prefWidth="113.0" styleClass="side_ankerpane" stylesheets="@stylesheet.css" text="Ajouter" textFill="#fcfcfc">
+         <font>
+            <Font name="Cambria Bold" size="16.0" />
+         </font></Button>
+      <Text layoutX="49.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicalnote" wrappingWidth="125.60000000000014">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Text>
+      <HBox layoutY="-14.0" prefHeight="85.0" prefWidth="792.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="81.0" prefWidth="618.0" text="LifeLineHope Welcomes You!" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TextField id="tfNote" fx:id="tfNote" layoutX="198.0" layoutY="332.0" prefHeight="30.0" prefWidth="225.0" promptText="Enter Medicalnote" styleClass="shadow" stylesheets="@style2.css" />
+      <TextField id="tfDesc" fx:id="tfDesc" layoutX="203.0" layoutY="265.0" prefHeight="30.0" prefWidth="214.0" promptText="enter description" styleClass="shadow" stylesheets="@style2.css" />
    </children>
 </AnchorPane>

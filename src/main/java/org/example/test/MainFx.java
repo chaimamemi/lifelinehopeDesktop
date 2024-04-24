@@ -18,11 +18,11 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjoutBiological.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterMedication.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root );
-            primaryStage.setTitle("Gestion Med");
+            primaryStage.setTitle("Gestion Medicament");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

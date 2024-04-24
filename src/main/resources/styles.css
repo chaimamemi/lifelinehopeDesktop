@@ -24,6 +24,9 @@
     -fx-font-size: 1.2em;
     -fx-background-color: #888888;
 }
+.label{
+    -fx-background-color: white;
+}
 -form_container_vbox{
     -fx-border-width: 0 0 0 1;
     -fx-border-color:#000000;

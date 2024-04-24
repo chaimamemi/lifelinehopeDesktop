@@ -1,5 +1,7 @@
 package org.example.models;
 
+import javafx.scene.control.TextField;
+
 public class BiologicalData {
     private int id;
     private String measurementType;
@@ -88,11 +90,7 @@ public class BiologicalData {
     }
 
     public void setPatientAge(int patientAge) {
-        if (patientAge >= 0) {
-            this.patientAge = patientAge;
-        } else {
-            throw new IllegalArgumentException("Patient age cannot be negative");
-        }
+        this.patientAge = patientAge;
     }
 
     public String getDisease() {
@@ -115,8 +113,18 @@ public class BiologicalData {
         this.otherInformation = otherInformation;
     }
 
+    @Override
     public String toString() {
-        return "BiologicalData{id=" + this.id + ", measurementType='" + this.measurementType + "', value='" + this.value + "', patientName='" + this.patientName + "', patientLastName='" + this.patientLastName + "', patientAge=" + this.patientAge + ", disease='" + this.disease + "', otherInformation='" + this.otherInformation + "'}";
+        return "BiologicalData{" +
+                "id=" + id +
+                ", measurementType='" + measurementType + '\'' +
+                ", value='" + value + '\'' +
+                ", patientName='" + patientName + '\'' +
+                ", patientLastName='" + patientLastName + '\'' +
+                ", patientAge=" + patientAge +
+                ", disease='" + disease + '\'' +
+                ", otherInformation='" + otherInformation + '\'' +
+                '}';
     }
 }
 

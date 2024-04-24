@@ -6,9 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.example.Services.ServiceBiologicalData;
 import org.example.Utils.MyDataBase;
 import org.example.models.BiologicalData;
@@ -25,34 +28,30 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class AjoutBiological  {
+public class AjoutBiological {
     ServiceBiologicalData sp = new ServiceBiologicalData();
-    @FXML
-    private TextField idb;
-    @FXML
-    private TextField ftM;
-    @FXML
-    private TextField lbBio;
-    @FXML
-    private TextField Ftv;
 
-    @FXML
-    private TextField FtP;
-    @FXML
-    private TextField Ftd;
-
-    @FXML
-    private Button btnshow;
-
-    @FXML
-    private TextField fTl;
     @FXML
     Button btnadd;
 
     @FXML
-    private TextField FtA;
+    private TextField Ftm;
+    @FXML
+    private TextField Ftv;
+    @FXML
+    private TextField Ftn;
+
+    @FXML
+    private TextField Ftla;
+    @FXML
+    private TextField fta;
+    @FXML
+    private TextField FtD;
     @FXML
     private TextField FtOth;
+
+    @FXML
+    private Button btnshow;
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -60,63 +59,70 @@ public class AjoutBiological  {
         btnshow.setOnAction(this::afficherBiological);
     }
 
+    @FXML
+    void afficherBiological(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherBiological.fxml"));
+        try {
+            Parent root = loader.load();
+            AfficherBiological controller = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Erreur", "Impossible de charger la vue AfficherBiological.");
+        }
+    }
 
     @FXML
-    private void ajouterBiological(ActionEvent actionEvent) {
+    void ajouterBiological(ActionEvent event) {
         if (areFieldsEmpty()) {
             showAlert("Erreur de saisie", "Veuillez remplir tous les champs.");
         } else {
             BiologicalData data = new BiologicalData();
-
-            data.setId(Integer.parseInt(idb.getText()));
-            data.setPatientAge(Integer.parseInt(FtA.getText()));
-            data.setMeasurementType(ftM.getText());
+            data.setMeasurementType(Ftm.getText());
             data.setValue(Ftv.getText());
-            data.setPatientName(FtP.getText());
-            data.setPatientLastName(fTl.getText());
-            data.setDisease(Ftd.getText());
-
-            sp.add(data);
-
-            // Charger le fichier FXML AjoutBiological.fxml après l'ajout
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjoutBiological.fxml"));
+            data.setPatientName(Ftn.getText());
+            data.setPatientLastName(Ftla.getText());
+            // Ajout de l'âge sans vérification préalable
             try {
-                Parent root = loader.load();
-                AjoutBiological controller = loader.getController();
-               idb.getScene().setRoot(root);
-            } catch (IOException e) {
-                showAlert("Erreur", "Impossible de charger la vue AjoutBiological.");
-                System.out.println(e.getMessage());
+                int age = Integer.parseInt(fta.getText());
+                data.setPatientAge(age);
+            } catch (NumberFormatException e) {
+                showAlert("Erreur de saisie", "Veuillez saisir un nombre valide pour l'âge.");
+                return; // Sortir de la méthode si l'âge n'est pas valide
             }
+
+            data.setDisease(FtD.getText());
+            data.setOtherInformation(FtOth.getText());
+            sp.add(data);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     private boolean areFieldsEmpty() {
 
-        return ftM == null || ftM.getText().isEmpty() || Ftv.getText().isEmpty() || FtP.getText().isEmpty() || fTl.getText().isEmpty() || FtA.getText().isEmpty() || Ftd.getText().isEmpty();
+        return Ftm.getText().isEmpty() || Ftv.getText().isEmpty() || Ftn.getText().isEmpty() ||   FtD.getText().isEmpty()||FtOth.getText().isEmpty()||Ftla.getText().isEmpty();
     }
 
 
-    @FXML
-    void afficherBiological(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherBiological.fxml"));
-
-        try {
-            Parent root = loader.load();
-            AjoutBiological controller = loader.getController();
-            idb.getScene().setRoot(root);
-        } catch (IOException e) {
-            showAlert("Erreur", "Impossible de charger la vue AjoutBiological.");
-            System.out.println(e.getMessage());
-        }
-    }
-
-
-    {
-
-    }
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

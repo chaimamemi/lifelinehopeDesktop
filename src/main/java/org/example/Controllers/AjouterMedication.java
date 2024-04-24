@@ -48,7 +48,8 @@ public class AjouterMedication {
         try {
             Parent root = loader.load();
             AfficherMedication ap = loader.getController();
-
+            ap.setMedications(sp.getAll());
+            tfName.getScene().setUserData(ap);
             tfName.getScene().setRoot(root);
         } catch (IOException e) {
             showAlert("Erreur", "Impossible de charger la vue AfficherMedication.");
@@ -56,19 +57,33 @@ public class AjouterMedication {
         }
     }
 
+
     @FXML
     void ajouterMedication(ActionEvent event) {
         if (areFieldsEmpty()) {
             showAlert("Erreur de saisie", "Veuillez remplir tous les champs.");
         } else {
-            Medication m = new Medication();
-            m.setNameMedication(tfName.getText());
-            m.setDescription(tfDesc.getText());
-            m.setDosage(tfDosage.getText());
-            m.setMedicalNote(tfNote.getText());
-            sp.add(m);
+            String dosageText = tfDosage.getText();
+            try {
+                double dosageValue = Double.parseDouble(dosageText);
+                if (dosageValue > 1000) {
+                    showAlert("Erreur de dosage", "Le dosage ne peut pas dépasser 1000.");
+                } else {
+
+                    Medication m = new Medication();
+                    m.setNameMedication(tfName.getText());
+                    m.setDescription(tfDesc.getText());
+                    m.setDosage(tfDosage.getText());
+                    m.setMedicalNote(tfNote.getText());
+                    sp.add(m);
+                }
+            } catch (NumberFormatException e) {
+                showAlert("Erreur de dosage", "Veuillez saisir une valeur numérique valide pour le dosage.");
+            }
         }
     }
+
+
 
     private boolean areFieldsEmpty() {
         return tfName.getText().isEmpty() || tfDesc.getText().isEmpty() || tfDosage.getText().isEmpty() || tfNote.getText().isEmpty();

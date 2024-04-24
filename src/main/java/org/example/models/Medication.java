@@ -68,5 +68,10 @@ public class Medication {
             throw new IllegalArgumentException("Le dosage ne peut pas être vide.");
         }
     }
+    @Override
+    public String toString() {
+        return "ID : " + id + ", Nom du médicament : " + nameMedication + ", Description : " + description + ", Note médicale : " + medicalNote + ", Dosage : " + dosage;
+    }
+
 }
 

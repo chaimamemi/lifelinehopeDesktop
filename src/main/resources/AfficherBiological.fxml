@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AfficherBiological">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AfficherBiological">
    <children>
-      <TableView layoutX="19.0" layoutY="130.0" prefHeight="219.0" prefWidth="561.0" styleClass="side_ankerpane" stylesheets="@stylesheet.css">
-        <columns>
-          <TableColumn id="idb" prefWidth="75.0" text="id" />
-          <TableColumn id="FtM" prefWidth="94.4000244140625" text="measurementType" />
-            <TableColumn id="FtV" prefWidth="75.0" text="value" />
-            <TableColumn id="FtN" prefWidth="87.199951171875" text="PatientName" />
-            <TableColumn id="FtL" prefWidth="75.0" text="lastName" />
-            <TableColumn id="FtA" prefWidth="75.0" text="Age" />
-            <TableColumn id="FtD" prefWidth="75.0" text="disease" />
-        </columns>
-      </TableView>
-      <Label id="Lbd" layoutX="146.0" layoutY="71.0" prefHeight="18.0" prefWidth="97.0" stylesheets="@styles.css" text="Data" />
+      <ListView id="listView" fx:id="listView" layoutX="17.0" layoutY="149.0" prefHeight="193.0" prefWidth="582.0" stylesheets="@style2.css" />
+      <Button id="btndel" fx:id="btndel" layoutX="157.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" text="Delete">
+         <styleClass>
+            <String fx:value="inner_pane" />
+            <String fx:value="most_inner_pane" />
+            <String fx:value="shadow" />
+            <String fx:value="delete" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@stylesheet.css" />
+            <URL value="@style2.css" />
+         </stylesheets></Button>
+      <Button id="btnupd" fx:id="btnupd" layoutX="273.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateSelectedItem" prefHeight="30.0" prefWidth="82.0" text="Update">
+         <styleClass>
+            <String fx:value="inner_pane" />
+            <String fx:value="most_inner_pane" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@stylesheet.css" />
+            <URL value="@style2.css" />
+         </stylesheets></Button>
+      <Label layoutX="152.0" layoutY="14.0" prefHeight="27.0" prefWidth="235.0" text="Biological Data history" textFill="#100f0e">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="72.0" fitWidth="64.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="searchField" layoutX="393.0" layoutY="28.0" prefHeight="26.0" prefWidth="175.0" promptText="tap to search" styleClass="search-box" stylesheets="@style2.css" />
+      <Button fx:id="btnsearch" layoutX="500.0" layoutY="28.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="69.0" styleClass="search-button" stylesheets="@style2.css" text="search" />
+      <Button fx:id="FTaverage" layoutX="372.0" layoutY="350.0" mnemonicParsing="false" onAction="#CalculAverage" prefHeight="30.0" prefWidth="82.0" text="Average">
+         <styleClass>
+            <String fx:value="inner_pane" />
+            <String fx:value="most_inner_pane" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@stylesheet.css" />
+            <URL value="@style2.css" />
+         </stylesheets></Button>
+      <ImageView fitHeight="109.0" fitWidth="132.0" layoutX="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/img/vaccination-7734674_1280.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

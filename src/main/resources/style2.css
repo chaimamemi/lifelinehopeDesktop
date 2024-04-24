@@ -1,5 +1,5 @@
 .nav-form{
-    -fx-background-color: linear-gradient(to bottom right,#449d6b,#633364
+    -fx-background-color: linear-gradient(to bottom right,#1E80CB, #00008B
     );
 }
 .nav-button{
@@ -16,6 +16,9 @@
     -fx-background-color:#28bb77;
 
 
+}
+.delete{
+    -fx-background-color: red;
 }
 .search-box{
     -fx-background-color: #FFFFFF;
@@ -35,3 +38,31 @@
 .shadow{
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0.1),10.0,0.0,0.0,10.0)
 }
+.chosen-medication-card{
+    -fx-background-color: #F16C31;
+    -fx-background-radius: 30;
+}
+.font{
+   -fx-background-color: #1E80CB;
+}
+.bio-card{
+    -fx-background-color: #BAEAD4;
+    -fx-background-radius: 30;
+}
+.list-view {
+    -fx-background-color: #a6dcef; /* Light blue background */
+    -fx-padding: 10; /* Padding around the ListView */
+    -fx-font-family: "Arial"; /* Use Arial font */
+    -fx-font-size: 14px; /* Font size */
+}
+
+
+
+.list-cell:hover {
+    -fx-background-color: #dd23; /* Light blue hover background */
+}
+
+.list-cell:selected {
+    -fx-background-color: #a7c3e5; /* Medium blue background when selected */
+}
+

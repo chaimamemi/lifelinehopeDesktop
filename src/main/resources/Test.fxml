@@ -1,35 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Test">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="inner_pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Test">
    <children>
-      <VBox prefHeight="400.0" prefWidth="179.0" stylesheets="@stylesheet.css">
+      <VBox prefHeight="400.0" prefWidth="179.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
          <children>
-            <AnchorPane prefHeight="405.0" prefWidth="190.0" styleClass="side_ankerpane">
+            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="67.0">
                <children>
-                  <Pane id="inner_pane" layoutX="2.0" layoutY="7.0" prefHeight="56.0" prefWidth="178.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
-                     <children>
-                        <ImageView fitHeight="43.0" fitWidth="67.0" layoutX="14.0" layoutY="7.0">
-                           <image>
-                              <Image url="@img/test.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Button layoutX="21.0" layoutY="122.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="137.0" styleClass="side_ankerpane" text="Dashboard" textFill="#fcfafa" />
-                  <Button id="Ftbut" layoutX="21.0" layoutY="169.0" mnemonicParsing="false" onAction="#AjouterMedication" prefHeight="30.0" prefWidth="146.0" styleClass="side_ankerpane" text="ADD medications" textFill="#fffdfd" />
-                  <Button layoutX="21.0" layoutY="223.0" mnemonicParsing="false" onAction="#AjouterBiological" prefHeight="30.0" prefWidth="146.0" styleClass="side_ankerpane" text="ADD biological_data" textFill="WHITE" />
-                  <Button layoutX="21.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="146.0" styleClass="side_ankerpane" text="Search" textFill="WHITE" />
-                  <Button layoutX="21.0" layoutY="310.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="146.0" styleClass="side_ankerpane" text="Downloadc pdf" textFill="WHITE" />
+                  <ImageView fitHeight="79.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/About.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
                </children>
-            </AnchorPane>
+            </VBox>
+            <Pane prefHeight="43.0" prefWidth="179.0">
+               <children>
+                  <JFXButton alignment="CENTER" layoutX="25.0" layoutY="1.0" prefHeight="30.0" prefWidth="147.0" styleClass="bold-text" stylesheets="@styles.css" text="LifeLinehope" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="216.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@img/test.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="424.0" styleClass="side_ankerpane">
+         <children>
+            <HBox prefHeight="43.0" prefWidth="422.0">
+               <children>
+                  <JFXHamburger prefHeight="43.0" prefWidth="40.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="41.0" prefWidth="422.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shadow" stylesheets="@style2.css">
+               <children>
+                  <Pane layoutY="-6.0" prefHeight="200.0" prefWidth="415.0">
+                     <children>
+                        <TextField layoutX="154.0" layoutY="24.0" prefHeight="25.0" prefWidth="197.0" />
+                        <TextField layoutX="154.0" layoutY="75.0" prefHeight="25.0" prefWidth="197.0" />
+                        <Pane layoutX="57.0" layoutY="6.0" prefHeight="200.0" prefWidth="415.0">
+                           <children>
+                              <TextField layoutX="93.0" layoutY="121.0" prefHeight="25.0" prefWidth="213.0" />
+                           </children>
+                        </Pane>
+                     </children></Pane>
+               </children>
+            </Pane>
          </children>
       </VBox>
    </children>
