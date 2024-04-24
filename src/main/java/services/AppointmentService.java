@@ -68,6 +68,7 @@ public class AppointmentService implements IService<Appointment> {
         return appointments;
     }
 
+
     @Override
     public boolean update(Appointment appointment, User user) {
         return false;
@@ -101,24 +102,6 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public boolean delete(Appointment appointment, User user) {
         if (!user.getRole().equals("ROLE_OWNER")) {
@@ -135,12 +118,6 @@ public class AppointmentService implements IService<Appointment> {
             return false;
         }
     }
-
-
-
-
-
-
 
 
     public void notifyDoctor(int appointmentId, User doctor) {
@@ -164,33 +141,34 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-    public void respondToAppointment(int appointmentId, User doctor, String response) {
+    public boolean respondToAppointment(int appointmentId, String response, User doctor) {
         if (!doctor.getRole().equals("ROLE_DOCTOR")) {
             System.out.println("Seuls les docteurs peuvent répondre aux rendez-vous.");
-            return;
+            return false;
         }
+
         if (!response.equals("Accepted") && !response.equals("Refused")) {
             System.out.println("Réponse invalide. Les options sont 'Accepted' ou 'Refused'.");
-            return;
+            return false;
         }
-        String sql = "UPDATE appointment SET status = ? WHERE id = ? AND doctor_id = ?";
+
+        String sql = "UPDATE appointment SET status = ? WHERE id = ?";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
             pstmt.setString(1, response);
             pstmt.setInt(2, appointmentId);
-            pstmt.setInt(3, doctor.getId());
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Le statut du rendez-vous a été mis à jour en: " + response);
+                return true;
             } else {
                 System.out.println("Échec de la mise à jour du statut du rendez-vous ou le rendez-vous n'existe pas.");
+                return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
-
-
 
 
     private Appointment mapToAppointment(ResultSet rs) throws SQLException {
@@ -203,9 +181,6 @@ public class AppointmentService implements IService<Appointment> {
         appointment.setDoctorId(rs.getInt("doctor_id"));
         return appointment;
     }
-
-
-
 
 
     @Override
@@ -226,8 +201,6 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
     @Override
     public void markAppointmentAsUrgent(int appointmentId) {
         String sql = "UPDATE appointment SET is_urgent = TRUE WHERE id = ?";
@@ -245,9 +218,6 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
-
     public List<Appointment> getAllPendingAppointments() {
         List<Appointment> pendingAppointments = new ArrayList<>();
         String sql = "SELECT * FROM appointment WHERE status = 'Pending' or  status = 'accepted' or  status = 'refused'";
@@ -261,11 +231,6 @@ public class AppointmentService implements IService<Appointment> {
         }
         return pendingAppointments;
     }
-
-
-
-
-
 
 
     public void checkAppointmentsAndNotify() {
@@ -283,12 +248,8 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
-
-
     public int getPatientIdByUserName(String patientName) throws SQLException {
-        String sql =  "SELECT id FROM user WHERE first_name = ? AND role = 'ROLE_OWNER'";
+        String sql = "SELECT id FROM user WHERE first_name = ? AND role = 'ROLE_OWNER'";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
             pstmt.setString(1, patientName);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -350,9 +311,6 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
-
     public String getPatientNameById(int patientId) {
         String patientName = "";
         String sql = "SELECT first_name, last_name FROM user WHERE id = ? AND role = 'ROLE_OWNER'";
@@ -386,9 +344,6 @@ public class AppointmentService implements IService<Appointment> {
     }
 
 
-
-
-
     public Appointment getAppointmentById(int appointmentId) {
         Appointment appointment = null;
         String sql = "SELECT * FROM appointment WHERE id = ?";
@@ -403,11 +358,4 @@ public class AppointmentService implements IService<Appointment> {
         }
         return appointment;
     }
-
-
-
-
-
-
-
 }
