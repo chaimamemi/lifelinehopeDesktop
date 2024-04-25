@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainBio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Doctor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Test.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/test2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,29 +39,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "wissal",
-    "last_directory_selection": "C:/Users/USER/IdeaProjects/PIDEvv/src/test/java",
-    "last_opened_file_path": "C:/Users/USER/IdeaProjects/PIDEvv/src/main/resources/img",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/USER/IdeaProjects/PIDEvv/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.49080458",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;wissal&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/main/resources/img&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.49080458&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
@@ -82,7 +79,15 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainFx">
+    <configuration name="MainBio" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.MainBio" />
+      <module name="PIDEvv" />
+      <option name="VM_PARAMETERS" value=" --module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainFx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.test.MainFx" />
       <module name="PIDEvv" />
@@ -97,6 +102,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainBio" />
+      <item itemvalue="Application.MainFx" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainFx" />
@@ -147,6 +156,11 @@
       <workItem from="1713913995465" duration="89000" />
       <workItem from="1713957451082" duration="452000" />
       <workItem from="1713964074296" duration="23947000" />
+      <workItem from="1713995294717" duration="167000" />
+      <workItem from="1713995476643" duration="28000" />
+      <workItem from="1713995670335" duration="801000" />
+      <workItem from="1713996955717" duration="80000" />
+      <workItem from="1714032750567" duration="2621000" />
     </task>
     <servers />
   </component>

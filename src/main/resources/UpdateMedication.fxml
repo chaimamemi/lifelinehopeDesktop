@@ -33,7 +33,7 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication" wrappingWidth="147.7367615699768">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Cambria" size="14.0" />
                </font>
             </Text>
             <TextField fx:id="tfNameUpdate" />
