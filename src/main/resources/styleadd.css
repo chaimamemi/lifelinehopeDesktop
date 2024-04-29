@@ -14,6 +14,21 @@
     -fx-background-color: #ffffff;
 }
 
+<<<<<<< HEAD
+=======
+.button-red {
+    -fx-background-color: #ff0000; /* Ceci est la couleur rouge en hexadécimal */
+}
+
+.button-green {
+    -fx-background-color: #248814; /* Ceci est la couleur rouge en hexadécimal */
+}
+
+
+
+
+
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 
 .left-bar{
     -fx-background-color: #d9e4f3;
@@ -34,16 +49,36 @@
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 .comboBox{
     -fx-background-color: rgba(255,255,255,0.3);
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 .add-btn{
     -fx-background-color: #b8d7e1;
     -fx-background-radius: 100;
 }
 
+<<<<<<< HEAD
+=======
+
+.add-btnn{
+    -fx-background-color: #62adbe;
+    -fx-background-radius: 100;
+}
+
+
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 .free-delivery-card{
     -fx-background-color: #D3D3D3;
     -fx-background-radius: 30;
@@ -54,6 +89,19 @@
     -fx-background-radius: 30;
 }
 
+<<<<<<< HEAD
+=======
+.shopping{
+    -fx-background-color: #97cffa;
+    -fx-background-radius: 30;
+}
+
+
+
+
+
+
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 .fruit-item{
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 30;
@@ -61,6 +109,12 @@
 
 
 
+<<<<<<< HEAD
+=======
+.white-background {
+    -fx-background-color: #fff;
+}
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
 
 .transparent {
         -fx-background-color: rgba(0, 0, 8, 0);
@@ -76,7 +130,10 @@
 .bold-text {
     -fx-font-weight: bold;
 }
+<<<<<<< HEAD
 .bodybg{
     -fx-background-image: url('image/back.png');
     -fx-background-size: 100% 100%;
 }
+=======
+>>>>>>> ce70b3c4c8202aca68554c6120d4589f2c8bbe8a
