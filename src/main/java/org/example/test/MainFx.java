@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.example.Controllers.GenerateQrCode;
 
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterMedication.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/test.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root );

@@ -6,10 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -44,6 +47,7 @@ public class AfficherMedication {
     private ServiceMedication serviceMedication;
     @FXML
     private Button btnsearch;
+
     public void initialize() {
         serviceMedication = new ServiceMedication();
         allMedications = serviceMedication.getAll();
@@ -148,6 +152,7 @@ public class AfficherMedication {
         // Mettre à jour la ListView avec la liste filtrée
         medicationListView.setItems(FXCollections.observableArrayList(filteredList));
     }
+
     @FXML
     private void sortMedicationsByDosage() {
         // Tri par dosage
@@ -210,9 +215,9 @@ public class AfficherMedication {
             alert.showAndWait();
         }
     }
-
-
 }
+
+
 
 
 

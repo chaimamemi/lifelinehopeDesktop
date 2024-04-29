@@ -52,10 +52,8 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <ImageView fitHeight="339.0" fitWidth="242.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="/img/doct.png" />
-                     </image></ImageView>
+
+
                </children>
                <stylesheets>
                   <URL value="@styles.css" />

@@ -1,5 +1,6 @@
 package org.example;
 import org.example.Controllers.GeneratePdf;
+import org.example.Controllers.GenerateQrCode;
 import org.example.Services.ServiceBiologicalData;
 import org.example.Services.ServiceMedication;
 import org.example.models.BiologicalData;

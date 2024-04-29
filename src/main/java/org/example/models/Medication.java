@@ -2,6 +2,7 @@ package org.example.models;
 
 public class Medication {
 
+
     private int id;
     private String nameMedication;
     private String description;
@@ -21,7 +22,7 @@ public class Medication {
         this.id = id;
     }
 
-    public String getNameMedication() {
+    public static String getNameMedication() {
         return this.nameMedication;
     }
 
@@ -33,7 +34,7 @@ public class Medication {
         }
     }
 
-    public String getDescription() {
+    public static String getDescription() {
         return this.description;
     }
 
@@ -57,7 +58,7 @@ public class Medication {
         }
     }
 
-    public String getDosage() {
+    public static String getDosage() {
         return this.dosage;
     }
 

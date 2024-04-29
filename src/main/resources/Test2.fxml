@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Test2">
+   <children>
+      <HBox prefHeight="56.0" prefWidth="600.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+         <children>
+            <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="51.0" prefWidth="460.0" text="LifelIneHope Welcomes You!" textFill="#fcfcfc">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutX="109.0" layoutY="56.0" orientation="VERTICAL" prefHeight="342.0" prefWidth="3.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+      <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/healthcare-8252835_1280.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="398.0" layoutY="69.0" prefHeight="26.0" prefWidth="187.0" promptText="Tap here to search" stylesheets="@style2.css">
+         <styleClass>
+            <String fx:value="search-box" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </TextField>
+      <Button layoutX="506.0" layoutY="69.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="search-button" text="Search" />
+      <Label layoutX="123.0" layoutY="84.0" prefHeight="18.0" prefWidth="201.0" text="Recently Added">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="115.0" layoutY="110.0" prefHeight="146.0" prefWidth="482.0">
+         <content>
+            <HBox fx:id="cardLayout" prefHeight="190.0" prefWidth="479.0" styleClass="transparent" stylesheets="@style2.css" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
