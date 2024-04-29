@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@../styleadd.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sinda.controllers.admin.Alerts">
+   <children>
+      <Separator layoutX="273.0" layoutY="10.0" orientation="VERTICAL" prefHeight="651.0" prefWidth="9.0" styleClass="chosen-fruit-card" />
+      <TableView fx:id="tableview" layoutX="298.0" layoutY="123.0" prefHeight="448.0" prefWidth="485.0" style="-fx-background-color: #EFFCFF;" />
+   </children>
+</AnchorPane>

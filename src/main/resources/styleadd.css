@@ -1,0 +1,82 @@
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+
+
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #ffffff;
+}
+
+
+.left-bar{
+    -fx-background-color: #d9e4f3;
+}
+
+
+.center-bar{
+    -fx-background-color: #4777c4;
+}
+
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgb(85, 159, 255), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+.chosen-fruit-card{
+    -fx-background-color: #1E7FCB;
+    -fx-background-radius: 30;
+}
+
+.comboBox{
+    -fx-background-color: rgba(255,255,255,0.3);
+    -fx-background-radius: 30;
+}
+
+.add-btn{
+    -fx-background-color: #b8d7e1;
+    -fx-background-radius: 100;
+}
+
+.free-delivery-card{
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 30;
+}
+
+.shopping-online-card{
+    -fx-background-color:  #1E7FCB;
+    -fx-background-radius: 30;
+}
+
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+
+
+
+.transparent {
+        -fx-background-color: rgba(0, 0, 8, 0);
+    }
+
+.selected {
+    -fx-background-color: #F3F3F3;
+}
+
+.mouse-noved:hover {
+    -fx-background-color: #E4E4E4;
+}
+.bold-text {
+    -fx-font-weight: bold;
+}
+.bodybg{
+    -fx-background-image: url('image/back.png');
+    -fx-background-size: 100% 100%;
+}

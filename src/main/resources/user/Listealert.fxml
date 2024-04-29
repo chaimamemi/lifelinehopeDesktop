@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@../styleadd.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sinda.controllers.user.ListealertController">
+   <children>
+      <Separator layoutX="253.0" layoutY="11.0" orientation="VERTICAL" prefHeight="629.0" prefWidth="10.0" styleClass="chosen-fruit-card" stylesheets="@../../../../../../Downloads/lifelinehopeDesktop-main/lifelinehopeDesktop-main/src/main/resources/styleadd.css" />
+      <ImageView fitHeight="134.0" fitWidth="251.0" layoutX="784.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" styleClass="bodybg">
+         <image>
+            <Image url="@../image/emergency-alert-system-turquoise-concept-icon-vector-40799398-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="ScrollePan" layoutX="275.0" layoutY="100.0" prefHeight="450.0" prefWidth="492.0" style="-fx-background-color: rgba(0, 0, 8, 0);" styleClass="transparent" />
+      <HBox alignment="CENTER" layoutX="290.0" layoutY="14.0" prefHeight="79.0" prefWidth="183.0" styleClass="chosen-fruit-card">
+         <children>
+            <Text blendMode="SCREEN" fill="WHITE" strokeWidth="0.0" styleClass="shadow" text="Alert's">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+         </children>
+      </HBox>
+      <Button alignment="CENTER" layoutX="784.0" layoutY="279.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#goAddAlert" prefHeight="58.0" prefWidth="110.0" text="ADD" textAlignment="CENTER" textFill="#1766d4">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="right-bar" />
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+            <String fx:value="comboBox" />
+         </styleClass>
+      </Button>
+      <Button alignment="CENTER" layoutY="227.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#goListAlert" prefHeight="58.0" prefWidth="249.0" text="Alert" textAlignment="CENTER" textFill="#1766d4">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="right-bar" />
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+            <String fx:value="comboBox" />
+         </styleClass>
+      </Button>
+      <TextField fx:id="recherchefld" layoutX="514.0" layoutY="61.0" prefHeight="26.0" prefWidth="211.0" />
+      <ImageView fitHeight="177.0" fitWidth="183.0" layoutX="36.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ww%20(2).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
