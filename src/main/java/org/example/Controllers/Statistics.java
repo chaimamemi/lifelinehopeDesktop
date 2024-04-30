@@ -39,7 +39,7 @@ public class Statistics  implements Initializable {
 
         // Collecting data for the pie chart
         for (Medication medication : medicationList) {
-            pieChartData.add(new PieChart.Data(medication.getNameMedication(), Double.parseDouble(medication.getDosage())));
+            pieChartData.add(new PieChart.Data(medication.getNameMedication(), medication.getDescription().length()));
         }
 
         piechart.setData(pieChartData);

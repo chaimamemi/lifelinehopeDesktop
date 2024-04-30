@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Test2">
+<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Dashboard">
    <children>
-      <HBox prefHeight="56.0" prefWidth="600.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+      <HBox prefHeight="56.0" prefWidth="770.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
          <children>
             <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,7 +28,7 @@
             </Label>
          </children>
       </HBox>
-      <Separator layoutX="109.0" layoutY="56.0" orientation="VERTICAL" prefHeight="342.0" prefWidth="3.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+      <Separator layoutX="109.0" layoutY="56.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="7.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
       <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/healthcare-8252835_1280.png" />
@@ -51,7 +51,13 @@
             <HBox fx:id="cardLayout" prefHeight="190.0" prefWidth="479.0" styleClass="transparent" stylesheets="@style2.css" />
          </content>
       </ScrollPane>
-      <Button layoutX="-2.0" layoutY="187.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="View Statistics">
+      <Button fx:id="btnstat" layoutX="-2.0" layoutY="187.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="View Statistics">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="nav-button" />
+         </styleClass>
+      </Button>
+      <Button layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="Download Pdf">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />

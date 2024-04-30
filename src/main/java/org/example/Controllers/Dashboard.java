@@ -1,9 +1,11 @@
-import javafx.event.ActionEvent;
+package org.example.Controllers;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
 import javafx.stage.Stage;
@@ -12,18 +14,20 @@ import org.example.models.Medication;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Test2  implements Initializable {
+public class Dashboard implements Initializable {
     @FXML
     private HBox cardLayout;
+    @FXML
+    private Button btnstat;
     private List<Medication> recentlyAdded;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showStatistics();
+
+        btnstat.setOnAction(event -> showStatistics());
 
 
 
