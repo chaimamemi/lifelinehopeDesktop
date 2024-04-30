@@ -41,6 +41,11 @@
             <artifactId>javase</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.ironsoftware</groupId>
+            <artifactId>ironpdf</artifactId>
+            <version>2024.3.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
