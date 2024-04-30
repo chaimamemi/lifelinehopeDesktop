@@ -1,5 +1,7 @@
 package org.example.models;
 
+import java.awt.image.BufferedImage;
+
 public class Medication {
 
 
@@ -22,8 +24,9 @@ public class Medication {
         this.id = id;
     }
 
-    public static String getNameMedication() {
-        return this.nameMedication;
+
+    public String getNameMedication() {
+        return nameMedication;
     }
 
     public void setNameMedication(String nameMedication) {
@@ -34,7 +37,7 @@ public class Medication {
         }
     }
 
-    public static String getDescription() {
+    public  String getDescription() {
         return this.description;
     }
 
@@ -58,7 +61,7 @@ public class Medication {
         }
     }
 
-    public static String getDosage() {
+    public  String getDosage() {
         return this.dosage;
     }
 
@@ -73,6 +76,7 @@ public class Medication {
     public String toString() {
         return "ID : " + id + ", Nom du médicament : " + nameMedication + ", Description : " + description + ", Note médicale : " + medicalNote + ", Dosage : " + dosage;
     }
+
 
 }
 

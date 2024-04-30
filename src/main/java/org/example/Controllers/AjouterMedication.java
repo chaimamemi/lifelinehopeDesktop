@@ -76,6 +76,9 @@ public class AjouterMedication {
                     m.setDosage(tfDosage.getText());
                     m.setMedicalNote(tfNote.getText());
                     sp.add(m);
+                    AfficherMedication afficherMedicationController = new AfficherMedication();
+                    afficherMedicationController.generateQRCodeForSelectedMedication(m);
+
                 }
             } catch (NumberFormatException e) {
                 showAlert("Erreur de dosage", "Veuillez saisir une valeur numérique valide pour le dosage.");

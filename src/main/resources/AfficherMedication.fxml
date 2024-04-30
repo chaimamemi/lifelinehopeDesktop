@@ -52,6 +52,7 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <ImageView fitHeight="169.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true" />
 
 
                </children>

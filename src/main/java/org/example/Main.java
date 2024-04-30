@@ -1,4 +1,8 @@
 package org.example;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import org.example.Controllers.GeneratePdf;
 import org.example.Controllers.GenerateQrCode;
 import org.example.Services.ServiceBiologicalData;
@@ -6,6 +10,8 @@ import org.example.Services.ServiceMedication;
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -125,7 +131,6 @@ public class Main {
                         medication.getDescription().contains(description))
                 .collect(Collectors.toList());
     }
-
 
 
 }

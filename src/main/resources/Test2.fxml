@@ -51,5 +51,6 @@
             <HBox fx:id="cardLayout" prefHeight="190.0" prefWidth="479.0" styleClass="transparent" stylesheets="@style2.css" />
          </content>
       </ScrollPane>
+      <Label layoutX="6.0" layoutY="192.0" prefHeight="26.0" prefWidth="97.0" text="View Statistics" />
    </children>
 </AnchorPane>

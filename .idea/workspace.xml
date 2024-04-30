@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="add library pdf genrator">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Card.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Test2.fxml" afterDir="false" />
+    <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifelinehopeDesktop" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jensd/fx/glyphs/fontawesome/FontAwesomeIconView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medication_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/medication_details.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Test2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Test2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +76,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging wissal&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;wissal&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/main/java&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javase-3.3.0.jar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -95,7 +89,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.49080458&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -204,7 +198,8 @@
       <workItem from="1714308691473" duration="7104000" />
       <workItem from="1714329875652" duration="2143000" />
       <workItem from="1714387173368" duration="1346000" />
-      <workItem from="1714423637207" duration="3507000" />
+      <workItem from="1714423637207" duration="8758000" />
+      <workItem from="1714467285069" duration="3826000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
@@ -233,7 +228,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add library pdf genrator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add library pdf genrator" />
+    <MESSAGE value="fixed problem" />
+    <MESSAGE value="fxml cardview" />
+    <option name="LAST_COMMIT_MESSAGE" value="fxml cardview" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
