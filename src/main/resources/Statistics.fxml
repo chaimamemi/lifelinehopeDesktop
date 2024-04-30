@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Statistics">
+   <children>
+      <HBox layoutX="-7.0" prefHeight="50.0" prefWidth="635.0" styleClass="chosen-medication-card" stylesheets="@style2.css">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="47.0" prefWidth="568.0" text="LifeLineHope Welcomes You !" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutX="96.0" layoutY="50.0" orientation="VERTICAL" prefHeight="353.0" prefWidth="0.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+   </children>
+</AnchorPane>

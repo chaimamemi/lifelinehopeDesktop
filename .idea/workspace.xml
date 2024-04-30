@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Test2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Test2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +22,8 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -188,7 +192,7 @@
       <workItem from="1714329875652" duration="2143000" />
       <workItem from="1714387173368" duration="1346000" />
       <workItem from="1714423637207" duration="8758000" />
-      <workItem from="1714467285069" duration="7790000" />
+      <workItem from="1714467285069" duration="11346000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

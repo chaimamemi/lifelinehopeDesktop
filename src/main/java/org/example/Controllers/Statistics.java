@@ -25,49 +25,29 @@ public class Statistics  implements Initializable {
     private final ServiceMedication serviceMedication;
 
     public Statistics() {
-        this.serviceMedication=new ServiceMedication();
+        this.serviceMedication = new ServiceMedication();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         populatePieChart();
-
     }
 
     private void populatePieChart() {
-
-        List<Medication> topRatedAvisList = serviceMedication.getTopRatedAvis();
+        List<Medication> medicationList = serviceMedication.getAll();
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-        for (Medication medication : topRatedAvisList) {
-            pieChartData.add(new PieChart.Data(Medication. getMedicalNote(), Double.parseDouble(medication.get())));
+        // Collecting data for the pie chart
+        for (Medication medication : medicationList) {
+            pieChartData.add(new PieChart.Data(medication.getNameMedication(), Double.parseDouble(medication.getDosage())));
         }
+
         piechart.setData(pieChartData);
     }
+
     @FXML
     private Button goback;
 
-    @FXML
-    void gobackon(ActionEvent event) {
-        navigateToDashboard();
-    }
-    private void navigateToDashboard() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Test2.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-            // Close the current window
-            Stage currentStage = (Stage) goback.getScene().getWindow();
-            currentStage.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 }
