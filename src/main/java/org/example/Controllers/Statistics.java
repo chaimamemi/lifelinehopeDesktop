@@ -21,6 +21,8 @@ import java.util.*;
 public class Statistics  implements Initializable {
     @FXML
     private PieChart piechart;
+    @FXML
+    private  Button goback;
     private final ServiceMedication serviceMedication;
 
     public Statistics() {
@@ -30,6 +32,7 @@ public class Statistics  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         populatePieChart();
+        goback.setOnAction(event -> navigateToDashboard());
     }
 
     private void populatePieChart() {
@@ -77,8 +80,7 @@ public class Statistics  implements Initializable {
 
 
 
-    @FXML
-    private Button goback;
+
 
 
     private void navigateToDashboard() {

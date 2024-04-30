@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -27,5 +29,12 @@
       </HBox>
       <Separator layoutX="96.0" layoutY="50.0" orientation="VERTICAL" prefHeight="353.0" prefWidth="0.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
       <PieChart fx:id="piechart" layoutX="159.0" layoutY="62.0" prefHeight="363.0" prefWidth="426.0" />
+      <Button fx:id="goback" layoutX="2.0" layoutY="214.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" stylesheets="@style2.css" text="Go Back" textFill="#151414">
+         <styleClass>
+            <String fx:value="nav-button" />
+            <String fx:value="shadow" />
+            <String fx:value="bio-card" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>
