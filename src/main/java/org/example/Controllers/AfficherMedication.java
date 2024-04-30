@@ -56,6 +56,8 @@ public class AfficherMedication {
     private ServiceMedication serviceMedication;
     @FXML
     private Button btnsearch;
+    @FXML
+    private ImageView qrCodeImageView;
 
     public void initialize() {
         serviceMedication = new ServiceMedication();

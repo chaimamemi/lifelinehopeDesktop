@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medication_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/medication_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Medication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Test2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Test2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +189,7 @@
       <workItem from="1714329875652" duration="2143000" />
       <workItem from="1714387173368" duration="1346000" />
       <workItem from="1714423637207" duration="8758000" />
-      <workItem from="1714467285069" duration="3826000" />
+      <workItem from="1714467285069" duration="4503000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
