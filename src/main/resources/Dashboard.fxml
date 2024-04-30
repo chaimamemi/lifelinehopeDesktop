@@ -109,7 +109,7 @@
          </image>
       </ImageView>
       <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="127.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="133.0" layoutY="318.0">
+      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="133.0" layoutY="326.0">
          <image>
             <Image url="@img/medo.png" />
          </image>
