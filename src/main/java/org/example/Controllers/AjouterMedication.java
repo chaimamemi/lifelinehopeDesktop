@@ -77,9 +77,14 @@ public class AjouterMedication {
                     m.setMedicalNote(tfNote.getText());
                     sp.add(m);
                     // Générer le code QR pour le médicament ajouté
+                    Parent root = tfName.getScene().getRoot();
                     AfficherMedication ap = (AfficherMedication) tfName.getScene().getUserData();
                     if (ap != null) {
+                        // Appeler la méthode pour générer le code QR pour la médication ajoutée
                         ap.generateQRCodeForSelectedMedication(m);
+                    } else {
+                        // Si le contrôleur AfficherMedication n'est pas disponible, afficher un message d'erreur
+                        showAlert("Erreur", "Impossible de générer le code QR. Veuillez afficher la vue AfficherMedication avant d'ajouter une médication.");
                     }
                 }
 
