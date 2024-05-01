@@ -39,7 +39,7 @@
             <Font name="Cambria Bold" size="18.0" />
          </font>
       </Label>
-      <Button id="btnsave" fx:id="btnsave" layoutX="477.0" layoutY="366.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="26.0" prefWidth="85.0" stylesheets="@style2.css" text="Save">
+      <Button id="btnsave" fx:id="btnsave" layoutX="502.0" layoutY="365.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="26.0" prefWidth="85.0" stylesheets="@style2.css" text="Save">
          <styleClass>
             <String fx:value="bio-card" />
             <String fx:value="shadow" />

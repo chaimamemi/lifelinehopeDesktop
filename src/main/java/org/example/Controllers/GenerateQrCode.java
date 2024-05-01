@@ -27,9 +27,15 @@ public class GenerateQrCode {
                 new String(data.getBytes(charset), charset),
                 BarcodeFormat.QR_CODE, width, height, hintMap);
 
+
+        String fullPath = "C:\\path\\to\\your\\directory\\" + path;
+
+        // Utiliser le chemin complet du fichier avec l'extension pour écrire le code QR
         MatrixToImageWriter.writeToPath(
                 matrix,
-                path.substring(path.lastIndexOf('.') + 1),
-                new File(path).toPath());
+                "PNG", // Format du fichier
+                new File(fullPath).toPath());
     }
+
+
 }

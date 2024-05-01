@@ -1,5 +1,6 @@
 package org.example.Controllers;
 
+import com.google.zxing.WriterException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,15 +78,29 @@ public class AjouterMedication {
                     sp.add(m);
 
                     // Générer le code QR pour le médicament ajouté
-                    AfficherMedication ap = (AfficherMedication) tfName.getScene().getUserData();
-                    if (ap != null) {
-                        ap.generateQRCodeForSelectedMedication(m);
-                    }
+                    String qrPath = "src/main/resources/qrcodes/" + m.getNameMedication() + ".png";
+                    GenerateQrCode.createQR(m.getNameMedication(), qrPath, "UTF-8", 400, 400);
 
-                   
+                    // Vous pouvez également afficher un message de succès ou une notification ici
+
+                    // Redirection vers la vue AfficherMedication
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherMedication.fxml"));
+                    try {
+                        Parent root = loader.load();
+                        AfficherMedication ap = loader.getController();
+                        ap.setMedications(sp.getAll());
+                        tfName.getScene().setUserData(ap);
+                        tfName.getScene().setRoot(root);
+                    } catch (IOException e) {
+                        showAlert("Erreur", "Impossible de charger la vue AfficherMedication.");
+                        System.out.println(e.getMessage());
+                    }
                 }
             } catch (NumberFormatException e) {
                 showAlert("Erreur de dosage", "Veuillez saisir une valeur numérique valide pour le dosage.");
+            } catch (IOException | WriterException e) {
+                showAlert("Erreur de génération de QR code", "Une erreur s'est produite lors de la génération du code QR.");
+                System.out.println(e.getMessage());
             }
         }
     }
