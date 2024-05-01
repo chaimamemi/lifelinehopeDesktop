@@ -46,7 +46,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnpdf" layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" stylesheets="@styles.css" text="Download Pdf">
+      <Button fx:id="btnpdf" layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" onAction="#generateBiologicalData" stylesheets="@styles.css" text="Download Pdf">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />

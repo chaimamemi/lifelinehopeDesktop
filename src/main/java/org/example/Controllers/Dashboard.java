@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
 import javafx.stage.Stage;
+import org.example.models.BiologicalData;
 import org.example.models.Medication;
 
 import java.awt.*;
@@ -25,13 +26,14 @@ public class Dashboard implements Initializable {
     private Button btnstat;
 
     @FXML
-    private Button btnpd;
+    private Button btnpdf;
     private List<Medication> recentlyAdded;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         btnstat.setOnAction(event -> showStatistics());
+        //btnpdf.setOnAction(event -> generatePDF());
 
 
 
@@ -42,7 +44,7 @@ public class Dashboard implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Statistics.fxml"));
             Parent root = loader.load();
 
-            // Créer une nouvelle fenêtre pour afficher les statistiques
+
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Medication Statistics");
@@ -52,7 +54,23 @@ public class Dashboard implements Initializable {
         }
     }
 
+    public void generateBiologicalData(ActionEvent actionEvent) {
+    }
+    //@FXML
+   // private void generatePDF() {
+
+       // List<BiologicalData> dataList = fetchData(); // Méthode à implémenter pour récupérer les données
+
+        // Appel de la méthode de génération de PDF avec les données récupérées
+       // PDFGenerator.generateBiologicalData(dataList);
+    //}
+
+   // private List<BiologicalData> fetchData() {
+
+       // return List.of();
+    }
 
 
-}
+
+
 
