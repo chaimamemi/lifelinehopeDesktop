@@ -76,7 +76,13 @@ public class AjouterMedication {
                     m.setDosage(tfDosage.getText());
                     m.setMedicalNote(tfNote.getText());
                     sp.add(m);
+                    // Générer le code QR pour le médicament ajouté
+                    AfficherMedication ap = (AfficherMedication) tfName.getScene().getUserData();
+                    if (ap != null) {
+                        ap.generateQRCodeForSelectedMedication(m);
+                    }
                 }
+
             } catch (NumberFormatException e) {
                 showAlert("Erreur de dosage", "Veuillez saisir une valeur numérique valide pour le dosage.");
             }

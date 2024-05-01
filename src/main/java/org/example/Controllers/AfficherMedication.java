@@ -1,15 +1,27 @@
 package org.example.Controllers;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -44,6 +56,9 @@ public class AfficherMedication {
     private ServiceMedication serviceMedication;
     @FXML
     private Button btnsearch;
+    @FXML
+    private ImageView qrCodeImageView;
+
     public void initialize() {
         serviceMedication = new ServiceMedication();
         allMedications = serviceMedication.getAll();
@@ -53,6 +68,7 @@ public class AfficherMedication {
         btnsearch.setOnAction(event -> searchMedications());
         btntri.setOnAction(event -> sortMedicationsByDosage());
         calculateAntibioticPercentages();
+
 
 
         medicationListView.setCellFactory(param -> new ListCell<Medication>() {
@@ -74,6 +90,7 @@ public class AfficherMedication {
                             item.getDosage());
 
                     setText(formattedData);
+
                 }
             }
         });
@@ -148,6 +165,7 @@ public class AfficherMedication {
         // Mettre à jour la ListView avec la liste filtrée
         medicationListView.setItems(FXCollections.observableArrayList(filteredList));
     }
+
     @FXML
     private void sortMedicationsByDosage() {
         // Tri par dosage
@@ -211,8 +229,46 @@ public class AfficherMedication {
         }
     }
 
+    @FXML
+    public void generateQRCodeForSelectedMedication(Medication medication) {
+        if (medication != null) {
+            try {
+                // Les données que le code QR contiendra
+                String data = medication.getNameMedication() + "\n" +
+                        medication.getDescription() + "\n" +
+                        medication.getMedicalNote() + "\n" +
+                        medication.getDosage();
 
+                // Le chemin où l'image sera sauvegardée
+                String path = "medication_qr.png";
+
+                // Charset d'encodage
+                String charset = "UTF-8";
+
+                // Appeler la méthode pour générer le code QR
+                GenerateQrCode.createQR(data, path, charset, 200, 200);
+                System.out.println("Code QR généré pour la médication : " + medication.getNameMedication());
+            } catch (IOException | WriterException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Afficher un message si aucun élément n'est sélectionné dans la liste
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Aucune sélection");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez sélectionner une médication pour générer le code QR.");
+            alert.showAndWait();
+        }
+
+    }
 }
+
+
+
+
+
+
+
 
 
 

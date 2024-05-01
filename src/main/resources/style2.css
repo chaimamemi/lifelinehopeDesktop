@@ -39,7 +39,7 @@
     -fx-effect:dropshadow(three-pass-box,rgba(0,0,0.1),10.0,0.0,0.0,10.0)
 }
 .chosen-medication-card{
-    -fx-background-color: #F16C31;
+    -fx-background-color: #1E80CB;
     -fx-background-radius: 30;
 }
 .font{
