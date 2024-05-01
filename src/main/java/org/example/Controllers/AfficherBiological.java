@@ -121,7 +121,6 @@ public class AfficherBiological {
                 Scene scene = new Scene(updateForm);
                 updateStage.setScene(scene);
                 updateStage.show();
-
             } catch (IOException e) {
                 e.printStackTrace();
 
