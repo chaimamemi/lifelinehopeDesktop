@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Dashboard">
+   <children>
+      <HBox prefHeight="56.0" prefWidth="770.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+         <children>
+            <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="51.0" prefWidth="460.0" text="LifelIneHope Welcomes You!" textFill="#fcfcfc">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutX="169.0" layoutY="69.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="7.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+      <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/healthcare-8252835_1280.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="547.0" layoutY="84.0" prefHeight="26.0" prefWidth="187.0" promptText="Tap here to search" stylesheets="@style2.css">
+         <styleClass>
+            <String fx:value="search-box" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </TextField>
+      <Button layoutX="654.0" layoutY="84.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="search-button" text="Search" />
+      <Label layoutX="296.0" layoutY="112.0" prefHeight="22.0" prefWidth="267.0" text="Recently Added">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="189.0" layoutY="154.0" prefHeight="146.0" prefWidth="482.0">
+         <content>
+            <HBox fx:id="cardLayout" prefHeight="165.0" prefWidth="475.0" styleClass="transparent" stylesheets="@style2.css" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnstat" layoutX="-2.0" layoutY="187.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="View Statistics">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="nav-button" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="Download Pdf">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="nav-button" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="-2.0" layoutY="275.0" mnemonicParsing="false" onAction="#showStatistics" prefHeight="26.0" prefWidth="146.0" stylesheets="@styles.css" text="List BiologicalData">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="nav-button" />
+         </styleClass>
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="56.0" fitWidth="62.0" layoutX="189.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/pdf.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="126.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/stat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="117.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="130.0" layoutY="227.0">
+         <image>
+            <Image url="@img/mmm.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutY="323.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="List Medication">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="nav-button" />
+         </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="127.0" layoutY="271.0">
+         <image>
+            <Image url="@img/fiche.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="127.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="133.0" layoutY="326.0">
+         <image>
+            <Image url="@img/medo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

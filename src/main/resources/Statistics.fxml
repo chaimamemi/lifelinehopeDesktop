@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Statistics">
+   <children>
+      <HBox layoutX="-7.0" prefHeight="50.0" prefWidth="635.0" styleClass="chosen-medication-card" stylesheets="@style2.css">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="47.0" prefWidth="548.0" text="LifeLineHope Welcomes You !" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutX="96.0" layoutY="50.0" orientation="VERTICAL" prefHeight="353.0" prefWidth="0.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+      <PieChart fx:id="piechart" layoutX="124.0" layoutY="58.0" prefHeight="363.0" prefWidth="426.0" />
+      <Button fx:id="goback" layoutX="2.0" layoutY="214.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" stylesheets="@style2.css" text="Go Back" textFill="#151414">
+         <styleClass>
+            <String fx:value="nav-button" />
+            <String fx:value="shadow" />
+            <String fx:value="chosen-medication-card" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
+      <ImageView fitHeight="64.0" fitWidth="71.0" layoutX="8.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/stat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="101.0" fitWidth="82.0" layoutX="6.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
