@@ -10,12 +10,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.example.Services.ServiceBiologicalData;
 import org.example.Utils.MyDataBase;
 import org.example.models.BiologicalData;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 
@@ -97,31 +101,15 @@ public class AjoutBiological {
             data.setDisease(FtD.getText());
             data.setOtherInformation(FtOth.getText());
             sp.add(data);
+            generatePDF(data);
         }
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private boolean areFieldsEmpty() {
 
-        return Ftm.getText().isEmpty() || Ftv.getText().isEmpty() || Ftn.getText().isEmpty() ||   FtD.getText().isEmpty()||FtOth.getText().isEmpty()||Ftla.getText().isEmpty();
+        return Ftm.getText().isEmpty() || Ftv.getText().isEmpty() || Ftn.getText().isEmpty() || FtD.getText().isEmpty() || FtOth.getText().isEmpty() || Ftla.getText().isEmpty();
     }
-
 
 
     private void showAlert(String title, String message) {
@@ -132,7 +120,28 @@ public class AjoutBiological {
         alert.showAndWait();
     }
 
+    public void generatePDF(BiologicalData data) {
+        PDFGenerator pdfGenerator = new PDFGenerator();
+        pdfGenerator.generatePDF(data);
+    }
 
+    private void openPDF() {
+        // Récupérer le chemin du fichier PDF
+        String FILE = "C:/Users/USER/IdeaProjects/PIDEvv/pdf/biological_data.pdf";
+
+        File file = new File(FILE);
+        if (file.exists()) {
+            // Ouvrir le fichier PDF avec le programme par défaut associé aux fichiers PDF
+            try {
+                Desktop.getDesktop().open(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            showAlert("Erreur", "Le fichier PDF n'existe pas.");
+        }
+
+    }
 }
 
 
