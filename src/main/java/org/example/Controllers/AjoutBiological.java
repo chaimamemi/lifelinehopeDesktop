@@ -41,6 +41,7 @@ import java.util.logging.Logger;
 
 public class AjoutBiological {
     ServiceBiologicalData sp = new ServiceBiologicalData();
+    PDFGenerator pdfGenerator = new PDFGenerator();
 
     @FXML
     Button btnadd;
@@ -108,7 +109,7 @@ public class AjoutBiological {
             data.setDisease(FtD.getText());
             data.setOtherInformation(FtOth.getText());
             sp.add(data);
-            generatePDF(data);
+           PDFGenerator.generateBiologicalData(data);
         }
     }
 

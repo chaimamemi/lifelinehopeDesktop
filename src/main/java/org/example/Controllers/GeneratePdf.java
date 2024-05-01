@@ -5,6 +5,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.example.models.BiologicalData;
 import org.example.models.Medication;
 
 import java.io.IOException;
@@ -51,4 +52,6 @@ public class GeneratePdf {
             System.err.println("Erreur lors de la génération du PDF : " + e.getMessage());
         }
     }
+
+
 }
