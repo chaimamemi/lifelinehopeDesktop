@@ -112,3 +112,53 @@
 .bold-text {
     -fx-font-weight: bold;
 }
+
+
+* {
+    -fx-primary: #ffffff;       /* Blanc, utilisé pour les arrière-plans principaux */
+    -fx-secondary: #FFFFBD;     /* Jaune pâle, pour les arrière-plans secondaires */
+    -fx-primarytext: #808080FF;      /* Gris, utilisé pour le texte principal */
+    -fx-blue: #1976D2;          /* Bleu, utilisé pour les bordures ou éléments décoratifs */
+    -fx-red: #FF0000;           /* Rouge, utilisé pour des éléments qui doivent ressortir */
+    -fx-color-l: #1976D2;       /* Bleu, probablement une erreur de duplication de la couleur bleue */
+}
+
+
+.dash_btn:hover {
+   /* -fx-background-color: -fx-primary;       /* Couleur d'arrière-plan lors du survol */
+   /* -fx-text-fill: -fx-primarytext;          /* Couleur du texte lors du survol */
+    -fx-border-color: -fx-blue;              /* Couleur de la bordure lors du survol */
+    -fx-border-width: 0px 0px 0px 4px;       /* Épaisseur de la bordure de 4 pixels sur tous les côtés */
+}
+
+.btn_li:hover {
+    -fx-background-color: #0277BD;
+
+}
+
+L ,
+
+.pane {
+    -fx-background-color: #0277BD;
+
+}
+
+
+.calendar-day-box {
+    -fx-padding: 10;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    background-color: #f4f4f4;
+    -fx-spacing: 5;
+}
+
+.day-text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.email-text {
+    -fx-font-size: 12px;
+    color: #333333;
+}
+

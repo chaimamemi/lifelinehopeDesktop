@@ -37,6 +37,9 @@ public class AfficheAppointementController {
     @FXML
     private Button update;
 
+    @FXML
+    private Button calander;
+
     private final AppointmentService appointmentService = new AppointmentService(); // Service to manage appointments
 
     @FXML
@@ -213,4 +216,24 @@ public class AfficheAppointementController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-}
+
+
+
+    @FXML
+    void ViewCalander(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/calendarOwner.fxml"));
+        try {
+            Parent root = loader.load();
+            Controllers.CalendarController controller = loader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) add.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    }
+

@@ -129,6 +129,12 @@ public class AddAppointmentController {
             return;
         }
 
+        if (selectedDate.isBefore(LocalDate.now())) {
+            showAlert(AlertType.ERROR, "Error", "Invalid Date", "Cannot set appointments in the past.");
+            return;
+        }
+
+
         try {
             int patientId = appointmentService.getPatientIdByUserName(patientName);
             String userRole = appointmentService.getRoleById(patientId);

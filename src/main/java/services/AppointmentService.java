@@ -75,7 +75,7 @@ public class AppointmentService implements IService<Appointment> {
     }
 
     public boolean updateAppointment(int appointmentId, String patientName, String description, LocalDate date) throws SQLException {
-        int patientId = getPatientIdByUserName(patientName); // Vous devez avoir cette méthode.
+        int patientId = getPatientIdByUserName(patientName);
         if (patientId == -1) {
             System.out.println("Le nom du patient n'a pas été trouvé.");
             return false;
@@ -378,6 +378,38 @@ public class AppointmentService implements IService<Appointment> {
         return searchResults;
     }
 
+    public List<Appointment> getAppointmentsForMonth(LocalDate month) {
+        List<Appointment> appointments = new ArrayList<>();
+        String sql = "SELECT * FROM appointment WHERE MONTH(date_time) = ? AND YEAR(date_time) = ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, month.getMonthValue());
+            pstmt.setInt(2, month.getYear());
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    appointments.add(mapToAppointment(rs));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appointments;
+    }
+
+    public List<Appointment> getAppointmentsForDay(LocalDate date) {
+        List<Appointment> appointments = new ArrayList<>();
+        String sql = "SELECT * FROM appointment WHERE date_time BETWEEN ? AND ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setTimestamp(1, Timestamp.valueOf(date.atStartOfDay()));
+            pstmt.setTimestamp(2, Timestamp.valueOf(date.plusDays(1).atStartOfDay()));
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                appointments.add(mapToAppointment(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appointments;
+    }
 
 
 }

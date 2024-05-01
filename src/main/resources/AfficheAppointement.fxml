@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="537.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficheAppointementController">
    <children>
       <ImageView fitHeight="82.0" fitWidth="110.0" layoutX="-21.0" pickOnBounds="true" preserveRatio="true">
@@ -107,5 +106,24 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets>
       </VBox>
+      <Button fx:id="calander" alignment="CENTER" layoutX="537.0" layoutY="361.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ViewCalander" prefHeight="67.0" prefWidth="180.0" stylesheets="@styleadd.css" text="       View Calander" textAlignment="CENTER" textFill="#1766d4">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="right-bar" />
+            <String fx:value="search-button" />
+            <String fx:value="shadow" />
+            <String fx:value="right-bar" />
+         </styleClass>
+      </Button>
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="549.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesBracelet/calendar_3796162.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
