@@ -71,6 +71,8 @@ public class AfficherMedication {
 
 
 
+
+
         medicationListView.setCellFactory(param -> new ListCell<Medication>() {
             @Override
             protected void updateItem(Medication item, boolean empty) {
