@@ -32,7 +32,7 @@
             <Image url="@img/healthcare-8252835_1280.png" />
          </image>
       </ImageView>
-      <Label layoutX="296.0" layoutY="112.0" prefHeight="22.0" prefWidth="348.0" text="Recently Added">
+      <Label layoutX="326.0" layoutY="86.0" prefHeight="22.0" prefWidth="348.0" text="Recently Added">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="-2.0" layoutY="227.0" mnemonicParsing="false"  stylesheets="@styles.css" text="Download Pdf">
+      <Button fx:id="btnpdf" layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" stylesheets="@styles.css" text="Download Pdf">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -98,6 +98,11 @@
       <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="133.0" layoutY="326.0">
          <image>
             <Image url="@img/medo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="407.0" fitWidth="301.0" layoutX="469.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/pop.png" />
          </image>
       </ImageView>
    </children>
