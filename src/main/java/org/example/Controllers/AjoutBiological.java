@@ -73,6 +73,15 @@ public class AjoutBiological {
 
     @FXML
     void afficherBiological(ActionEvent event) {
+
+
+        List<BiologicalData> biologicalList = sp.getAll();
+
+        // Générer le PDF avec la liste complète des données biologiques
+        pdfGenerator.generateBiologicalData(biologicalList);
+
+        // Afficher un message de confirmation
+        showAlert("Succès", "Le PDF des données biologiques a été généré avec succès !");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherBiological.fxml"));
         try {
             Parent root = loader.load();
@@ -109,7 +118,7 @@ public class AjoutBiological {
             data.setDisease(FtD.getText());
             data.setOtherInformation(FtOth.getText());
             sp.add(data);
-           PDFGenerator.generateBiologicalData(data);
+            pdfGenerator.generateBiologicalData(List.of(data));
         }
     }
 

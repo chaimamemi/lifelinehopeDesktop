@@ -121,7 +121,7 @@ public class AfficherBiological {
                 Scene scene = new Scene(updateForm);
                 updateStage.setScene(scene);
                 updateStage.show();
-                PDFGenerator.generateBiologicalData(selectedItem);
+
             } catch (IOException e) {
                 e.printStackTrace();
 
