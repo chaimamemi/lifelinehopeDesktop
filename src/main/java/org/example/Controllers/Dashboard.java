@@ -1,5 +1,6 @@
 package org.example.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +23,9 @@ public class Dashboard implements Initializable {
     private HBox cardLayout;
     @FXML
     private Button btnstat;
+
+    @FXML
+    private Button btnpd;
     private List<Medication> recentlyAdded;
 
     @Override

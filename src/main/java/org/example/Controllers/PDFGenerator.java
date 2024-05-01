@@ -2,7 +2,6 @@ package org.example.Controllers;
 
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.Color;
-import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -10,8 +9,7 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.Style;
-import com.itextpdf.layout.borders.SolidBorder;
+import com.itextpdf.layout.element.Div;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -44,11 +42,17 @@ public class PDFGenerator {
                     .setItalic()
                     .setMarginBottom(20) // Ajoute une marge en bas du titre
                     .setTextAlignment(com.itextpdf.layout.property.TextAlignment.CENTER); // Centrer le titre horizontalement
-            document.add(title);
 
             // Ajout de l'image en haut du document
             Image logo = new Image(ImageDataFactory.create("src/main/resources/img/logo.png"));
-            document.add(logo);
+
+            // Création d'une ligne contenant le logo et le titre
+            Div headerDiv = new Div()
+                    .add(logo)
+                    .add(title)
+                    .setHorizontalAlignment(com.itextpdf.layout.property.HorizontalAlignment.LEFT); // Alignement à gauche
+
+            document.add(headerDiv);
 
             // Tableau pour afficher les données biologiques
             Table table = new Table(new float[]{2, 3, 3, 3, 2, 3, 4});
@@ -64,7 +68,7 @@ public class PDFGenerator {
                         .setBackgroundColor(headerColor)
                         .setPadding(8) // Ajuste le padding pour les titres de colonnes
                         .setTextAlignment(com.itextpdf.layout.property.TextAlignment.CENTER)
-                        .setBorder(new SolidBorder(1))); // Ajoute des bordures solides
+                        .setBorder(null)); // Retirer les bordures pour le titre de colonne
             }
             // Ajoutez les données biologiques au tableau avec des bordures et des marges personnalisées
             for (BiologicalData data : dataList) {
@@ -108,13 +112,13 @@ public class PDFGenerator {
         }
     }
 
-    // Méthode utilitaire pour ajouter une cellule avec des bordures
+    // Méthode utilitaire pour ajouter une cellule avec des bordures au tableau
     private static void addCellWithBorder(Table table, String content, PdfFont font, Color textColor) {
         table.addCell(new Paragraph(content)
                 .setFont(font)
                 .setFontColor(textColor)
                 .setPadding(8) // Ajuste le padding pour le contenu des cellules
-                .setBorder(new SolidBorder(1)) // Ajoute des bordures solides
+                .setBorder(null) // Retirer les bordures autour de la cellule
                 .setTextAlignment(com.itextpdf.layout.property.TextAlignment.CENTER)); // Centrer le texte horizontalement
     }
 }
