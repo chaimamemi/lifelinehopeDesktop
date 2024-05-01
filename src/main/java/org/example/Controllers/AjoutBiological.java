@@ -1,5 +1,10 @@
 package org.example.Controllers;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,6 +25,7 @@ import org.example.models.BiologicalData;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
 
@@ -28,6 +34,7 @@ import org.example.models.Medication;
 
 import java.net.URL;
 import java.text.BreakIterator;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -105,6 +112,81 @@ public class AjoutBiological {
         }
     }
 
+    private void generatePDF(BiologicalData data) {
+        String projectDirectory = System.getProperty("user.dir");
+        String filePath = projectDirectory + File.separator + "pdf" + File.separator + "biological_data.pdf";
+
+        try {
+            PdfWriter writer = new PdfWriter(new FileOutputStream(filePath));
+            com.itextpdf.kernel.pdf.PdfDocument pdf = new PdfDocument(writer);
+            com.itextpdf.layout.Document document = new com.itextpdf.layout.Document(pdf);
+
+            // Ajouter les métadonnées
+            addMetaData(document);
+
+            // Ajouter la page de titre
+            addTitlePage(document);
+
+            // Ajouter le contenu du PDF
+            addContent(document, (List<BiologicalData>) data);
+
+            document.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Ajouter les métadonnées au PDF
+    private void addMetaData(com.itextpdf.layout.Document document) {
+        // Ajouter les métadonnées ici si nécessaire
+    }
+
+    // Ajouter la page de titre au PDF
+    private void addTitlePage(com.itextpdf.layout.Document document) {
+        Paragraph title = new Paragraph("Biological Data");
+        title.setFontSize(24);
+        document.add(title);
+
+        Paragraph subtitle = new Paragraph("Generated on: " + new java.util.Date().toString());
+        subtitle.setFontSize(12);
+        document.add(subtitle);
+
+        document.add(new Paragraph("\n\n")); // Ajouter un espace vertical
+    }
+
+    // Ajouter le contenu du PDF
+    private void addContent(Document document, List<BiologicalData> dataList) {
+        Paragraph title = new Paragraph("Biological Data Details");
+        title.setFontSize(18);
+        document.add(title);
+
+        document.add(new Paragraph("\n")); // Ajouter un espace vertical
+
+        // Créer un tableau pour afficher les détails des données biologiques
+        Table table = new Table(new float[]{2, 5}); // 2 colonnes avec des largeurs proportionnelles
+
+        // Ajouter les détails des données biologiques dans le tableau
+        for (BiologicalData data : dataList) {
+            addTableRow(table, "Measurement Type:", data.getMeasurementType());
+            addTableRow(table, "Value:", data.getValue());
+            addTableRow(table, "Patient Name:", data.getPatientName());
+            addTableRow(table, "Patient Last Name:", data.getPatientLastName());
+            addTableRow(table, "Patient Age:", String.valueOf(data.getPatientAge()));
+            addTableRow(table, "Disease:", data.getDisease());
+            addTableRow(table, "Other Information:", data.getOtherInformation());
+
+            document.add(table);
+        }
+    }
+
+    // Méthode utilitaire pour ajouter une ligne au tableau avec une clé et une valeur
+    private void addTableRow(Table table, String key, String value) {
+        table.addCell(key);
+        table.addCell(value);
+    }
+
+
+
 
     private boolean areFieldsEmpty() {
 
@@ -120,28 +202,10 @@ public class AjoutBiological {
         alert.showAndWait();
     }
 
-    public void generatePDF(BiologicalData data) {
-        PDFGenerator pdfGenerator = new PDFGenerator();
-        pdfGenerator.generatePDF(data);
-    }
 
-    private void openPDF() {
-        // Récupérer le chemin du fichier PDF
-        String FILE = "C:/Users/USER/IdeaProjects/PIDEvv/pdf/biological_data.pdf";
 
-        File file = new File(FILE);
-        if (file.exists()) {
-            // Ouvrir le fichier PDF avec le programme par défaut associé aux fichiers PDF
-            try {
-                Desktop.getDesktop().open(file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            showAlert("Erreur", "Le fichier PDF n'existe pas.");
-        }
 
-    }
+
 }
 
 
