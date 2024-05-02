@@ -14,6 +14,7 @@ import org.example.models.Medication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class AjouterMedication {
     ServiceMedication sp = new ServiceMedication();
@@ -70,16 +71,23 @@ public class AjouterMedication {
                 if (dosageValue > 1000) {
                     showAlert("Erreur de dosage", "Le dosage ne peut pas dépasser 1000.");
                 } else {
+                    // Concaténer tous les champs dans une seule chaîne de caractères
+                    String qrData = "Nom: " + tfName.getText() +
+                            "\nDosage: " + tfDosage.getText() +
+                            "\nDescription: " + tfDesc.getText() +
+                            "\nNote médicale: " + tfNote.getText();
+
                     Medication m = new Medication();
                     m.setNameMedication(tfName.getText());
                     m.setDescription(tfDesc.getText());
                     m.setDosage(tfDosage.getText());
                     m.setMedicalNote(tfNote.getText());
                     sp.add(m);
+                    String uniqueId = UUID.randomUUID().toString();
+                    String qrFileName = "src/main/resources/qrcodes/" + tfName.getText() + "_" + uniqueId + ".png";
 
-
-                    String qrFileName = "src/main/resources/qrcodes/" + tfName.getText() + ".png";
-                    GenerateQrCode.createQR(tfName.getText(), qrFileName);
+                    // Créer le code QR
+                    GenerateQrCode.createQR(qrData, qrFileName);
 
                     showAlert("Succès", "Code QR généré pour la médication : " + tfName.getText());
 
