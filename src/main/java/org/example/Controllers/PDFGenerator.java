@@ -128,4 +128,5 @@ public class PDFGenerator {
                 .setBorder(new SolidBorder( 1)) // Ajoute une bordure blanche autour de la cellule
                 .setTextAlignment(com.itextpdf.layout.property.TextAlignment.CENTER)); // Centrer le texte horizontalement
     }
+
 }
