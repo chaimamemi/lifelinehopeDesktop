@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AjouterMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/PDFGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/PDFGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateBiological.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,30 +62,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "wissal",
-    "last_directory_selection": "C:/Users/USER/IdeaProjects/PIDEvv/src/main/java",
-    "last_opened_file_path": "C:/Program Files/Java/itextpdf-5.5.9.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/USER/IdeaProjects/PIDEvv/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.49080458",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;wissal&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/itextpdf-5.5.9.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/USER/IdeaProjects/PIDEvv/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.49080458&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
@@ -197,6 +193,7 @@
       <workItem from="1714387173368" duration="1346000" />
       <workItem from="1714423637207" duration="8758000" />
       <workItem from="1714467285069" duration="23595000" />
+      <workItem from="1714637174576" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

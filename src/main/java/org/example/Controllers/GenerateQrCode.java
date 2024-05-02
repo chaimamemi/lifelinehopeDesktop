@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class GenerateQrCode {
 
-    // Function to create the QR code
+
     public static void createQR(String data, String path,
                                 String charset, int height, int width)
             throws WriterException, IOException {
@@ -30,10 +30,10 @@ public class GenerateQrCode {
 
         String fullPath = "C:\\path\\to\\your\\directory\\" + path;
 
-        // Utiliser le chemin complet du fichier avec l'extension pour écrire le code QR
+
         MatrixToImageWriter.writeToPath(
                 matrix,
-                "PNG", // Format du fichier
+                "PNG", 
                 new File(fullPath).toPath());
     }
 

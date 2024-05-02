@@ -77,13 +77,12 @@ public class AjouterMedication {
                     m.setMedicalNote(tfNote.getText());
                     sp.add(m);
 
-                    // Générer le code QR pour le médicament ajouté
+
                     String qrPath = "src/main/resources/qrcodes/" + m.getNameMedication() + ".png";
                     GenerateQrCode.createQR(m.getNameMedication(), qrPath, "UTF-8", 400, 400);
 
-                    // Vous pouvez également afficher un message de succès ou une notification ici
 
-                    // Redirection vers la vue AfficherMedication
+
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherMedication.fxml"));
                     try {
                         Parent root = loader.load();
