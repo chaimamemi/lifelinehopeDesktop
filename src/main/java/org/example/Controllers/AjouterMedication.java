@@ -78,8 +78,10 @@ public class AjouterMedication {
                     sp.add(m);
 
 
-                    String qrPath = "src/main/resources/qrcodes/" + m.getNameMedication() + ".png";
-                    GenerateQrCode.createQR(m.getNameMedication(), qrPath, "UTF-8", 400, 400);
+                    String qrFileName = "src/main/resources/qrcodes/" + tfName.getText() + ".png";
+                    GenerateQrCode.createQR(tfName.getText(), qrFileName);
+
+                    showAlert("Succès", "Code QR généré pour la médication : " + tfName.getText());
 
 
 

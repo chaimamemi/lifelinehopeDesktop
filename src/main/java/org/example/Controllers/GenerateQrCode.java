@@ -10,32 +10,27 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
 public class GenerateQrCode {
 
-
-    public static void createQR(String data, String path,
-                                String charset, int height, int width)
+    public static void createQR(String data, String fileName)
             throws WriterException, IOException {
+
+        int width = 400;
+        int height = 400;
+        String format = "PNG";
 
         Map<EncodeHintType, ErrorCorrectionLevel> hintMap = new HashMap<>();
         hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
 
         BitMatrix matrix = new MultiFormatWriter().encode(
-                new String(data.getBytes(charset), charset),
-                BarcodeFormat.QR_CODE, width, height, hintMap);
+                data, BarcodeFormat.QR_CODE, width, height, hintMap);
 
-
-        String fullPath = "C:\\path\\to\\your\\directory\\" + path;
-
-
-        MatrixToImageWriter.writeToPath(
-                matrix,
-                "PNG", 
-                new File(fullPath).toPath());
+        Path path = FileSystems.getDefault().getPath(fileName);
+        MatrixToImageWriter.writeToPath(matrix, format, path);
     }
-
-
 }
