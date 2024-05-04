@@ -69,7 +69,7 @@ public class Statistics  implements Initializable {
 
         // Si le nombre total de médicaments est supérieur à cinq, ajouter une catégorie "Autres"
         if (sortedEntries.size() > 5) {
-            String label = "Autres";
+            String label = "others";
             double value = (double) (totalLength - otherLength) / totalLength;
             pieChartData.add(new PieChart.Data(label, value));
         }
