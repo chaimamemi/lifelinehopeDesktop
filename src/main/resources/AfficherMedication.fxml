@@ -53,6 +53,11 @@
                      </children>
                   </VBox>
                   <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="269.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/doct.png" />
+                     </image>
+                  </ImageView>
 
 
                </children>
