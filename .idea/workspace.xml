@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/doct.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/doct.png" afterDir="false" />
-    </list>
+    <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +192,7 @@
       <workItem from="1714637174576" duration="13838000" />
       <workItem from="1714724018459" duration="1993000" />
       <workItem from="1714775682261" duration="2164000" />
-      <workItem from="1714779966373" duration="650000" />
+      <workItem from="1714779966373" duration="1001000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
