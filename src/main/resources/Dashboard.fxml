@@ -28,12 +28,12 @@
          </children>
       </HBox>
       <Separator layoutX="169.0" layoutY="69.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="7.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
-      <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="108.0" fitWidth="160.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/healthcare-8252835_1280.png" />
          </image>
       </ImageView>
-      <Label layoutX="326.0" layoutY="86.0" prefHeight="22.0" prefWidth="348.0" text="Recently Added">
+      <Label layoutX="408.0" layoutY="87.0" prefHeight="22.0" prefWidth="348.0" text="Recently Added">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>
@@ -65,9 +65,9 @@
             <Font size="11.0" />
          </font>
       </Button>
-      <ImageView fitHeight="56.0" fitWidth="62.0" layoutX="189.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="108.0" fitWidth="182.0" layoutX="196.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/pdf.jpg" />
+            <Image url="@img/admin.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="126.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
@@ -101,11 +101,11 @@
             <Image url="@img/medo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="179.0" fitWidth="189.0" layoutX="558.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/pop.png" />
-         </image>
-      </ImageView>
-      <ListView fx:id="List" layoutX="211.0" layoutY="301.0" prefHeight="200.0" prefWidth="500.0" styleClass="transparent" stylesheets="@style2.css" />
+      <ListView fx:id="LisrMedication" layoutX="188.0" layoutY="205.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@styles.css">
+         <styleClass>
+            <String fx:value="nav-button" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </ListView>
    </children>
 </AnchorPane>
