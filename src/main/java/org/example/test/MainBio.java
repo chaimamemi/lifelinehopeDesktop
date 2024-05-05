@@ -18,7 +18,7 @@ public class MainBio extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherBiological.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjoutBiological.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root );

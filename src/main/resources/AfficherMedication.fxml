@@ -53,11 +53,6 @@
                      </children>
                   </VBox>
                   <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="269.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/doct.png" />
-                     </image>
-                  </ImageView>
 
 
                </children>
@@ -68,7 +63,7 @@
             </VBox>
          </bottom>
       </BorderPane>
-      <ListView id="medicationListView" fx:id="medicationListView" layoutX="261.0" layoutY="106.0" prefHeight="371.0" prefWidth="524.0" styleClass="bio-card" />
+      <ListView id="medicationListView" fx:id="medicationListView" layoutX="253.0" layoutY="148.0" prefHeight="371.0" prefWidth="524.0" styleClass="bio-card" />
       <Label alignment="CENTER" layoutX="352.0" layoutY="20.0" prefHeight="34.0" prefWidth="301.0" text="List of Medication">
          <font>
             <Font size="18.0" />
@@ -90,11 +85,6 @@
             <String fx:value="bio-card" />
             <String fx:value="shadow" />
          </styleClass></Button>
-      <ImageView fitHeight="102.0" fitWidth="149.0" layoutX="631.0">
-         <image>
-            <Image url="@img/healthcare-8252835_1280.png" />
-         </image>
-      </ImageView>
       <HBox layoutX="243.0" layoutY="110.0" prefHeight="38.0" prefWidth="234.0" />
       <Button fx:id="btntri" layoutX="596.0" layoutY="438.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" stylesheets="@style2.css" text="TRI">
          <styleClass>
@@ -102,5 +92,10 @@
             <String fx:value="shadow" />
          </styleClass>
       </Button>
+      <ImageView fitHeight="115.0" fitWidth="132.0" layoutX="253.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/doct.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

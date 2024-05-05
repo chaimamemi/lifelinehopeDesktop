@@ -9,14 +9,11 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-
-import com.itextpdf.layout.borders.SolidBorder;
-import com.itextpdf.layout.element.Div;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import org.example.models.BiologicalData;
 
 import java.io.IOException;
@@ -31,16 +28,18 @@ public class PDFGenerator {
 
             // Couleurs personnalisées
             Color titleColor = new DeviceRgb(52, 152, 219); // Bleu vif pour le titre
-            Color headerColor = new DeviceRgb(189, 195, 199); // Gris pour les titres de colonnes
-            Color cellColor = new DeviceRgb(243, 243, 243); // Gris clair pour les cellules du tableau
             Color textColor = new DeviceRgb(33, 33, 33); // Noir pour le texte
 
             // Polices de caractères
             PdfFont titleFont = PdfFontFactory.createFont();
             PdfFont contentFont = PdfFontFactory.createFont();
 
-            // Titre
-            Paragraph title = new Paragraph("Biological Data")
+            // Logo à gauche du titre
+            Image logoImage = new Image(ImageDataFactory.create("src/main/resources/img/logo.png"));
+            logoImage.setWidth(30).setHeight(30); // Taille réduite du logo
+            Paragraph title = new Paragraph()
+                    .add(logoImage)
+                    .add("Biological Data")
                     .setFont(titleFont)
                     .setFontSize(36)
                     .setFontColor(titleColor)
@@ -49,21 +48,13 @@ public class PDFGenerator {
                     .setMarginBottom(20) // Ajoute une marge en bas du titre
                     .setTextAlignment(TextAlignment.CENTER); // Centrer le titre horizontalement
 
-            // Ajout de l'image en haut du document
-            Image logo = new Image(ImageDataFactory.create("src/main/resources/img/logo.png"));
-
-            // Création d'une ligne contenant le logo et le titre
-            Div headerDiv = new Div()
-                    .add(logo)
-                    .add(title)
-                    .setHorizontalAlignment(HorizontalAlignment.LEFT); // Alignement à gauche
-
-            document.add(headerDiv);
+            document.add(title);
 
             // Tableau pour afficher les données biologiques
-            Table table = new Table(new float[]{2, 3, 3, 3, 2, 3, 4});
-            // Appliquer la couleur de fond pour les cellules du tableau
-            table.setBackgroundColor(cellColor);
+            Table table = new Table(new float[]{3, 3, 3, 3, 3, 3, 3});
+            table.setWidth(UnitValue.createPercentValue(100));
+            // Appliquer la couleur de fond bleu clair pour les cellules du tableau
+            table.setBackgroundColor(new DeviceRgb(173, 216, 230)); // Bleu clair pour le tableau
 
             // Modification des couleurs et de la police pour les titres de colonnes
             for (int i = 0; i < 7; i++) {
@@ -71,24 +62,37 @@ public class PDFGenerator {
                         .setFont(contentFont)
                         .setBold()
                         .setFontColor(textColor)
-                        .setBackgroundColor(headerColor)
                         .setPadding(8) // Ajuste le padding pour les titres de colonnes
-                        .setTextAlignment(TextAlignment.CENTER)
-                        .setBorder(new SolidBorder(1))); // Ajoute une bordure blanche autour des titres de colonnes
+                        .setTextAlignment(TextAlignment.CENTER));
             }
 
             // Ajoutez les données biologiques au tableau avec des bordures et des marges personnalisées
             for (BiologicalData data : dataList) {
-                addCellWithBorder(table, data.getMeasurementType(), contentFont, textColor);
-                addCellWithBorder(table, data.getValue(), contentFont, textColor);
-                addCellWithBorder(table, data.getPatientName(), contentFont, textColor);
-                addCellWithBorder(table, data.getPatientLastName(), contentFont, textColor);
-                addCellWithBorder(table, String.valueOf(data.getPatientAge()), contentFont, textColor);
-                addCellWithBorder(table, data.getDisease(), contentFont, textColor);
-                addCellWithBorder(table, data.getOtherInformation(), contentFont, textColor);
+                addCell(table, data.getMeasurementType(), contentFont, textColor);
+                addCell(table, data.getValue(), contentFont, textColor);
+                addCell(table, data.getPatientName(), contentFont, textColor);
+                addCell(table, data.getPatientLastName(), contentFont, textColor);
+                addCell(table, String.valueOf(data.getPatientAge()), contentFont, textColor);
+                addCell(table, data.getDisease(), contentFont, textColor);
+                addCell(table, data.getOtherInformation(), contentFont, textColor);
             }
 
             document.add(table);
+
+            // Ajout de l'image "doct.png" à droite de la page
+            Image doctorImage = new Image(ImageDataFactory.create("src/main/resources/img/doct.png"));
+            doctorImage.setWidth(100).setHeight(100); // Taille réduite de l'image
+            document.add(doctorImage);
+
+            // Ajout du message "Thank you for downloading AjoutBiological History" en gras
+            Paragraph thankYouMessage = new Paragraph("Thank you for downloading AjoutBiological History")
+                    .setFont(contentFont)
+                    .setFontColor(textColor)
+                    .setBold() // Mettre le texte en gras
+                    .setMarginTop(50) // Marge en haut du message
+                    .setTextAlignment(TextAlignment.CENTER); // Centrer le message horizontalement
+            document.add(thankYouMessage);
+
             document.close();
 
             System.out.println("Le PDF des données biologiques a été généré avec succès !");
@@ -120,13 +124,11 @@ public class PDFGenerator {
     }
 
     // Méthode utilitaire pour ajouter une cellule avec des bordures au tableau
-    private static void addCellWithBorder(Table table, String content, PdfFont font, Color textColor) {
+    private static void addCell(Table table, String content, PdfFont font, Color textColor) {
         table.addCell(new Paragraph(content)
                 .setFont(font)
                 .setFontColor(textColor)
                 .setPadding(8) // Ajuste le padding pour le contenu des cellules
-                .setBorder(new SolidBorder( 1)) // Ajoute une bordure blanche autour de la cellule
-                .setTextAlignment(com.itextpdf.layout.property.TextAlignment.CENTER)); // Centrer le texte horizontalement
+                .setTextAlignment(TextAlignment.CENTER));
     }
-
 }
