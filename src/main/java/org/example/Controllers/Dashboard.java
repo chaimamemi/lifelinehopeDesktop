@@ -33,11 +33,11 @@ public class Dashboard implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         btnstat.setOnAction(event -> showStatistics());
-        //btnpdf.setOnAction(event -> generatePDF());
-
+         btnpdf.setOnAction(event -> generatePDF());
 
 
     }
+
     @FXML
     private void showStatistics() {
         try {
@@ -56,19 +56,21 @@ public class Dashboard implements Initializable {
 
     public void generateBiologicalData(ActionEvent actionEvent) {
     }
-    //@FXML
-   // private void generatePDF() {
 
-       // List<BiologicalData> dataList = fetchData(); // Méthode à implémenter pour récupérer les données
+    @FXML
+    private void generatePDF() {
+
+        List<BiologicalData> dataList = fetchData(); // Méthode à implémenter pour récupérer les données
 
         // Appel de la méthode de génération de PDF avec les données récupérées
-       // PDFGenerator.generateBiologicalData(dataList);
-    //}
-
-   // private List<BiologicalData> fetchData() {
-
-       // return List.of();
+        PDFGenerator.generateBiologicalData(dataList);
     }
+
+    private List<BiologicalData> fetchData() {
+
+        return List.of();
+    }
+}
 
 
 
