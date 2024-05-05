@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/aa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medication.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medication.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/medo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +213,7 @@
       <workItem from="1714830713086" duration="1814000" />
       <workItem from="1714867957853" duration="7449000" />
       <workItem from="1714913359249" duration="5216000" />
-      <workItem from="1714918716353" duration="3241000" />
+      <workItem from="1714918716353" duration="4558000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

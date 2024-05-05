@@ -9,7 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
@@ -90,6 +92,43 @@ public class Statistics implements Initializable {
 
         // Afficher les données dans le PieChart
         piechart.setData(pieChartData);
+
+        // Déterminer le médicament le plus utilisé
+        String mostUsedMedication = getMostUsedMedication(pieChartData);
+
+        // Afficher une alerte offrant un échantillon gratuit du médicament le plus utilisé
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Offre spéciale");
+        alert.setHeaderText("Le médicament le plus utilisé est : " + mostUsedMedication);
+        alert.setContentText("Félicitations! Vous avez droit à un échantillon gratuit de " + mostUsedMedication + ". Voulez-vous réclamer votre échantillon maintenant ?");
+
+        ButtonType ouiButton = new ButtonType("Oui");
+        ButtonType nonButton = new ButtonType("Non");
+
+        alert.getButtonTypes().setAll(ouiButton, nonButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ouiButton) {
+            // Logique pour réclamer l'échantillon gratuit
+            System.out.println("Échantillon gratuit de " + mostUsedMedication + " réclamé!");
+        } else {
+            System.out.println("Pas de réclamation d'échantillon.");
+        }
+    }
+
+    private String getMostUsedMedication(ObservableList<PieChart.Data> pieChartData) {
+        String mostUsedMedication = "";
+        double maxValue = Double.MIN_VALUE;
+
+        for (PieChart.Data data : pieChartData) {
+            if (data.getPieValue() > maxValue) {
+                maxValue = data.getPieValue();
+                mostUsedMedication = data.getName();
+            }
+        }
+
+        return mostUsedMedication;
     }
 
     private void navigateToDashboard() {
@@ -102,12 +141,11 @@ public class Statistics implements Initializable {
             stage.setScene(scene);
             stage.show();
 
-            // Close the current window
+            // Fermer la fenêtre actuelle
             Stage currentStage = (Stage) goback.getScene().getWindow();
             currentStage.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

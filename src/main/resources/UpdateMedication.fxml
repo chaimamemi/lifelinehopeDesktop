@@ -70,7 +70,7 @@
       </VBox>
       <ImageView fitHeight="183.0" fitWidth="189.0" layoutX="419.0" layoutY="113.0">
          <image>
-            <Image url="@../../../../../Desktop/good.png" />
+            <Image url="@img/good.png" />
          </image>
       </ImageView>
    </children>

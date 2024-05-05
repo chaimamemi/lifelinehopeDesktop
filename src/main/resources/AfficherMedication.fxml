@@ -52,12 +52,19 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="161.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/medo.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="34.0" prefWidth="114.0" stylesheets="@style2.css" text="return">
+                     <styleClass>
+                        <String fx:value="search-button" />
+                        <String fx:value="bio-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </Button>
 
 
                </children>

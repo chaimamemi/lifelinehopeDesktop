@@ -8,9 +8,11 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -50,6 +52,10 @@ public class AfficherMedication {
     private Button btntri;
 
 
+    @FXML
+    private Button back;
+
+
     private List<Medication> allMedications;
     @FXML
     private TextField searchField;
@@ -68,7 +74,7 @@ public class AfficherMedication {
         btnsearch.setOnAction(event -> searchMedications(searchField.getText().trim().toLowerCase()));
         btntri.setOnAction(event -> sortMedicationsByDosage());
         calculateAntibioticPercentages();
-
+        back.setOnAction(this::navigateToAddMedication);
         medicationListView.setCellFactory(param -> new ListCell<Medication>() {
             @Override
             protected void updateItem(Medication item, boolean empty) {
@@ -192,4 +198,19 @@ public class AfficherMedication {
             alert.showAndWait();
         }
     }
+
+    @FXML
+    private void navigateToAddMedication(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterMedication.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Ajouter Médication");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
