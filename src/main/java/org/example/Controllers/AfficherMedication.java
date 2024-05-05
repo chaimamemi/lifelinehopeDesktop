@@ -65,13 +65,9 @@ public class AfficherMedication {
         refreshListView();
         btndelete.setOnAction(event -> deleteSelectedItems());
         btnupdate.setOnAction(event -> updateSelectedMedication());
-        btnsearch.setOnAction(event -> searchMedications());
+        btnsearch.setOnAction(event -> searchMedications(searchField.getText().trim().toLowerCase()));
         btntri.setOnAction(event -> sortMedicationsByDosage());
         calculateAntibioticPercentages();
-
-
-
-
 
         medicationListView.setCellFactory(param -> new ListCell<Medication>() {
             @Override
@@ -98,7 +94,6 @@ public class AfficherMedication {
         });
     }
 
-
     public void setMedications(List<Medication> all) {
         allMedications = all;
         refreshListView();
@@ -106,15 +101,9 @@ public class AfficherMedication {
 
     @FXML
     private void deleteSelectedItems() {
-
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
-
-
         if (selectedItem != null) {
-
             serviceMedication.delete(selectedItem);
-
-
             refreshListView();
         }
     }
@@ -125,24 +114,15 @@ public class AfficherMedication {
         medicationListView.setItems(FXCollections.observableArrayList(medicationList));
     }
 
-
     @FXML
     private void updateSelectedMedication() {
-
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
-
-
         if (selectedItem != null) {
             try {
-
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMedication.fxml"));
                 Parent root = loader.load();
-
-
                 UpdateMedicationController updateMedicationController = loader.getController();
                 updateMedicationController.initData(selectedItem);
-
-
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.setTitle("Update Medication");
@@ -153,15 +133,11 @@ public class AfficherMedication {
         }
     }
 
-
     @FXML
-    private void searchMedications() {
-        // Récupérer le texte saisi dans le champ de recherche
-        String searchText = searchField.getText().toLowerCase().trim();
-
+    private void searchMedications(String searchText) {
         // Filtrer la liste des médications en fonction du texte saisi dans le champ de recherche
         List<Medication> filteredList = allMedications.stream()
-                .filter(medication -> medication.getNameMedication().toLowerCase().contains(searchText))
+                .filter(medication -> medication.getNameMedication().toLowerCase().startsWith(searchText))
                 .collect(Collectors.toList());
 
         // Mettre à jour la ListView avec la liste filtrée
@@ -173,40 +149,29 @@ public class AfficherMedication {
         // Tri par dosage
         medicationListView.setItems(FXCollections.observableArrayList(
                 allMedications.stream()
-                        .filter(medication -> !medication.getDosage().isEmpty()) // Filtrer les médications avec un dosage non vide
+                        .filter(medication -> !medication.getDosage().isEmpty())
                         .sorted(Comparator.comparingDouble(medication -> {
-                            // Extraire la partie numérique de la chaîne de dosage
                             String dosage = medication.getDosage();
                             String numericPart = dosage.replaceAll("[^0-9.]", "");
                             if (!numericPart.isEmpty()) {
                                 return Double.parseDouble(numericPart);
                             } else {
-                                return 0.0; // Retourner 0 si la partie numérique est vide
+                                return 0.0;
                             }
                         }))
                         .collect(Collectors.toList())
         ));
-
-        // Affichage pour vérification
         System.out.println("Médications triées par dosage : " + medicationListView.getItems());
     }
 
-    // Méthode pour calculer les pourcentages d'utilisation des antibiotiques
     @FXML
     private void calculateAntibioticPercentages() {
-        // Supposons que nous avons une liste d'antibiotiques avec leurs utilisations
         Map<String, Integer> antibioticUsage = new HashMap<>();
         antibioticUsage.put("Amoxicillin", 25);
         antibioticUsage.put("Ciprofloxacin", 15);
         antibioticUsage.put("Doxycycline", 10);
-        // Ajoutez d'autres antibiotiques et leurs utilisations ici
-
-        // Calcul du nombre total d'utilisations d'antibiotiques
         int totalUsage = antibioticUsage.values().stream().mapToInt(Integer::intValue).sum();
-
-        // Vérification si la liste d'antibiotiques n'est pas vide
         if (!antibioticUsage.isEmpty()) {
-            // Construction de la chaîne de caractères pour l'affichage
             StringBuilder stringBuilder = new StringBuilder("Pourcentage d'utilisation des antibiotiques :\n");
             for (Map.Entry<String, Integer> entry : antibioticUsage.entrySet()) {
                 String antibiotic = entry.getKey();
@@ -214,15 +179,12 @@ public class AfficherMedication {
                 double percentage = (double) usage / totalUsage * 100;
                 stringBuilder.append(antibiotic).append(": ").append(percentage).append("%\n");
             }
-
-            // Affichage dans une fenêtre de dialogue (Alert)
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Pourcentage d'utilisation des antibiotiques");
             alert.setHeaderText(null);
             alert.setContentText(stringBuilder.toString());
             alert.showAndWait();
         } else {
-            // Affichage d'un message si la liste d'antibiotiques est vide
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Aucune donnée d'antibiotique");
             alert.setHeaderText(null);
@@ -230,21 +192,4 @@ public class AfficherMedication {
             alert.showAndWait();
         }
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

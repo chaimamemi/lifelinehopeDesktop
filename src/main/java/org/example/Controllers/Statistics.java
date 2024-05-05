@@ -18,11 +18,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Statistics  implements Initializable {
+public class Statistics implements Initializable {
     @FXML
     private PieChart piechart;
     @FXML
-    private  Button goback;
+    private Button goback;
     private final ServiceMedication serviceMedication;
 
     public Statistics() {
@@ -39,6 +39,13 @@ public class Statistics  implements Initializable {
         List<Medication> medicationList = serviceMedication.getAll();
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
+        // Vérifier s'il y a des médicaments
+        if (medicationList.isEmpty()) {
+            // Afficher un message si la liste des médicaments est vide
+            System.out.println("Aucun médicament trouvé.");
+            return;
+        }
+
         // Créer une carte pour stocker la longueur de la description de chaque médicament
         Map<String, Integer> medicationDescriptionLengthMap = new HashMap<>();
 
@@ -51,6 +58,13 @@ public class Statistics  implements Initializable {
 
             // Ajouter ou mettre à jour la longueur de la description dans la carte
             medicationDescriptionLengthMap.put(medication.getNameMedication(), length);
+        }
+
+        // Vérifier s'il y a des données de médicament à afficher
+        if (medicationDescriptionLengthMap.isEmpty()) {
+            // Afficher un message si aucune donnée de médicament n'est disponible
+            System.out.println("Aucune donnée de médicament disponible.");
+            return;
         }
 
         // Trier la carte par longueur de description dans l'ordre décroissant
@@ -69,7 +83,7 @@ public class Statistics  implements Initializable {
 
         // Si le nombre total de médicaments est supérieur à cinq, ajouter une catégorie "Autres"
         if (sortedEntries.size() > 5) {
-            String label = "others";
+            String label = "Autres";
             double value = (double) (totalLength - otherLength) / totalLength;
             pieChartData.add(new PieChart.Data(label, value));
         }
@@ -77,11 +91,6 @@ public class Statistics  implements Initializable {
         // Afficher les données dans le PieChart
         piechart.setData(pieChartData);
     }
-
-
-
-
-
 
     private void navigateToDashboard() {
         try {

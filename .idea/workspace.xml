@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/aa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/medication.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/PDFGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/PDFGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainBio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainBio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/AfficherMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medication.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/medo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +34,8 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,6 +110,7 @@
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.test" />
       <recent name="org.example.Controlles" />
     </key>
   </component>
@@ -105,6 +120,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MainFx">
+    <configuration name="Admin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.test.Admin" />
+      <module name="PIDEvv" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.2\lib&quot; --add-modules javafx.controls" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainBio" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.test.MainBio" />
       <module name="PIDEvv" />
@@ -129,6 +152,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainBio" />
+      <item itemvalue="Application.Admin" />
       <item itemvalue="Application.MainFx" />
     </list>
     <recent_temporary>
@@ -200,7 +224,8 @@
       <workItem from="1714779966373" duration="1288000" />
       <workItem from="1714830713086" duration="1814000" />
       <workItem from="1714867957853" duration="7449000" />
-      <workItem from="1714913359249" duration="1277000" />
+      <workItem from="1714913359249" duration="5216000" />
+      <workItem from="1714918716353" duration="3241000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

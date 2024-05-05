@@ -53,6 +53,11 @@
                      </children>
                   </VBox>
                   <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/medo.png" />
+                     </image>
+                  </ImageView>
 
 
                </children>
@@ -63,13 +68,19 @@
             </VBox>
          </bottom>
       </BorderPane>
-      <ListView id="medicationListView" fx:id="medicationListView" layoutX="253.0" layoutY="148.0" prefHeight="371.0" prefWidth="524.0" styleClass="bio-card" />
+      <ListView id="medicationListView" fx:id="medicationListView" layoutX="253.0" layoutY="121.0" prefHeight="301.0" prefWidth="542.0" stylesheets="@styles.css">
+         <styleClass>
+            <String fx:value="bio-card" />
+            <String fx:value="bold-text" />
+            <String fx:value="nav-button" />
+            <String fx:value="shadow" />
+         </styleClass></ListView>
       <Label alignment="CENTER" layoutX="352.0" layoutY="20.0" prefHeight="34.0" prefWidth="301.0" text="List of Medication">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button id="btndelete" fx:id="btndelete" layoutX="327.0" layoutY="435.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
+      <Button id="btndelete" fx:id="btndelete" layoutX="295.0" layoutY="438.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
          <styleClass>
             <String fx:value="most_inner_pane" />
             <String fx:value="shadow" />
@@ -92,9 +103,9 @@
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <ImageView fitHeight="115.0" fitWidth="132.0" layoutX="253.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="98.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/doct.png" />
+            <Image url="@img/medi.png" />
          </image>
       </ImageView>
    </children>

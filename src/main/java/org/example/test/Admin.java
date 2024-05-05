@@ -1,4 +1,5 @@
 package org.example.test;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,21 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainFx extends Application {
+import static javafx.application.Application.launch;
 
-
+public class Admin extends Application {
     public static void main(String[] args) {
-
         launch(args);
     }
 
-    @Override
+@Override
     public void start(Stage primaryStage) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Statistics.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root );
-            primaryStage.setTitle("Gestion Medicament");
+            primaryStage.setTitle("Gestion Biological");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
@@ -31,5 +31,3 @@ public class MainFx extends Application {
 
     }
 }
-
-

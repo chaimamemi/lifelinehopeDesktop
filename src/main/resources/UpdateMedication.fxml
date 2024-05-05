@@ -29,7 +29,7 @@
             </Label>
          </children>
       </HBox>
-      <VBox layoutX="12.0" layoutY="115.0" prefHeight="286.0" prefWidth="378.0">
+      <VBox layoutX="12.0" layoutY="115.0" prefHeight="286.0" prefWidth="370.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication" wrappingWidth="147.7367615699768">
                <font>
@@ -55,22 +55,22 @@
                </font>
             </Text>
             <TextField fx:id="tfNoteUpdate" />
+            <Button fx:id="btnsave" mnemonicParsing="false" onAction="#saveChanges" prefHeight="26.0" prefWidth="100.0" text="save" textFill="WHITE">
+               <stylesheets>
+                  <URL value="@stylesheet.css" />
+                  <URL value="@styles.css" />
+                  <URL value="@style2.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="bio-card" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </Button>
          </children>
       </VBox>
-      <Button fx:id="btnsave" layoutX="395.0" layoutY="346.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="26.0" prefWidth="100.0" text="save" textFill="WHITE">
-         <stylesheets>
-            <URL value="@stylesheet.css" />
-            <URL value="@styles.css" />
-            <URL value="@style2.css" />
-         </stylesheets>
-         <styleClass>
-            <String fx:value="bio-card" />
-            <String fx:value="shadow" />
-         </styleClass>
-      </Button>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="419.0" layoutY="113.0">
+      <ImageView fitHeight="183.0" fitWidth="189.0" layoutX="419.0" layoutY="113.0">
          <image>
-            <Image url="@../../../../../Downloads/healthcare-8252835_1280.png" />
+            <Image url="@../../../../../Desktop/good.png" />
          </image>
       </ImageView>
    </children>
