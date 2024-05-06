@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.AfficheAllBraceletController">
+   <children>
+      <VBox layoutX="104.0" layoutY="131.0" prefHeight="482.0" prefWidth="713.0">
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+         <children>
+            <ScrollPane prefHeight="250.0" prefWidth="200.0" styleClass="transparent" stylesheets="@styleadd.css">
+               <content>
+                  <HBox fx:id="cardBracelet" prefHeight="250.0" prefWidth="714.0" styleClass="transparent" stylesheets="@styleadd.css">
+                     <children>
+                        <VBox fx:id="temp" prefHeight="250.0" prefWidth="167.0">
+                           <children>
+                              <Label text="Temperature Data" textFill="#1e7fcb">
+                                 <font>
+                                    <Font name="Candara Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="temperatureList" prefHeight="199.0" prefWidth="189.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="bloodp" prefHeight="250.0" prefWidth="171.0">
+                           <children>
+                              <Label text="Blodd Presure Data" textFill="#1e7fcb">
+                                 <font>
+                                    <Font name="Candara Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="bloodPresure" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="heartR" prefHeight="250.0" prefWidth="163.0">
+                           <children>
+                              <Label text="Heart Rate Data" textFill="#1e7fcb">
+                                 <font>
+                                    <Font name="Candara Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="hertRate" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="move" prefHeight="250.0" prefWidth="173.0">
+                           <children>
+                              <Label text="Movement Data" textFill="#1e7fcb">
+                                 <font>
+                                    <Font name="Candara Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="movement" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <Label text="Health Recap" textFill="#1e7fcb">
+               <font>
+                  <Font name="Candara Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="dataHealth" prefHeight="159.0" prefWidth="703.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TextArea>
+            <VBox prefHeight="64.0" prefWidth="722.0">
+               <children>
+                  <Label>
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="boutonAppoitment" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css" text="Add Apoitment" textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="500.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="boutonGenerate" mnemonicParsing="false" onAction="#generateRapport" styleClass="shadow" stylesheets="@styleadd.css" text="more Details" textFill="#1e7fcb" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="117.0" layoutY="27.0" prefHeight="67.0" prefWidth="696.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
+         <children>
+            <Label alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="245.0" text="Your Health Summary" textFill="#fffcfc" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </opaqueInsets>
+      </VBox>
+      <Button fx:id="boutonBack" layoutX="14.0" layoutY="567.0" mnemonicParsing="false" onAction="#backToBracelet" styleClass="chosen-fruit-card" stylesheets="@styleadd.css" text="Back" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="121.0" fitWidth="104.0" layoutX="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesBracelet/istockphoto-1307877022-612x612.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="84.0" layoutY="-44.0" orientation="VERTICAL" prefHeight="687.0" prefWidth="6.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css" />
+   </children>
+</AnchorPane>
