@@ -1,4 +1,4 @@
-package org.example.Controllers;
+package org.example.Controllers.admin;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,11 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
 import javafx.stage.Stage;
+import org.example.Controllers.PDFGenerator;
+import org.example.Controllers.user.AfficherMedication;
 import org.example.Services.ServiceMedication;
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;

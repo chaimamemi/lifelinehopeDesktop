@@ -2,6 +2,9 @@ package org.example.Services;
 import org.example.Interfaces.Iservice;
 import org.example.connectionDB.DatabaseConnector;
 import org.example.models.BiologicalData;
+import org.example.models.Medication;
+import org.example.models.User;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -49,6 +52,11 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @Override
+    public void add(Medication medication, User user) {
+
     }
 
     @Override

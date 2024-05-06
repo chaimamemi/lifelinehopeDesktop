@@ -1,4 +1,4 @@
-package org.example.Controllers;
+package org.example.Controllers.user;
 
 import com.google.zxing.WriterException;
 import javafx.event.ActionEvent;
@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.example.Controllers.GenerateQrCode;
+import org.example.Controllers.user.AfficherMedication;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
 

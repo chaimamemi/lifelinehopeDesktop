@@ -6,6 +6,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.example.Interfaces.Iservice;
 import org.example.connectionDB.DatabaseConnector;
 import org.example.models.Medication;
+import org.example.models.User;
 
 import java.io.IOException;
 import java.sql.*;
@@ -18,8 +19,18 @@ public class ServiceMedication implements Iservice<Medication> {
         cnx = DatabaseConnector.getInstance().getCnx();
     }
 
+
     @Override
     public void add(Medication medication) {
+
+    }
+
+    @Override
+    public void add(Medication medication, User user) {
+        if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_DOCTOR")) {
+            System.out.println("Invalid user or user role. Only Doctors can create medications.");
+            return;
+        }
         String qry = "INSERT INTO medication (name_medication, description, medical_note, dosage) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement pstmt = cnx.prepareStatement(qry, Statement.RETURN_GENERATED_KEYS);

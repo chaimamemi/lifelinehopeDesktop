@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Dashboard">
+<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.admin.Dashboard">
    <children>
       <HBox prefHeight="56.0" prefWidth="770.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
          <children>

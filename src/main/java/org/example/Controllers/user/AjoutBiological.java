@@ -1,4 +1,4 @@
-package org.example.Controllers;
+package org.example.Controllers.user;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -15,6 +15,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.Controllers.PDFGenerator;
+import org.example.Controllers.user.AfficherBiological;
 import org.example.Services.ServiceBiologicalData;
 import org.example.models.BiologicalData;
 

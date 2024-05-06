@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="536.0" prefWidth="794.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AfficherMedication">
+<AnchorPane prefHeight="536.0" prefWidth="794.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AfficherMedication">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="185.0" styleClass="right-bar" stylesheets="@style2.css">
          <bottom>
