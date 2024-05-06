@@ -1,19 +1,19 @@
-package org.example.Utils;
+package org.example.connectionDB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MyDataBase {
+public class DatabaseConnector {
 
-    private static MyDataBase instance ;
+    private static DatabaseConnector instance ;
 
     private final String URL="jdbc:mysql://127.0.0.1:3306/lifelinehope";
     private final String USERNAME ="root";
     private final String PASSWORD ="";
     private Connection cnx ;
 
-    private MyDataBase (){
+    private DatabaseConnector(){
 
         try {
             cnx = DriverManager.getConnection(URL,USERNAME,PASSWORD);
@@ -26,9 +26,9 @@ public class MyDataBase {
     }
 
 
-    public static MyDataBase getInstance() {
+    public static DatabaseConnector getInstance() {
         if(instance == null)
-            instance = new MyDataBase();
+            instance = new DatabaseConnector();
 
         return instance;
     }

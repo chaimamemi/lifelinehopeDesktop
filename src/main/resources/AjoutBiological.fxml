@@ -15,10 +15,10 @@
 
 <AnchorPane prefHeight="513.0" prefWidth="864.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.AjoutBiological">
    <children>
-      <TextField fx:id="Ftm" layoutX="147.0" layoutY="107.0" prefHeight="26.0" prefWidth="182.0" stylesheets="@style2.css" />
-      <TextField fx:id="Ftv" layoutX="147.0" layoutY="152.0" prefHeight="26.0" prefWidth="182.0" />
-      <TextField fx:id="Ftn" layoutX="147.0" layoutY="196.0" prefHeight="26.0" prefWidth="182.0" />
-      <TextField id="Ftla" fx:id="Ftla" layoutX="147.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="Ftm" layoutX="147.0" layoutY="107.0" prefHeight="26.0" prefWidth="182.0" promptText="enter Measurment type" stylesheets="@style2.css" />
+      <TextField fx:id="Ftv" layoutX="147.0" layoutY="152.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter value" />
+      <TextField fx:id="Ftn" layoutX="147.0" layoutY="196.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter patient name" />
+      <TextField id="Ftla" fx:id="Ftla" layoutX="147.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Patient lastname" />
       <Text id="Ftm" fill="#231c1c" layoutX="14.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Measurment_type" wrappingWidth="118.67971801757812">
          <font>
             <Font name="Cambria Bold" size="14.0" />
@@ -39,19 +39,19 @@
             <Font name="Cambria Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="fta" layoutX="147.0" layoutY="288.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="fta" layoutX="147.0" layoutY="288.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Age" />
       <Text id="fta" fill="#131313" layoutX="23.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="100.27969360351562">
          <font>
             <Font name="Cambria Bold" size="15.0" />
          </font>
       </Text>
-      <TextField id="FtD" fx:id="FtD" layoutX="147.0" layoutY="332.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField id="FtD" fx:id="FtD" layoutX="147.0" layoutY="332.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Disease" />
       <Text id="ftd" fill="#151414" layoutX="23.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disease" wrappingWidth="100.27969360351562">
          <font>
             <Font name="Cambria Bold" size="16.0" />
          </font>
       </Text>
-      <TextField id="FtOth" fx:id="FtOth" layoutX="147.0" layoutY="378.0" prefHeight="30.0" prefWidth="182.0" />
+      <TextField id="FtOth" fx:id="FtOth" layoutX="147.0" layoutY="378.0" prefHeight="30.0" prefWidth="182.0" promptText="Add other information" />
       <Text id="ftoth" fill="#1b1818" layoutX="6.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other_information" wrappingWidth="133.87973022460938">
          <font>
             <Font name="Cambria Bold" size="15.0" />

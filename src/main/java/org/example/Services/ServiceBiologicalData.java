@@ -1,6 +1,6 @@
 package org.example.Services;
 import org.example.Interfaces.Iservice;
-import org.example.Utils.MyDataBase;
+import org.example.connectionDB.DatabaseConnector;
 import org.example.models.BiologicalData;
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
     private Connection cnx;
 
     public ServiceBiologicalData() {
-        cnx = MyDataBase.getInstance().getCnx();
+        cnx = DatabaseConnector.getInstance().getCnx();
     }
 
     @Override

@@ -199,6 +199,16 @@ public class AfficherMedication {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
     @FXML
     private void navigateToAddMedication(ActionEvent event) {
         try {

@@ -4,20 +4,18 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.example.Interfaces.Iservice;
-import org.example.Utils.MyDataBase;
+import org.example.connectionDB.DatabaseConnector;
 import org.example.models.Medication;
-import java.io.File;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class ServiceMedication implements Iservice<Medication> {
     private Connection cnx;
 
     public ServiceMedication() {
-        cnx = MyDataBase.getInstance().getCnx();
+        cnx = DatabaseConnector.getInstance().getCnx();
     }
 
     @Override
