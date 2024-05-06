@@ -5,6 +5,7 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.example.Interfaces.Iservice;
 import org.example.connectionDB.DatabaseConnector;
+import org.example.models.BiologicalData;
 import org.example.models.Medication;
 import org.example.models.User;
 
@@ -19,6 +20,11 @@ public class ServiceMedication implements Iservice<Medication> {
         cnx = DatabaseConnector.getInstance().getCnx();
     }
 
+
+    @Override
+    public void add(BiologicalData data, User user) {
+
+    }
 
     @Override
     public void add(Medication medication) {

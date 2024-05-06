@@ -17,7 +17,11 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
     }
 
     @Override
-    public void add(BiologicalData data) {
+    public void add(BiologicalData data ,User user) {
+        if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_DOCTOR")) {
+            System.out.println("Invalid user or user role. Only doctors can create Biologicaldata.");
+            return;
+        }
         String sql = "INSERT INTO biological_data (id, measurement_type, value, patient_name, patient_last_name, patient_age, disease,other_information) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setInt(1, data.getId());
@@ -52,6 +56,11 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @Override
+    public void add(BiologicalData biologicalData) {
+
     }
 
     @Override
