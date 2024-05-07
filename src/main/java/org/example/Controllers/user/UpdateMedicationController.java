@@ -20,12 +20,10 @@ public class UpdateMedicationController {
     private TextField tfNoteUpdate;
 
     @FXML
-    private Button btnsave; // Ajouter le bouton btnSave
+    private Button btnsave;
 
-    // Ajouter une référence à la médication en cours de modification
     private Medication currentMedication;
 
-    // Méthode pour initialiser les champs avec les détails de la médication sélectionnée
     public void initData(Medication medication) {
         currentMedication = medication;
         tfNameUpdate.setText(medication.getNameMedication());
@@ -34,10 +32,8 @@ public class UpdateMedicationController {
         tfNoteUpdate.setText(medication.getMedicalNote());
     }
 
-    // Méthode pour enregistrer les modifications
     @FXML
     private void saveChanges() {
-        // Mettre à jour les détails de la médication avec les nouvelles valeurs saisies
         currentMedication.setNameMedication(tfNameUpdate.getText());
         currentMedication.setDescription(tfDescUpdate.getText());
         currentMedication.setDosage(tfDosageUpdate.getText());
@@ -47,7 +43,6 @@ public class UpdateMedicationController {
         // Par exemple :
         // serviceMedication.update(currentMedication);
 
-        // Fermer la fenêtre d'édition après l'enregistrement
         btnsave.getScene().getWindow().hide();
     }
 }
