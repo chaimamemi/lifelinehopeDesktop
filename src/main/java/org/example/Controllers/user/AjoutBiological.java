@@ -84,12 +84,7 @@ public class AjoutBiological {
             showAlert("Erreur", "Impossible de charger la vue AfficherBiological.");
         }
     }
-    private User getCurrentUser() {
-        User currentUser = new User();
-        currentUser.setRole("ROLE_DOCTOR"); // Définissez le rôle du médecin
-        // Vous pouvez également définir d'autres propriétés de l'utilisateur si nécessaire
-        return currentUser;
-    }
+
     @FXML
     void ajouterBiological(ActionEvent event) {
         if (areFieldsEmpty()) {

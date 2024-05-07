@@ -63,6 +63,10 @@ public class AfficherMedication {
         btnsearch.setOnAction(event -> searchMedications(searchField.getText().trim().toLowerCase()));
         btntri.setOnAction(event -> sortMedicationsByDosage());
         calculateAntibioticPercentages();
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Appeler la méthode de recherche dynamique avec le nouveau texte saisi
+            searchMedications(newValue.toLowerCase());
+        });
         back.setOnAction(this::navigateToAddMedication);
         medicationListView.setCellFactory(param -> new ListCell<Medication>() {
             @Override
@@ -114,7 +118,7 @@ public class AfficherMedication {
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/UpdateMedication.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMedication.fxml"));
                 Parent root = loader.load();
                 UpdateMedicationController updateMedicationController = loader.getController();
                 updateMedicationController.initData(selectedItem);
@@ -127,17 +131,16 @@ public class AfficherMedication {
             }
         }
     }
-
-    @FXML
     private void searchMedications(String searchText) {
         // Filtrer la liste des médications en fonction du texte saisi dans le champ de recherche
         List<Medication> filteredList = allMedications.stream()
-                .filter(medication -> medication.getNameMedication().toLowerCase().startsWith(searchText))
+                .filter(medication -> medication.getNameMedication().toLowerCase().contains(searchText))
                 .collect(Collectors.toList());
 
         // Mettre à jour la ListView avec la liste filtrée
         medicationListView.setItems(FXCollections.observableArrayList(filteredList));
     }
+   
 
     @FXML
     private void sortMedicationsByDosage() {
