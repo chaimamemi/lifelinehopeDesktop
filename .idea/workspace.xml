@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/qrcodes/all_3d68cf86-07d0-4371-a518-1518bdf34508.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/qrcodes/all_dfb9c553-c7eb-49cb-ac7f-1aa2d79b0774.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/gobck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/img/statii.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/qrcodes/clamoxyl_e92b5270-9dd0-4679-94f7-95b64a0692dc.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ChartExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjouterMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/User/GenerateQrCode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/GenerateQrCode.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/Why-You-Shouldnt-Give-Your-Doctor-Your-Social-Security-Number-58608b23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/medication.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/wiss.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +225,7 @@
       <workItem from="1715019149368" duration="6491000" />
       <workItem from="1715074892595" duration="4799000" />
       <workItem from="1715079748281" duration="1319000" />
-      <workItem from="1715103061623" duration="15403000" />
+      <workItem from="1715103061623" duration="16889000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
