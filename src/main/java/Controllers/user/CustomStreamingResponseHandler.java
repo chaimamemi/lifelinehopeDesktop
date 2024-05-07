@@ -26,7 +26,7 @@ public class CustomStreamingResponseHandler {
         Platform.runLater(() -> {
             LOGGER.info("Complete response: " + response.toString());
             LOGGER.info("Answer is complete for '" + action.getQuestion() + "', size: " + action.getAnswer().length());
-            action.setFinished();
+            action.setFinished(true); // Correctly pass true to indicate the action is finished
             searchButton.setDisable(false); // Re-enable the search button here
         });
     }
@@ -35,7 +35,7 @@ public class CustomStreamingResponseHandler {
         Platform.runLater(() -> {
             LOGGER.error("Error while receiving answer: " + error.getMessage());
             action.appendAnswer("\nSomething went wrong: " + error.getMessage());
-            action.setFinished();
+            action.setFinished(true); // Correctly pass true to indicate the action is finished, even on error
             searchButton.setDisable(false); // Re-enable the search button here as well
         });
     }

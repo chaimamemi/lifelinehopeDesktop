@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,10 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="617.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.admin.AdminVision">
+<AnchorPane prefHeight="670.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.admin.AdminVision">
    <children>
-      <HBox fx:id="cardBracelet" layoutX="53.0" layoutY="133.0" prefHeight="245.0" prefWidth="690.0" styleClass="transparent" stylesheets="@styleadd.css">
+      <HBox fx:id="cardBracelet" layoutX="53.0" layoutY="144.0" prefHeight="245.0" prefWidth="690.0" styleClass="transparent" stylesheets="@styleadd.css">
          <children>
             <VBox prefHeight="254.0" prefWidth="341.0">
                <children>
@@ -26,6 +26,16 @@
                      </font>
                   </Label>
                   <ListView fx:id="ownerView" prefHeight="199.0" prefWidth="223.0" />
+                  <TextField fx:id="searchOwnerfx" prefHeight="27.0" prefWidth="194.0" promptText="Search" stylesheets="@styleadd.css">
+                     <font>
+                        <Font name="Cambria Bold" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="comboBox" />
+                        <String fx:value="transparent" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
                </children>
             </VBox>
             <VBox prefHeight="258.0" prefWidth="351.0">
@@ -36,11 +46,21 @@
                      </font>
                   </Label>
                   <ListView fx:id="DoctorView" prefHeight="200.0" prefWidth="200.0" />
+                  <TextField fx:id="searchDoctorfx" prefHeight="27.0" prefWidth="194.0" promptText="Search" stylesheets="@styleadd.css">
+                     <font>
+                        <Font name="Cambria Bold" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="comboBox" />
+                        <String fx:value="transparent" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
                </children>
             </VBox>
          </children>
       </HBox>
-      <VBox layoutX="70.0" layoutY="22.0" prefHeight="67.0" prefWidth="656.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
+      <VBox layoutX="79.0" layoutY="20.0" prefHeight="67.0" prefWidth="690.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
          <children>
             <Label alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="393.0" styleClass="shadow" stylesheets="@styleadd.css" text="                         Admin Vision        " textFill="#fffcfc" textOverrun="WORD_ELLIPSIS">
                <font>
@@ -55,19 +75,19 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets>
       </VBox>
-      <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="45.0" layoutX="20.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagesBracelet/418353343_841516261075498_2055370023800072158_n.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="reportArea" layoutX="97.0" layoutY="391.0" prefHeight="200.0" prefWidth="576.0" stylesheets="@styleadd.css">
+      <TextArea fx:id="reportArea" layoutX="148.0" layoutY="447.0" prefHeight="200.0" prefWidth="576.0" stylesheets="@styleadd.css">
          <styleClass>
             <String fx:value="day-text" />
             <String fx:value="shadow" />
             <String fx:value="comboBox" />
          </styleClass>
       </TextArea>
-      <Text fill="#1e7fcb" layoutX="97.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auditing and Reporting ">
+      <Text fill="#1e7fcb" layoutX="154.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auditing and Reporting ">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>

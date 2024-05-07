@@ -27,8 +27,9 @@ public class AnswerService {
                 .build();
         // Log completion of initialization for debugging, don't append to TextArea
         LOGGER.info("Done");
-        action.setFinished(); // Only mark the action as finished without appending "Done"
+        action.setFinished(true); // Correctly mark the action as finished
     }
+
 
     public void ask(SearchAction action, Button searchButton) {
         LOGGER.info("Asking question '" + action.getQuestion() + "'");

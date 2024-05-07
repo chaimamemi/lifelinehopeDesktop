@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 
 public class AppointmentService implements IService<Appointment> {
-
+    private LocalDateTime lastCheckedTime = LocalDateTime.now();
     private final Connection cnx;
 
     public AppointmentService() {
@@ -522,4 +522,35 @@ public class AppointmentService implements IService<Appointment> {
         // Simplified example: count appointments per hour, find max, etc.
         return "Most appointments are at 3 PM";
     }
+
+
+
+
+
+
+    public List<Appointment> getNewAppointments() {
+        List<Appointment> newAppointments = new ArrayList<>();
+        String sql = "SELECT * FROM appointment WHERE status = 'Pending' AND date_time > ?";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setTimestamp(1, Timestamp.valueOf(lastCheckedTime));
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    newAppointments.add(mapToAppointment(rs));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // Mettre à jour le timestamp de la dernière vérification
+        lastCheckedTime = LocalDateTime.now();
+        return newAppointments;
+    }
 }
+
+
+
+
+
+
+
+

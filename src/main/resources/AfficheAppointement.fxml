@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,14 +13,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="537.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.AfficheAppointementController">
+<AnchorPane prefHeight="576.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.AfficheAppointementController">
    <children>
       <ImageView fitHeight="82.0" fitWidth="110.0" layoutX="-21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagesBracelet/business-person-with-clock-time-break-3d-icon_139955-91.jpg" />
          </image>
       </ImageView>
-      <HBox fx:id="cardBracelet" layoutX="20.0" layoutY="98.0" prefHeight="250.0" prefWidth="714.0" styleClass="transparent" stylesheets="@styleadd.css">
+      <HBox fx:id="cardBracelet" layoutX="34.0" layoutY="144.0" prefHeight="250.0" prefWidth="714.0" styleClass="transparent" stylesheets="@styleadd.css">
          <children>
             <VBox fx:id="temp" prefHeight="255.0" prefWidth="750.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
                <children>
@@ -33,7 +34,7 @@
             <VBox fx:id="heartR" prefHeight="250.0" prefWidth="0.0" />
          </children>
       </HBox>
-      <HBox layoutX="224.0" layoutY="429.0" prefHeight="100.0" prefWidth="306.0">
+      <HBox layoutX="260.0" layoutY="462.0" prefHeight="100.0" prefWidth="306.0">
          <children>
             <VBox prefHeight="100.0" prefWidth="110.0">
                <children>
@@ -106,7 +107,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets>
       </VBox>
-      <Button fx:id="calander" alignment="CENTER" layoutX="537.0" layoutY="361.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ViewCalander" prefHeight="67.0" prefWidth="180.0" stylesheets="@styleadd.css" text="       View Calander" textAlignment="CENTER" textFill="#1766d4">
+      <Button fx:id="calander" alignment="CENTER" layoutX="554.0" layoutY="404.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ViewCalander" prefHeight="58.0" prefWidth="178.0" stylesheets="@styleadd.css" text="       View Calander" textAlignment="CENTER" textFill="#1766d4">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font>
@@ -120,9 +121,24 @@
             <String fx:value="right-bar" />
          </styleClass>
       </Button>
-      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="549.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="566.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagesBracelet/calendar_3796162.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="searchfx" layoutX="274.0" layoutY="98.0" prefHeight="27.0" prefWidth="194.0" promptText="Search" stylesheets="@styleadd.css">
+         <font>
+            <Font name="Cambria Bold" size="12.0" />
+         </font>
+         <styleClass>
+            <String fx:value="comboBox" />
+            <String fx:value="transparent" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </TextField>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="437.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@searchh.png" />
          </image>
       </ImageView>
    </children>

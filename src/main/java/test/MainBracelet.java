@@ -16,19 +16,13 @@ public class MainBracelet extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AffichageBracelet.fxml"));
         try {
             Parent root = loader.load();
-            Scene scene = new Scene(root );
+            Scene scene = new Scene(root);
 
             primaryStage.setTitle("Gestion Bracelet");
             primaryStage.setScene(scene);
             primaryStage.show();
-
-
-
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error loading FXML: " + e.getMessage());
         }
-
-
     }
 }
-

@@ -5,13 +5,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="525.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.GenerateReportController">
    <children>
-      <VBox layoutX="31.0" layoutY="43.0" prefHeight="67.0" prefWidth="730.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
+      <VBox layoutX="66.0" layoutY="43.0" prefHeight="67.0" prefWidth="677.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
          <children>
             <Label alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="230.0" text="Generate Rapport" textFill="#fffcfc" textOverrun="WORD_ELLIPSIS">
                <font>
@@ -45,5 +47,15 @@
             <Font name="Cambria Bold" size="14.0" />
          </font>
       </Button>
+      <ImageView fitHeight="125.0" fitWidth="188.0" layoutX="61.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesBracelet/5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="18.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesBracelet/418353343_841516261075498_2055370023800072158_n.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

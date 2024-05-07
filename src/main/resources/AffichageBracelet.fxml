@@ -284,7 +284,7 @@
                   <String fx:value="search-button" />
                </styleClass>
                <graphic>
-                  <ImageView fitHeight="42.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" styleClass="s">
+                  <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="s">
                      <image>
                         <Image url="@imagesBracelet/ChatGPT_logo.svg%20(1).png" />
                      </image>

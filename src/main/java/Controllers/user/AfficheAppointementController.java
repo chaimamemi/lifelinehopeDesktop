@@ -1,14 +1,12 @@
 package Controllers.user;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -39,11 +37,16 @@ public class AfficheAppointementController {
     @FXML
     private Button calander;
 
-    private final AppointmentService appointmentService = new AppointmentService(); // Service to manage appointments
+    @FXML
+    private TextField searchfx;
+
+    private final AppointmentService appointmentService = new AppointmentService();
+    private ObservableList<String> allAppointments; // Stores all appointment strings for searching
 
     @FXML
     private void initialize() {
-        displayAppointments(); // Call method to display appointments when the controller starts
+        displayAppointments();
+        setupSearchFilter(); // Call method to display appointments when the controller starts
         add.setOnAction(this::addapp);
         delete.setOnAction(this::deleteapp);
         update.setOnAction(this::updateapp);
@@ -116,6 +119,38 @@ public class AfficheAppointementController {
 
             appointmentRequest.getItems().add(appointmentInfo);
         }
+
+        // Initialize allAppointments with the displayed appointments
+        allAppointments = appointmentRequest.getItems();
+    }
+
+    private String formatAppointmentString(Appointment appointment) {
+        return String.format("Patient: %s, Date: %s, Doctor: %s, Status: %s, Description: %s",
+                appointmentService.getPatientNameById(appointment.getPatientId()),
+                appointment.getDateTime(),
+                appointmentService.getDoctorEmailById(appointment.getDoctorId()),
+                appointment.getStatus(),
+                appointment.getDescription());
+    }
+
+    private void setupSearchFilter() {
+        searchfx.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Assurez-vous que allAppointments est initialisée
+            if (allAppointments != null) {
+                appointmentRequest.setItems(allAppointments.filtered(
+                        item -> {
+                            String lowerCaseItem = item.toLowerCase();
+                            String lowerCaseNewValue = newValue.toLowerCase();
+
+                            // Search for the new value in the item string
+                            if (lowerCaseItem.contains(lowerCaseNewValue)) {
+                                return true;
+                            }
+                            return false;
+                        }
+                ));
+            }
+        });
     }
 
     @FXML
@@ -154,7 +189,7 @@ public class AfficheAppointementController {
                 showAlert("Failed to delete the appointment.");
             }
         } else {
-            showAlert("Error extracting appointment ID.");
+            showAlert("please choose one.");
         }
     }
 
@@ -201,7 +236,7 @@ public class AfficheAppointementController {
                 stage.setScene(scene);
                 stage.show();
             } else {
-                showAlert("Error extracting appointment ID.");
+                showAlert("please choose one.");
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -215,8 +250,6 @@ public class AfficheAppointementController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-
 
     @FXML
     void ViewCalander(ActionEvent event) {
@@ -233,6 +266,16 @@ public class AfficheAppointementController {
         }
     }
 
-
+    private void changeScene(String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) add.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
+}

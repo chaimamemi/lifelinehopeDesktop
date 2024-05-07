@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="465.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.DoctorAppointmentReceived">
+<AnchorPane prefHeight="465.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.DoctorAppointmentReceived">
    <children>
       <Button fx:id="accept" layoutX="355.0" layoutY="349.0" mnemonicParsing="false" onAction="#respondToAppointment" stylesheets="@styleadd.css" text="Accept" textAlignment="CENTER">
          <font>
@@ -49,7 +48,7 @@
             <ListView fx:id="appointmentReceived" prefHeight="156.0" prefWidth="622.0" />
          </content>
       </ScrollPane>
-      <VBox layoutX="65.0" layoutY="31.0" prefHeight="67.0" prefWidth="622.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
+      <VBox layoutX="61.0" layoutY="26.0" prefHeight="70.0" prefWidth="558.0" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
          <children>
             <Label alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="371.0" text="Your Appointments Received" textFill="#fffcfc" textOverrun="WORD_ELLIPSIS">
                <font>
@@ -64,7 +63,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </opaqueInsets>
       </VBox>
-      <ImageView fx:id="imagedoctor" fitHeight="77.0" fitWidth="64.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagedoctor" fitHeight="77.0" fitWidth="64.0" layoutX="8.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@doctor.png" />
          </image>

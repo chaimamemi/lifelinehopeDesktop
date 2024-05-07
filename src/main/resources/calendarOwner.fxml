@@ -23,7 +23,7 @@
                      <graphic>
                         <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" styleClass="dash_btn">
                            <image>
-                              <Image url="@imagesBracelet/aaaaaa%20(1).png" />
+                              <Image url="@imagesBracelet/93634.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -32,7 +32,7 @@
             </VBox>
             <AnchorPane prefHeight="678.0" prefWidth="1062.0">
                <children>
-                  <Label layoutX="14.0" layoutY="31.0" prefHeight="24.0" prefWidth="120.0" text="Calendar">
+                  <Label layoutX="77.0" layoutY="46.0" prefHeight="24.0" prefWidth="120.0" text="Calendar">
                      <font>
                         <Font name="Century" size="24.0" />
                      </font>
@@ -60,6 +60,11 @@
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font></Text>
+                  <ImageView fitHeight="53.0" fitWidth="70.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagesBracelet/calendar_3796162.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <Pane prefHeight="678.0" prefWidth="28.0" style="-fx-border-color: #0277BD;" styleClass="btn_li" stylesheets="@styleadd.css" />

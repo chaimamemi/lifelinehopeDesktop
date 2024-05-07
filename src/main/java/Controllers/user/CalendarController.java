@@ -3,7 +3,6 @@ package Controllers.user;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,6 +21,9 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
 
 public class CalendarController implements Initializable {
     @FXML
@@ -70,7 +72,7 @@ public class CalendarController implements Initializable {
         calendar.getChildren().clear();
         YearMonth yearMonth = YearMonth.from(currentMonth);
         LocalDate firstDayOfMonth = currentMonth.withDayOfMonth(1);
-        int firstDayOfWeekIndex = firstDayOfMonth.getDayOfWeek().getValue() - 1;  // Adjust for zero-based index
+        int firstDayOfWeekIndex = firstDayOfMonth.getDayOfWeek().getValue() - 1; // Adjust for zero-based index
 
         // Create empty cells at the start of the month
         for (int i = 0; i < firstDayOfWeekIndex; i++) {
@@ -86,43 +88,44 @@ public class CalendarController implements Initializable {
     }
 
     private VBox createDateBox(LocalDate date) {
-        VBox dayBox = new VBox();
-        dayBox.getStyleClass().add("calendar-day-box");  // Apply CSS styling
-        dayBox.setPrefSize(126, 118);  // Set the preferred width and height
+        VBox dayBox = new VBox(5); // Espacement entre les éléments
+        dayBox.getStyleClass().add("calendar-day-box");
+        dayBox.setPrefSize(100, 100); // Taille préférée pour tous les boxes
+        dayBox.setMaxSize(StackPane.USE_PREF_SIZE, StackPane.USE_PREF_SIZE); // Assure que la taille ne change pas
 
-        // Day number and day of week
-        Text dayNum = new Text(date.getDayOfMonth() + " - " + date.getDayOfWeek().toString());
-        dayBox.getChildren().add(dayNum);
+        // Label pour le jour et le numéro (e.g., "Monday 29")
+        Label dayLabel = new Label(String.format("%s %d", date.getDayOfWeek(), date.getDayOfMonth()));
+        dayLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 12px;");
+        dayLabel.setWrapText(true); // Permet au texte de revenir à la ligne si nécessaire
+        dayBox.getChildren().add(dayLabel);
 
-        // Retrieve appointments for the date
+        // Ajoute des rendez-vous pour le jour
         List<Appointment> appointments = appointmentService.getAppointmentsForDay(date);
         for (Appointment appt : appointments) {
-            // Fetching the doctor's email
             String doctorEmail = appointmentService.getDoctorEmailById(appt.getDoctorId());
-
-            Text statusText = new Text(appt.getStatus() + " - " + doctorEmail);  // Including doctor's email in the status text
-            switch (appt.getStatus().toLowerCase()) {
-                case "accepted":
-                    statusText.setFill(Color.GREEN);
-                    dayBox.setStyle("-fx-background-color: #90EE90;");  // Light green for accepted
-                    break;
-                case "pending":
-                    statusText.setFill(Color.YELLOW);
-                    dayBox.setStyle("-fx-background-color: #4e5036;");  // Gold for pending
-                    break;
-                case "refused":
-                    statusText.setFill(Color.RED);
-                    dayBox.setStyle("-fx-background-color: #F08080;");  // Light red for refused
-                    break;
-                default:
-                    dayBox.setStyle("-fx-background-color: #97cffa;");  // Default light blue
-                    break;
-            }
-            dayBox.getChildren().add(statusText);
+            Label statusLabel = new Label(String.format("%s - %s", appt.getStatus(), doctorEmail));
+            statusLabel.setStyle("-fx-font-size: 10px;");
+            statusLabel.setTextFill(getStatusColor(appt.getStatus()));
+            statusLabel.setWrapText(true); // Gère le débordement de texte
+            dayBox.getChildren().add(statusLabel);
         }
 
         return dayBox;
     }
+
+    private Color getStatusColor(String status) {
+        switch (status.toLowerCase()) {
+            case "accepted":
+                return Color.GREEN;
+            case "pending":
+                return Color.ORANGE;
+            case "refused":
+                return Color.RED;
+            default:
+                return Color.BLACK;
+        }
+    }
+
 
     @FXML
     private void handleBackAction(ActionEvent event) {
