@@ -7,7 +7,6 @@ import org.example.Interfaces.Iservice;
 import org.example.connectionDB.DatabaseConnector;
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
-import org.example.models.User;
 
 import java.io.IOException;
 import java.sql.*;
@@ -21,15 +20,14 @@ public class ServiceMedication implements Iservice<Medication> {
     }
 
 
-    @Override
-    public void add(BiologicalData data, User user) {
 
-    }
 
     @Override
     public void add(BiologicalData data) {
-        
+
     }
+
+
 
 
     @Override

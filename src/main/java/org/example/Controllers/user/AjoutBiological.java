@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 import org.example.Controllers.PDFGenerator;
 import org.example.Services.ServiceBiologicalData;
 import org.example.models.BiologicalData;
-import org.example.models.User;
 
 import java.io.File;
 import java.io.FileOutputStream;

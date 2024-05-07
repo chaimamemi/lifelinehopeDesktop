@@ -2,12 +2,11 @@ package org.example.Interfaces;
 
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
-import org.example.models.User;
 
 import java.util.ArrayList;
 
 public interface Iservice<T> {
-    void add(BiologicalData data, User user);
+
 
     void add(BiologicalData data);
 

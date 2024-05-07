@@ -3,7 +3,6 @@ import org.example.Interfaces.Iservice;
 import org.example.connectionDB.DatabaseConnector;
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
-import org.example.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,11 +16,8 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
     }
 
     @Override
-    public void add(BiologicalData data, User user) {
-        if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_DOCTOR")) {
-            System.out.println("Invalid user or user role. Only doctors can create Biologicaldata.");
-            return;
-        }
+    public void add(BiologicalData data) {
+
         String sql = "INSERT INTO biological_data (id, measurement_type, value, patient_name, patient_last_name, patient_age, disease,other_information) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setInt(1, data.getId());
@@ -58,10 +54,7 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
         }
     }
 
-    @Override
-    public void add(BiologicalData biologicalData) {
 
-    }
 
     @Override
     public void add(Medication medication) {
