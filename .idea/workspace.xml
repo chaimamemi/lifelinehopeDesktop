@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/User/GenerateQrCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/GenerateQrCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/User/GenerateQrCode.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AjouterMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/GenerateQrCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +96,7 @@
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\java\org\example\Controllers\user" />
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\User" />
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\Admin" />
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
@@ -109,7 +112,7 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Admin">
+  <component name="RunManager" selected="Application.MainFx">
     <configuration name="Admin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.test.Admin" />
       <module name="PIDEvv" />
@@ -221,7 +224,7 @@
       <workItem from="1715019149368" duration="6491000" />
       <workItem from="1715074892595" duration="4799000" />
       <workItem from="1715079748281" duration="1319000" />
-      <workItem from="1715103061623" duration="11942000" />
+      <workItem from="1715103061623" duration="13573000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

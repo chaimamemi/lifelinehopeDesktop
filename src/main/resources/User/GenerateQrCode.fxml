@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.User.GenerateQrCode">
+   <children>
+      <HBox prefHeight="69.0" prefWidth="606.0" stylesheets="@../style2.css">
+         <styleClass>
+            <String fx:value="font" />
+            <String fx:value="chosen-medication-card" />
+         </styleClass>
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="70.0" prefWidth="531.0" text="LifeLinehope welcomes you!" textFill="#f7f7f7">
+               <font>
+                  <Font name="Cambria Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutX="95.0" layoutY="70.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="11.0" styleClass="font" stylesheets="@../style2.css" />
+   </children>
+</AnchorPane>
