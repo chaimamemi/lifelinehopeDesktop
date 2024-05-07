@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/UpdateMedicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/UpdateMedicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AfficherMedication.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User/UpdateBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/UpdateBiological.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/User/UpdateMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/UpdateMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/User/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AjouterMedication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +50,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -109,7 +109,7 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainFx">
+  <component name="RunManager" selected="Application.Admin">
     <configuration name="Admin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.test.Admin" />
       <module name="PIDEvv" />
@@ -221,7 +221,7 @@
       <workItem from="1715019149368" duration="6491000" />
       <workItem from="1715074892595" duration="4799000" />
       <workItem from="1715079748281" duration="1319000" />
-      <workItem from="1715103061623" duration="10591000" />
+      <workItem from="1715103061623" duration="11942000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />

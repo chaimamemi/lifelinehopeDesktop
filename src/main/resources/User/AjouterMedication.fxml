@@ -14,19 +14,19 @@
 
 <AnchorPane prefHeight="466.0" prefWidth="790.0" styleClass="transparent" stylesheets="@../style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AjouterMedication">
    <children>
-      <TextField id="tfName" fx:id="tfName" layoutX="205.0" layoutY="134.0" prefHeight="30.0" prefWidth="212.0" promptText="entrer nom medicamnets" styleClass="shadow" stylesheets="@../style2.css" />
+      <TextField id="tfName" fx:id="tfName" layoutX="205.0" layoutY="134.0" prefHeight="30.0" prefWidth="206.0" promptText="entrer nom medicamnets" styleClass="shadow" stylesheets="@../style2.css" />
       <Text layoutX="34.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font></Text>
-      <TextField id="tfDosage" fx:id="tfDosage" layoutX="205.0" layoutY="202.0" prefHeight="30.0" prefWidth="212.0" promptText="Enter dosage" styleClass="shadow" stylesheets="@../stylesheet.css" />
-      <Text layoutX="61.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" wrappingWidth="74.99999999999994">
+      <TextField id="tfDosage" fx:id="tfDosage" layoutX="205.0" layoutY="202.0" prefHeight="30.0" prefWidth="206.0" promptText="Enter dosage" styleClass="shadow" stylesheets="@../stylesheet.css" />
+      <Text layoutX="60.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="chosen-medication-card" text="Dosage" wrappingWidth="102.19998168945307">
          <font>
-            <Font name="Cambria" size="14.0" />
+            <Font name="Cambria Bold" size="14.0" />
          </font></Text>
-      <Text layoutX="61.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+      <Text layoutX="60.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
          <font>
-            <Font name="Cambria" size="14.0" />
+            <Font name="Cambria Bold" size="14.0" />
          </font></Text>
        <Label id="Lbmedication" fx:id="lbmedication" layoutX="216.0" layoutY="14.0" prefHeight="28.0" prefWidth="375.0" styleClass="bold-text" text="Gestion Medicament" textAlignment="RIGHT" textFill="#fbfcff">
            <font>
@@ -58,7 +58,7 @@
          </styleClass></Button>
       <Text layoutX="49.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicalnote" wrappingWidth="125.60000000000014">
          <font>
-            <Font name="Cambria" size="14.0" />
+            <Font name="Cambria Bold" size="14.0" />
          </font>
       </Text>
       <HBox layoutY="-14.0" prefHeight="85.0" prefWidth="792.0" styleClass="most_inner_pane" stylesheets="@../stylesheet.css">
@@ -75,7 +75,7 @@
             </Label>
          </children>
       </HBox>
-      <TextField id="tfNote" fx:id="tfNote" layoutX="198.0" layoutY="332.0" prefHeight="30.0" prefWidth="225.0" promptText="Enter Medicalnote" styleClass="shadow" stylesheets="@../style2.css" />
-      <TextField id="tfDesc" fx:id="tfDesc" layoutX="203.0" layoutY="265.0" prefHeight="30.0" prefWidth="214.0" promptText="enter description" styleClass="shadow" stylesheets="@../style2.css" />
+      <TextField id="tfNote" fx:id="tfNote" layoutX="198.0" layoutY="332.0" prefHeight="30.0" prefWidth="212.0" promptText="Enter Medicalnote" styleClass="shadow" stylesheets="@../style2.css" />
+      <TextField id="tfDesc" fx:id="tfDesc" layoutX="203.0" layoutY="265.0" prefHeight="30.0" prefWidth="205.0" promptText="enter description" styleClass="shadow" stylesheets="@../style2.css" />
    </children>
 </AnchorPane>
