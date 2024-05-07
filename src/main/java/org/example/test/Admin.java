@@ -17,7 +17,7 @@ public class Admin extends Application {
 
 @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Statistics.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Dashboard.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root );

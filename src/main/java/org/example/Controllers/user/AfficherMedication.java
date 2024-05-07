@@ -8,11 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -43,6 +45,8 @@ public class AfficherMedication {
 
     @FXML
     private Button back;
+    private String qrCodeFilePath;
+
 
 
     private List<Medication> allMedications;
@@ -91,6 +95,7 @@ public class AfficherMedication {
                 }
             }
         });
+        displayQRCode();
     }
 
     public void setMedications(List<Medication> all) {
@@ -118,7 +123,7 @@ public class AfficherMedication {
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMedication.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/UpdateMedication.fxml"));
                 Parent root = loader.load();
                 UpdateMedicationController updateMedicationController = loader.getController();
                 updateMedicationController.initData(selectedItem);
@@ -196,6 +201,17 @@ public class AfficherMedication {
 
 
 
+    private void displayQRCode() {
+        // Vérifiez si le chemin du fichier QR est défini
+        if (qrCodeFilePath != null && !qrCodeFilePath.isEmpty()) {
+            // Chargez le fichier QR depuis le chemin spécifié et affichez-le dans ImageView
+            Image qrCodeImage = new Image(new File(qrCodeFilePath).toURI().toString());
+            qrCodeImageView.setImage(qrCodeImage);
+        } else {
+            // Affichez un message d'erreur si le chemin du fichier QR n'est pas défini
+            System.out.println("Chemin du fichier QR non défini.");
+        }
+    }
 
 
 
