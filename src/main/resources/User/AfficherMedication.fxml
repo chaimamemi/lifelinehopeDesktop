@@ -35,16 +35,17 @@
                         <HBox prefHeight="29.0" prefWidth="240.0" />
                      </children>
                   </VBox>
-                  <ImageView fitHeight="116.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="209.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/medo.png" />
+                        <Image url="@../img/pilo%20(1).png" />
                      </image>
                   </ImageView>
-                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="30.0" prefWidth="115.0" stylesheets="@../style2.css" text="return">
+                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="38.0" prefWidth="105.0" stylesheets="@../style2.css" text="return">
                      <styleClass>
                         <String fx:value="search-button" />
                         <String fx:value="bio-card" />
                         <String fx:value="shadow" />
+                        <String fx:value="list-view" />
                      </styleClass>
                   </Button>
 
@@ -69,7 +70,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button id="btndelete" fx:id="btndelete" layoutX="303.0" layoutY="469.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
+      <Button id="btndelete" fx:id="btndelete" layoutX="388.0" layoutY="472.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
          <styleClass>
             <String fx:value="most_inner_pane" />
             <String fx:value="shadow" />
@@ -79,14 +80,14 @@
             <URL value="@../stylesheet.css" />
             <URL value="@../style2.css" />
          </stylesheets></Button>
-      <Button id="btnupdate" fx:id="btnupdate" layoutX="456.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="Update">
+      <Button id="btnupdate" fx:id="btnupdate" layoutX="513.0" layoutY="472.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="Update">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="bio-card" />
             <String fx:value="shadow" />
          </styleClass></Button>
       <HBox layoutX="243.0" layoutY="110.0" prefHeight="38.0" prefWidth="234.0" />
-      <Button fx:id="btntri" layoutX="608.0" layoutY="472.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" stylesheets="@../style2.css" text="TRI">
+      <Button fx:id="btntri" layoutX="654.0" layoutY="475.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" stylesheets="@../style2.css" text="TRI">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
@@ -95,11 +96,6 @@
       <ImageView fitHeight="82.0" fitWidth="98.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/medi.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="131.0" fitWidth="133.0" layoutX="366.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/medo.png" />
          </image>
       </ImageView>
       <HBox fx:id="searchTextField" layoutX="534.0" layoutY="89.0" prefHeight="38.0" prefWidth="238.0" stylesheets="@../style2.css">
