@@ -90,21 +90,18 @@ public class AjouterMedication {
                     // Créer le code QR
                     GenerateQrCode.createQR(qrData, qrFileName);
 
+                    // Charger l'interface GenerateQrCode.fxml
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/GenerateQrCode.fxml"));
+                    Parent root = loader.load();
+
+                    // Passer les données au contrôleur
+                    GenerateQrCode controller = loader.getController();
+                    controller.setQrCodeImage(qrFileName);
+
+                    // Afficher l'interface
+                    tfName.getScene().setRoot(root);
+
                     showAlert("Succès", "Code QR généré pour la médication : " + tfName.getText());
-
-
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/AfficherMedication.fxml"));
-                    try {
-                        Parent root = loader.load();
-                        AfficherMedication ap = loader.getController();
-                        ap.setMedications(sp.getAll());
-                        tfName.getScene().setUserData(ap);
-                        tfName.getScene().setRoot(root);
-                    } catch (IOException e) {
-                        showAlert("Erreur", "Impossible de charger la vue AfficherMedication.");
-                        System.out.println(e.getMessage());
-                    }
                 }
             } catch (NumberFormatException e) {
                 showAlert("Erreur de dosage", "Veuillez saisir une valeur numérique valide pour le dosage.");
@@ -114,6 +111,7 @@ public class AjouterMedication {
             }
         }
     }
+
 
 
 

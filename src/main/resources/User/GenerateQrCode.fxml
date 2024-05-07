@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.User.GenerateQrCode">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.GenerateQrCode">
    <children>
       <HBox prefHeight="69.0" prefWidth="606.0" stylesheets="@../style2.css">
          <styleClass>
@@ -25,11 +24,23 @@
             </ImageView>
             <Label prefHeight="70.0" prefWidth="531.0" text="LifeLinehope welcomes you!" textFill="#f7f7f7">
                <font>
-                  <Font name="Cambria Bold" size="14.0" />
+                  <Font name="Cambria Bold" size="24.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <Separator layoutX="95.0" layoutY="70.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="11.0" styleClass="font" stylesheets="@../style2.css" />
+      <Separator layoutX="143.0" layoutY="70.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="11.0" styleClass="font" stylesheets="@../style2.css" />
+      <ImageView fx:id="imgqr" fitHeight="150.0" fitWidth="200.0" layoutX="392.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgqr1" fitHeight="150.0" fitWidth="200.0" layoutX="327.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="182.0" fitWidth="132.0" layoutX="11.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/mindo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="170.0" layoutY="70.0" prefHeight="70.0" prefWidth="341.0" text="Scan QrCode Reminder!" textFill="#231e1e">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -7,6 +7,9 @@ package org.example.Controllers;
         import com.google.zxing.client.j2se.MatrixToImageWriter;
         import com.google.zxing.common.BitMatrix;
         import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+        import javafx.fxml.FXML;
+        import javafx.scene.image.Image;
+        import javafx.scene.image.ImageView;
 
         import java.io.File;
         import java.io.IOException;
@@ -32,5 +35,13 @@ public class GenerateQrCode {
 
         Path path = FileSystems.getDefault().getPath(fileName);
         MatrixToImageWriter.writeToPath(matrix, format, path);
+    }
+    @FXML
+    private ImageView imgqr;
+
+    public void setQrCodeImage(String qrFileName) {
+        File file = new File(qrFileName);
+        Image image = new Image(file.toURI().toString());
+        imgqr.setImage(image);
     }
 }
