@@ -56,7 +56,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="-2.0" layoutY="275.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" stylesheets="@../styles.css" text="List BiologicalData">
+      <Button fx:id="btnbio" layoutX="-2.0" layoutY="275.0" mnemonicParsing="false" onAction="#listBiologicalData" prefHeight="26.0" prefWidth="146.0" stylesheets="@../styles.css" text="List BiologicalData">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -101,21 +101,12 @@
             <Image url="@../img/medo.png" />
          </image>
       </ImageView>
-      <ListView id="list" layoutX="196.0" layoutY="213.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@../styles.css">
+      <ListView id="list" fx:id="listb" layoutX="196.0" layoutY="213.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@../styles.css">
          <styleClass>
             <String fx:value="nav-button" />
             <String fx:value="shadow" />
+            <String fx:value="bold-text" />
          </styleClass>
       </ListView>
-      <ImageView fitHeight="150.0" fitWidth="113.0" layoutX="226.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../qrcodes/panadol_b09f6558-a4b6-41d4-afef-895bb51e1f16.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="113.0" layoutX="406.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../qrcodes/aa_e1c5351f-2d9d-4de0-b3d5-186d0bf50fa4.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

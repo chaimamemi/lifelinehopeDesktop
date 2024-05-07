@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 
 import javafx.stage.Stage;
 import org.example.Controllers.PDFGenerator;
+import org.example.Controllers.user.AfficherBiological;
 import org.example.Controllers.user.AfficherMedication;
 import org.example.Services.ServiceMedication;
 import org.example.models.BiologicalData;
@@ -30,6 +31,7 @@ public class Dashboard implements Initializable {
     private Button show ;
 
     private AfficherMedication afficherMedication;
+    private AfficherBiological afficherBiological = new AfficherBiological();
     @FXML
     private Button btnm;
 
@@ -46,6 +48,9 @@ public class Dashboard implements Initializable {
         btnm.setOnAction(event->fetchdata());
 
     }
+
+
+
 
     @FXML
     private void showStatistics() {
@@ -130,6 +135,12 @@ public class Dashboard implements Initializable {
         // Par exemple, compter le nombre d'occurrences de chaque médicament et trouver celui avec le nombre le plus élevé
         // Retourner le médicament le plus utilisé
         return null; // Remplacer null par le médicament réel trouvé
+    }
+
+    @FXML
+    private void listBiologicalData(ActionEvent actionEvent) {
+        // Appeler la méthode listBiological() de l'instance afficherBiological
+        afficherBiological.listBiological(actionEvent);
     }
 
 }
