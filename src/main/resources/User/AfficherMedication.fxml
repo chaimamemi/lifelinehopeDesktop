@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,22 +20,16 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="185.0" styleClass="right-bar" stylesheets="@../style2.css">
          <bottom>
-            <VBox prefHeight="536.0" prefWidth="186.0" styleClass="font" stylesheets="@../styles.css" BorderPane.alignment="CENTER">
+            <VBox prefHeight="534.0" prefWidth="178.0" stylesheets="@../style2.css" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="186.0">
+                  <HBox alignment="CENTER" prefHeight="195.0" prefWidth="186.0" styleClass="transparent" stylesheets="@../styles.css">
                      <children>
-                        <ImageView fitHeight="55.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
-                     </children></HBox>
-                  <VBox id="cardview" prefHeight="206.0" prefWidth="240.0" styleClass="font" stylesheets="@../style2.css">
-                     <children>
-                        <ImageView fitHeight="257.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="183.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/pilo%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </VBox>
-                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="38.0" prefWidth="105.0" stylesheets="@../style2.css" text="return">
+                           </image></ImageView>
+                     </children></HBox>
+                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="38.0" prefWidth="177.0" stylesheets="@../style2.css" text="return">
                      <styleClass>
                         <String fx:value="search-button" />
                         <String fx:value="bio-card" />
@@ -48,14 +43,14 @@
             </VBox>
          </bottom>
       </BorderPane>
-      <ListView id="medicationListView" fx:id="medicationListView" layoutX="251.0" layoutY="129.0" prefHeight="301.0" prefWidth="542.0" stylesheets="@../styles.css">
+      <ListView id="medicationListView" fx:id="medicationListView" layoutX="217.0" layoutY="116.0" prefHeight="301.0" prefWidth="542.0" stylesheets="@../styles.css">
          <styleClass>
             <String fx:value="bio-card" />
             <String fx:value="bold-text" />
             <String fx:value="nav-button" />
             <String fx:value="shadow" />
          </styleClass></ListView>
-      <Button id="btndelete" fx:id="btndelete" layoutX="282.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
+      <Button id="btndelete" fx:id="btndelete" layoutX="267.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Delete">
          <styleClass>
             <String fx:value="most_inner_pane" />
             <String fx:value="shadow" />
@@ -66,7 +61,7 @@
             <URL value="@../stylesheet.css" />
             <URL value="@../style2.css" />
          </stylesheets></Button>
-      <Button id="btnupdate" fx:id="btnupdate" layoutX="420.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="Update">
+      <Button id="btnupdate" fx:id="btnupdate" layoutX="403.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="Update">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="chosen-medication-card" />
@@ -74,13 +69,16 @@
             <String fx:value="search-button" />
          </styleClass></Button>
       <HBox layoutX="243.0" layoutY="110.0" prefHeight="38.0" prefWidth="234.0" />
-      <Button fx:id="btntri" layoutX="575.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" stylesheets="@../style2.css" text="Filter by dosage">
+      <Button fx:id="btntri" layoutX="541.0" layoutY="446.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" stylesheets="@../style2.css" text="Filter by dosage">
          <styleClass>
             <String fx:value="chosen-medication-card" />
             <String fx:value="shadow" />
          </styleClass>
+         <font>
+            <Font size="14.0" />
+         </font>
       </Button>
-      <HBox fx:id="searchTextField" layoutX="538.0" layoutY="71.0" prefHeight="38.0" prefWidth="238.0" stylesheets="@../style2.css">
+      <HBox fx:id="searchTextField" layoutX="507.0" layoutY="59.0" prefHeight="38.0" prefWidth="238.0" stylesheets="@../style2.css">
          <opaqueInsets>
             <Insets left="30.0" right="30.0" />
          </opaqueInsets>
@@ -97,9 +95,9 @@
             <Button id="btnsearch" fx:id="btnsearch" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" styleClass="search-button" stylesheets="@../style2.css" text="Search" />
          </children>
       </HBox>
-      <HBox layoutX="225.0" layoutY="-10.0" prefHeight="74.0" prefWidth="568.0" styleClass="most_inner_pane" stylesheets="@../stylesheet.css">
+      <HBox layoutX="183.0" layoutY="-10.0" prefHeight="62.0" prefWidth="610.0" styleClass="most_inner_pane" stylesheets="@../stylesheet.css">
          <children>
-            <ImageView>
+            <ImageView fitHeight="64.0" fitWidth="56.0">
                <image>
                   <Image url="@../img/logo.png" />
                </image>
@@ -111,5 +109,6 @@
             </Label>
          </children>
       </HBox>
+      <Separator layoutX="173.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="536.0" prefWidth="13.0" styleClass="chosen-medication-card" stylesheets="@../styles.css" />
    </children>
 </AnchorPane>
