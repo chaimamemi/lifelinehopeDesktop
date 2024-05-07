@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/User/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AfficherMedication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +217,7 @@
       <workItem from="1715019149368" duration="6491000" />
       <workItem from="1715074892595" duration="4799000" />
       <workItem from="1715079748281" duration="1319000" />
-      <workItem from="1715103061623" duration="936000" />
+      <workItem from="1715103061623" duration="3929000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
