@@ -8,5 +8,5 @@ public class ApiKeys {
     //bch najim npushi fel git 3maltvariable
     //public static final String OPENAI_API_KEY = System.getenv("OPENAI_API_KEY");
 
-    public static final String OPENAI_API_KEY = "sk-proj-mLymKytjnVEAazPAOJGbT3BlbkFJOht6efoNLvxFViNVT0dX";
+    public static final String OPENAI_API_KEY = "sk-proj-YePESlPQbeXX5AoZWHEST3BlbkFJFHD7IiIzmAVczl077Dbu";
 }
