@@ -109,7 +109,7 @@ public class AfficherBiological {
         if (selectedItem != null) {
             try {
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateBiological.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/UpdateBiological.fxml"));
                 AnchorPane updateForm = loader.load();
 
 

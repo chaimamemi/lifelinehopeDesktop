@@ -2,7 +2,6 @@ package org.example.Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -133,7 +132,7 @@ public class Statistics implements Initializable {
 
     private void navigateToDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Dashboard.fxml")); // Changer le chemin du fichier FXML selon le besoin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin/Dashboard.fxml")); // Changer le chemin du fichier FXML selon le besoin
             Parent root = loader.load();
 
             Stage stage = new Stage();

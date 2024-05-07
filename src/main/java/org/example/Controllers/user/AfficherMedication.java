@@ -114,7 +114,7 @@ public class AfficherMedication {
         Medication selectedItem = medicationListView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/UpdateMedication.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/UpdateMedication.fxml"));
                 Parent root = loader.load();
                 UpdateMedicationController updateMedicationController = loader.getController();
                 updateMedicationController.initData(selectedItem);
@@ -201,7 +201,7 @@ public class AfficherMedication {
     @FXML
     private void navigateToAddMedication(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterMedication.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/AjouterMedication.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

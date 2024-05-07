@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.admin.Dashboard">
+<AnchorPane prefHeight="564.0" prefWidth="770.0" styleClass="transparent" stylesheets="@../style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.admin.Dashboard">
    <children>
-      <HBox prefHeight="56.0" prefWidth="770.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+      <HBox prefHeight="56.0" prefWidth="770.0" styleClass="most_inner_pane" stylesheets="@../stylesheet.css">
          <children>
             <ImageView fitHeight="53.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/logo.png" />
+                  <Image url="@../img/logo.png" />
                </image>
             </ImageView>
             <Label prefHeight="51.0" prefWidth="460.0" text="LifelIneHope Welcomes You!" textFill="#fcfcfc">
@@ -27,10 +27,10 @@
             </Label>
          </children>
       </HBox>
-      <Separator layoutX="169.0" layoutY="69.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="7.0" styleClass="chosen-medication-card" stylesheets="@style2.css" />
+      <Separator layoutX="169.0" layoutY="69.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="7.0" styleClass="chosen-medication-card" stylesheets="@../style2.css" />
       <ImageView fitHeight="108.0" fitWidth="160.0" layoutX="-1.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/healthcare-8252835_1280.png" />
+            <Image url="@../img/healthcare-8252835_1280.png" />
          </image>
       </ImageView>
       <Label layoutX="318.0" layoutY="89.0" prefHeight="22.0" prefWidth="348.0" text="Recently Added">
@@ -38,7 +38,7 @@
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnstat" layoutX="-2.0" layoutY="187.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@styles.css" text="View Statistics">
+      <Button fx:id="btnstat" layoutX="-2.0" layoutY="187.0" mnemonicParsing="false" onAction="#showStatistics" stylesheets="@../styles.css" text="View Statistics">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -47,7 +47,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnpdf" layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" onAction="#generateBiologicalData" stylesheets="@styles.css" text="Download Pdf">
+      <Button fx:id="btnpdf" layoutX="-2.0" layoutY="227.0" mnemonicParsing="false" onAction="#generateBiologicalData" stylesheets="@../styles.css" text="Download Pdf">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -56,7 +56,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="-2.0" layoutY="275.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" stylesheets="@styles.css" text="List BiologicalData">
+      <Button layoutX="-2.0" layoutY="275.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" stylesheets="@../styles.css" text="List BiologicalData">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -67,21 +67,21 @@
       </Button>
       <ImageView fitHeight="73.0" fitWidth="106.0" layoutX="196.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/admin.jpg" />
+            <Image url="@../img/admin.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="126.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/stat.png" />
+            <Image url="@../img/stat.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="117.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="130.0" layoutY="227.0">
          <image>
-            <Image url="@img/mmm.jpg" />
+            <Image url="@../img/mmm.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnm" layoutY="323.0" mnemonicParsing="false" stylesheets="@styles.css" text="List Medication">
+      <Button fx:id="btnm" layoutY="323.0" mnemonicParsing="false" stylesheets="@../styles.css" text="List Medication">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="nav-button" />
@@ -92,16 +92,16 @@
       </Button>
       <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="127.0" layoutY="271.0">
          <image>
-            <Image url="@img/fiche.png" />
+            <Image url="@../img/fiche.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="127.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="133.0" layoutY="326.0">
          <image>
-            <Image url="@img/medo.png" />
+            <Image url="@../img/medo.png" />
          </image>
       </ImageView>
-      <ListView id="list" layoutX="196.0" layoutY="213.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@styles.css">
+      <ListView id="list" layoutX="196.0" layoutY="213.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@../styles.css">
          <styleClass>
             <String fx:value="nav-button" />
             <String fx:value="shadow" />
@@ -109,12 +109,12 @@
       </ListView>
       <ImageView fitHeight="150.0" fitWidth="113.0" layoutX="226.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@qrcodes/panadol_b09f6558-a4b6-41d4-afef-895bb51e1f16.png" />
+            <Image url="@../qrcodes/panadol_b09f6558-a4b6-41d4-afef-895bb51e1f16.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="120.0" fitWidth="113.0" layoutX="406.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@qrcodes/aa_e1c5351f-2d9d-4de0-b3d5-186d0bf50fa4.png" />
+            <Image url="@../qrcodes/aa_e1c5351f-2d9d-4de0-b3d5-186d0bf50fa4.png" />
          </image>
       </ImageView>
    </children>

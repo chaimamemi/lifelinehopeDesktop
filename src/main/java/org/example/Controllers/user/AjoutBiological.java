@@ -16,9 +16,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.Controllers.PDFGenerator;
-import org.example.Controllers.user.AfficherBiological;
 import org.example.Services.ServiceBiologicalData;
 import org.example.models.BiologicalData;
+import org.example.models.User;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -71,7 +71,7 @@ public class AjoutBiological {
 
         // Afficher un message de confirmation
         showAlert("Succès", "Le PDF des données biologiques a été généré avec succès !");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherBiological.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/AfficherBiological.fxml"));
         try {
             Parent root = loader.load();
             AfficherBiological controller = loader.getController();
@@ -84,7 +84,12 @@ public class AjoutBiological {
             showAlert("Erreur", "Impossible de charger la vue AfficherBiological.");
         }
     }
-
+    private User getCurrentUser() {
+        User currentUser = new User();
+        currentUser.setRole("ROLE_DOCTOR"); // Définissez le rôle du médecin
+        // Vous pouvez également définir d'autres propriétés de l'utilisateur si nécessaire
+        return currentUser;
+    }
     @FXML
     void ajouterBiological(ActionEvent event) {
         if (areFieldsEmpty()) {

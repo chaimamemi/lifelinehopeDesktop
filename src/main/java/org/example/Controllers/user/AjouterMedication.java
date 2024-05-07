@@ -9,7 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import org.example.Controllers.GenerateQrCode;
-import org.example.Controllers.user.AfficherMedication;
 import org.example.Services.ServiceMedication;
 import org.example.models.Medication;
 
@@ -47,7 +46,7 @@ public class AjouterMedication {
 
     @FXML
     void affichierMedication(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherMedication.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/AfficherMedication.fxml"));
 
         try {
             Parent root = loader.load();
@@ -95,7 +94,7 @@ public class AjouterMedication {
 
 
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherMedication.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/User/AfficherMedication.fxml"));
                     try {
                         Parent root = loader.load();
                         AfficherMedication ap = loader.getController();

@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="536.0" prefWidth="794.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AfficherMedication">
+<AnchorPane prefHeight="536.0" prefWidth="794.0" styleClass="transparent" stylesheets="@../style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AfficherMedication">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="185.0" styleClass="right-bar" stylesheets="@style2.css">
+      <BorderPane prefHeight="200.0" prefWidth="185.0" styleClass="right-bar" stylesheets="@../style2.css">
          <bottom>
             <VBox prefHeight="536.0" prefWidth="186.0" styleClass="font" BorderPane.alignment="CENTER">
                <children>
@@ -25,15 +25,15 @@
                      <children>
                         <ImageView>
                            <image>
-                              <Image url="@img/logo.png" />
+                              <Image url="@../img/logo.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="55.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
                      </children></HBox>
-                  <VBox id="cardview" prefHeight="70.0" prefWidth="240.0" styleClass="font" stylesheets="@style2.css">
+                  <VBox id="cardview" prefHeight="70.0" prefWidth="240.0" styleClass="font" stylesheets="@../style2.css">
                      <children>
                         <HBox prefHeight="29.0" prefWidth="240.0" />
-                        <HBox fx:id="searchTextField" prefHeight="38.0" prefWidth="238.0" stylesheets="@style2.css">
+                        <HBox fx:id="searchTextField" prefHeight="38.0" prefWidth="238.0" stylesheets="@../style2.css">
                            <opaqueInsets>
                               <Insets left="30.0" right="30.0" />
                            </opaqueInsets>
@@ -42,23 +42,23 @@
                               <String fx:value="shadow" />
                            </styleClass>
                            <children>
-                              <TextField fx:id="searchField" alignment="CENTER" prefHeight="30.0" prefWidth="127.0" promptText="Type here to search" styleClass="search-box" stylesheets="@style2.css">
+                              <TextField fx:id="searchField" alignment="CENTER" prefHeight="30.0" prefWidth="127.0" promptText="Type here to search" styleClass="search-box" stylesheets="@../style2.css">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </TextField>
-                              <Button id="btnsearch" fx:id="btnsearch" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" styleClass="search-button" stylesheets="@style2.css" text="Search" />
+                              <Button id="btnsearch" fx:id="btnsearch" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" styleClass="search-button" stylesheets="@../style2.css" text="Search" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
                   <ImageView fitHeight="161.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/medo.png" />
+                        <Image url="@../img/medo.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="qrCodeImageView" fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="34.0" prefWidth="114.0" stylesheets="@style2.css" text="return">
+                  <Button id="btnupdate" fx:id="back" mnemonicParsing="false" onAction="#navigateToAddMedication" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="return">
                      <styleClass>
                         <String fx:value="search-button" />
                         <String fx:value="bio-card" />
@@ -69,13 +69,13 @@
 
                </children>
                <stylesheets>
-                  <URL value="@styles.css" />
-                  <URL value="@style2.css" />
+                  <URL value="@../styles.css" />
+                  <URL value="@../style2.css" />
                </stylesheets>
             </VBox>
          </bottom>
       </BorderPane>
-      <ListView id="medicationListView" fx:id="medicationListView" layoutX="253.0" layoutY="121.0" prefHeight="301.0" prefWidth="542.0" stylesheets="@styles.css">
+      <ListView id="medicationListView" fx:id="medicationListView" layoutX="253.0" layoutY="121.0" prefHeight="301.0" prefWidth="542.0" stylesheets="@../styles.css">
          <styleClass>
             <String fx:value="bio-card" />
             <String fx:value="bold-text" />
@@ -94,17 +94,17 @@
             <String fx:value="delete" />
          </styleClass>
          <stylesheets>
-            <URL value="@stylesheet.css" />
-            <URL value="@style2.css" />
+            <URL value="@../stylesheet.css" />
+            <URL value="@../style2.css" />
          </stylesheets></Button>
-      <Button id="btnupdate" fx:id="btnupdate" layoutX="458.0" layoutY="435.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@style2.css" text="Update">
+      <Button id="btnupdate" fx:id="btnupdate" layoutX="458.0" layoutY="435.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" stylesheets="@../style2.css" text="Update">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="bio-card" />
             <String fx:value="shadow" />
          </styleClass></Button>
       <HBox layoutX="243.0" layoutY="110.0" prefHeight="38.0" prefWidth="234.0" />
-      <Button fx:id="btntri" layoutX="596.0" layoutY="438.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" stylesheets="@style2.css" text="TRI">
+      <Button fx:id="btntri" layoutX="596.0" layoutY="438.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" stylesheets="@../style2.css" text="TRI">
          <styleClass>
             <String fx:value="search-button" />
             <String fx:value="shadow" />
@@ -112,7 +112,7 @@
       </Button>
       <ImageView fitHeight="82.0" fitWidth="98.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/medi.png" />
+            <Image url="@../img/medi.png" />
          </image>
       </ImageView>
    </children>

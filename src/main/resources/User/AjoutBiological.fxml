@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="513.0" prefWidth="864.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AjoutBiological">
    <children>
-      <TextField fx:id="Ftm" layoutX="147.0" layoutY="107.0" prefHeight="26.0" prefWidth="182.0" promptText="enter Measurment type" stylesheets="@style2.css" />
+      <TextField fx:id="Ftm" layoutX="147.0" layoutY="107.0" prefHeight="26.0" prefWidth="182.0" promptText="enter Measurment type" stylesheets="@../style2.css" />
       <TextField fx:id="Ftv" layoutX="147.0" layoutY="152.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter value" />
       <TextField fx:id="Ftn" layoutX="147.0" layoutY="196.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter patient name" />
       <TextField id="Ftla" fx:id="Ftla" layoutX="147.0" layoutY="243.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Patient lastname" />
@@ -57,11 +57,11 @@
             <Font name="Cambria Bold" size="15.0" />
          </font>
       </Text>
-      <HBox layoutY="-3.0" prefHeight="68.0" prefWidth="864.0" styleClass="most_inner_pane" stylesheets="@style2.css">
+      <HBox layoutY="-3.0" prefHeight="68.0" prefWidth="864.0" styleClass="most_inner_pane" stylesheets="@../style2.css">
          <children>
             <ImageView fitHeight="89.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/logo.png" />
+                  <Image url="@../img/logo.png" />
                </image>
             </ImageView>
             <Label prefHeight="82.0" prefWidth="692.0" text="Welcome To LifeLine hope" textFill="#f7f7f7">
@@ -75,18 +75,18 @@
          <children>
             <ImageView fitHeight="379.0" fitWidth="408.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/female-6813278_1280.png" />
+                  <Image url="@../img/female-6813278_1280.png" />
                </image>
             </ImageView>
          </children>
       </VBox>
-      <Button id="btnadd" layoutX="73.0" layoutY="440.0" mnemonicParsing="false" onAction="#ajouterBiological" prefHeight="26.0" prefWidth="100.0" stylesheets="@style2.css" text="Ajouter" textFill="WHITE">
+      <Button id="btnadd" layoutX="73.0" layoutY="440.0" mnemonicParsing="false" onAction="#ajouterBiological" prefHeight="26.0" prefWidth="100.0" stylesheets="@../style2.css" text="Ajouter" textFill="WHITE">
          <styleClass>
             <String fx:value="inner_pane" />
             <String fx:value="shadow" />
          </styleClass>
       </Button>
-      <Button id="btnshow" layoutX="219.0" layoutY="440.0" mnemonicParsing="false" onAction="#afficherBiological" prefHeight="30.0" prefWidth="111.0" stylesheets="@style2.css" text="Afficher" textFill="WHITE">
+      <Button id="btnshow" layoutX="219.0" layoutY="440.0" mnemonicParsing="false" onAction="#afficherBiological" prefHeight="30.0" prefWidth="111.0" stylesheets="@../style2.css" text="Afficher" textFill="WHITE">
          <styleClass>
             <String fx:value="inner_pane" />
             <String fx:value="shadow" />
@@ -95,8 +95,8 @@
 
    </children>
    <stylesheets>
-      <URL value="@stylesheet.css" />
-      <URL value="@style2.css" />
+      <URL value="@../stylesheet.css" />
+      <URL value="@../style2.css" />
    </stylesheets>
    <styleClass>
       <String fx:value="text-field" />

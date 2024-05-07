@@ -12,14 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="466.0" prefWidth="790.0" styleClass="transparent" stylesheets="@style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AjouterMedication">
+<AnchorPane prefHeight="466.0" prefWidth="790.0" styleClass="transparent" stylesheets="@../style2.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.user.AjouterMedication">
    <children>
-      <TextField id="tfName" fx:id="tfName" layoutX="205.0" layoutY="134.0" prefHeight="30.0" prefWidth="212.0" promptText="entrer nom medicamnets" styleClass="shadow" stylesheets="@style2.css" />
+      <TextField id="tfName" fx:id="tfName" layoutX="205.0" layoutY="134.0" prefHeight="30.0" prefWidth="212.0" promptText="entrer nom medicamnets" styleClass="shadow" stylesheets="@../style2.css" />
       <Text layoutX="34.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namemedication">
          <font>
             <Font name="Cambria" size="18.0" />
          </font></Text>
-      <TextField id="tfDosage" fx:id="tfDosage" layoutX="205.0" layoutY="202.0" prefHeight="30.0" prefWidth="212.0" promptText="Enter dosage" styleClass="shadow" stylesheets="@stylesheet.css" />
+      <TextField id="tfDosage" fx:id="tfDosage" layoutX="205.0" layoutY="202.0" prefHeight="30.0" prefWidth="212.0" promptText="Enter dosage" styleClass="shadow" stylesheets="@../stylesheet.css" />
       <Text layoutX="74.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" wrappingWidth="74.99999999999994">
          <font>
             <Font name="Cambria" size="23.0" />
@@ -37,10 +37,10 @@
        <ButtonBar layoutX="176.0" layoutY="280.0" prefHeight="40.0" prefWidth="224.0" AnchorPane.leftAnchor="176.0" />
       <ImageView fitHeight="380.0" fitWidth="307.0" layoutX="484.0" layoutY="84.0">
          <image>
-            <Image url="@img/doct.png" />
+            <Image url="@../img/doct.png" />
          </image>
       </ImageView>
-      <Button id="btnaff" layoutX="311.0" layoutY="408.0" minWidth="0.0" mnemonicParsing="false" onAction="#affichierMedication" prefHeight="34.0" prefWidth="126.0" stylesheets="@stylesheet.css" text="Afficher" textFill="WHITE">
+      <Button id="btnaff" layoutX="311.0" layoutY="408.0" minWidth="0.0" mnemonicParsing="false" onAction="#affichierMedication" prefHeight="34.0" prefWidth="126.0" stylesheets="@../stylesheet.css" text="Show" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font>
@@ -48,7 +48,7 @@
             <String fx:value="side_ankerpane" />
             <String fx:value="shadow" />
          </styleClass></Button>
-      <Button id="btnajout" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="167.0" layoutY="407.0" mnemonicParsing="false" onAction="#ajouterMedication" prefHeight="30.0" prefWidth="113.0" stylesheets="@stylesheet.css" text="Ajouter" textFill="#fcfcfc">
+      <Button id="btnajout" alignment="TOP_CENTER" graphicTextGap="5.0" layoutX="167.0" layoutY="407.0" mnemonicParsing="false" onAction="#ajouterMedication" prefHeight="30.0" prefWidth="113.0" stylesheets="@../stylesheet.css" text="ADD" textFill="#fcfcfc">
          <font>
             <Font name="Cambria Bold" size="16.0" />
          </font>
@@ -61,11 +61,11 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Text>
-      <HBox layoutY="-14.0" prefHeight="85.0" prefWidth="792.0" styleClass="most_inner_pane" stylesheets="@stylesheet.css">
+      <HBox layoutY="-14.0" prefHeight="85.0" prefWidth="792.0" styleClass="most_inner_pane" stylesheets="@../stylesheet.css">
          <children>
             <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/logo.png" />
+                  <Image url="@../img/logo.png" />
                </image>
             </ImageView>
             <Label prefHeight="81.0" prefWidth="618.0" text="LifeLineHope Welcomes You!" textFill="WHITE">
@@ -75,7 +75,7 @@
             </Label>
          </children>
       </HBox>
-      <TextField id="tfNote" fx:id="tfNote" layoutX="198.0" layoutY="332.0" prefHeight="30.0" prefWidth="225.0" promptText="Enter Medicalnote" styleClass="shadow" stylesheets="@style2.css" />
-      <TextField id="tfDesc" fx:id="tfDesc" layoutX="203.0" layoutY="265.0" prefHeight="30.0" prefWidth="214.0" promptText="enter description" styleClass="shadow" stylesheets="@style2.css" />
+      <TextField id="tfNote" fx:id="tfNote" layoutX="198.0" layoutY="332.0" prefHeight="30.0" prefWidth="225.0" promptText="Enter Medicalnote" styleClass="shadow" stylesheets="@../style2.css" />
+      <TextField id="tfDesc" fx:id="tfDesc" layoutX="203.0" layoutY="265.0" prefHeight="30.0" prefWidth="214.0" promptText="enter description" styleClass="shadow" stylesheets="@../style2.css" />
    </children>
 </AnchorPane>

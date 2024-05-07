@@ -7,9 +7,20 @@
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Interfaces/Iservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Interfaces/Iservice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/ServiceBiologicalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/ServiceBiologicalData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/ServiceMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/ServiceMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherBiological.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherBiological.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjoutBiological.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjoutBiological.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjouterMedication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AjouterMedication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainBio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainBio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AfficherBiological.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AfficherMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjoutBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AjoutBiological.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/AjouterMedication.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateBiological.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/UpdateBiological.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UpdateMedication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/User/UpdateMedication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +104,8 @@
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\User" />
+      <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\Admin" />
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources\img" />
       <recent name="C:\Users\USER\IdeaProjects\PIDEvv\src\main\resources" />
     </key>
@@ -215,7 +228,8 @@
       <workItem from="1714918716353" duration="4977000" />
       <workItem from="1714994947779" duration="3826000" />
       <workItem from="1715007958535" duration="594000" />
-      <workItem from="1715019149368" duration="5079000" />
+      <workItem from="1715019149368" duration="6491000" />
+      <workItem from="1715074892595" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
