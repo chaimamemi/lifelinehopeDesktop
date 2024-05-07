@@ -27,16 +27,14 @@ public class ServiceMedication implements Iservice<Medication> {
     }
 
     @Override
-    public void add(Medication medication) {
-
+    public void add(BiologicalData data) {
+        
     }
 
+
     @Override
-    public void add(Medication medication, User user) {
-        if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_DOCTOR")) {
-            System.out.println("Invalid user or user role. Only Doctors can create medications.");
-            return;
-        }
+    public void add(Medication medication) {
+
         String qry = "INSERT INTO medication (name_medication, description, medical_note, dosage) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement pstmt = cnx.prepareStatement(qry, Statement.RETURN_GENERATED_KEYS);

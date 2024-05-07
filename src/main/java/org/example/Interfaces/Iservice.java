@@ -9,9 +9,11 @@ import java.util.ArrayList;
 public interface Iservice<T> {
     void add(BiologicalData data, User user);
 
+    void add(BiologicalData data);
+
     void add (T t );
 
-    void add(Medication medication, User user);
+    void add(Medication medication);
 
     ArrayList<T> getAll();
 

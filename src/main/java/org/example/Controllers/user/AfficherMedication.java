@@ -140,27 +140,29 @@ public class AfficherMedication {
         // Mettre à jour la ListView avec la liste filtrée
         medicationListView.setItems(FXCollections.observableArrayList(filteredList));
     }
-   
+
 
     @FXML
     private void sortMedicationsByDosage() {
         // Tri par dosage
-        medicationListView.setItems(FXCollections.observableArrayList(
-                allMedications.stream()
-                        .filter(medication -> !medication.getDosage().isEmpty())
-                        .sorted(Comparator.comparingDouble(medication -> {
-                            String dosage = medication.getDosage();
-                            String numericPart = dosage.replaceAll("[^0-9.]", "");
-                            if (!numericPart.isEmpty()) {
-                                return Double.parseDouble(numericPart);
-                            } else {
-                                return 0.0;
-                            }
-                        }))
-                        .collect(Collectors.toList())
-        ));
+        allMedications = allMedications.stream()
+                .filter(medication -> !medication.getDosage().isEmpty())
+                .sorted(Comparator.comparingDouble(medication -> {
+                    String dosage = medication.getDosage();
+                    String numericPart = dosage.replaceAll("[^0-9.]", "");
+                    if (!numericPart.isEmpty()) {
+                        return Double.parseDouble(numericPart);
+                    } else {
+                        return 0.0;
+                    }
+                }))
+                .collect(Collectors.toList());
+
+        // Mettre à jour la ListView avec la liste triée
+        medicationListView.setItems(FXCollections.observableArrayList(allMedications));
         System.out.println("Médications triées par dosage : " + medicationListView.getItems());
     }
+
 
     @FXML
     private void calculateAntibioticPercentages() {

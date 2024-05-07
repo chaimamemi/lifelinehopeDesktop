@@ -36,7 +36,9 @@ public class AfficherBiological {
     public void initialize() {
         serviceBiologicalData = new ServiceBiologicalData();
         refreshListView();
+
         listView.setCellFactory(param -> new ListCell<>() {
+
             @Override
             protected void updateItem(BiologicalData item, boolean empty) {
                 super.updateItem(item, empty);
@@ -71,6 +73,10 @@ public class AfficherBiological {
         btnsearch.setOnAction(event -> searchBiologicalData());
         FTaverage.setOnAction(event -> CalculAverage());
         checkForSurveillance();
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Appeler la méthode de recherche dynamique avec le nouveau texte de recherche
+            searchBiologicalData();
+        });
     }
 
 
@@ -131,22 +137,21 @@ public class AfficherBiological {
 
     @FXML
     private void searchBiologicalData() {
-
+        // Obtenir le texte de recherche et le convertir en minuscules
         String searchText = searchField.getText().toLowerCase().trim();
 
-
+        // Obtenir toutes les données biologiques
         List<BiologicalData> allData = serviceBiologicalData.getAll();
 
-
+        // Filtrer les données en fonction du texte de recherche
         List<BiologicalData> filteredData = allData.stream()
                 .filter(data ->
                         data.getPatientLastName().toLowerCase().contains(searchText) ||
                                 data.getPatientName().toLowerCase().contains(searchText) ||
-
                                 String.valueOf(data.getPatientAge()).toLowerCase().contains(searchText))
                 .collect(Collectors.toList());
 
-
+        // Mettre à jour la liste avec les données filtrées
         listView.setItems(FXCollections.observableArrayList(filteredData));
     }
 

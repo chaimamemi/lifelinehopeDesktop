@@ -17,7 +17,7 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
     }
 
     @Override
-    public void add(BiologicalData data ,User user) {
+    public void add(BiologicalData data, User user) {
         if (user == null || user.getRole() == null || !user.getRole().equals("ROLE_DOCTOR")) {
             System.out.println("Invalid user or user role. Only doctors can create Biologicaldata.");
             return;
@@ -64,9 +64,10 @@ public class ServiceBiologicalData implements Iservice<BiologicalData> {
     }
 
     @Override
-    public void add(Medication medication, User user) {
+    public void add(Medication medication) {
 
     }
+
 
     @Override
     public ArrayList<BiologicalData> getAll() {
