@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a36a11-803e-40cb-9f99-bdc9067aa8d5" name="Changes" comment="fxml cardview">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/qrcodes/ISIMIG_6ab1e4e8-fc35-4878-986f-2e424a99b9dd.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/admin/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/admin/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/MainFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +223,7 @@
       <workItem from="1715079748281" duration="1319000" />
       <workItem from="1715103061623" duration="20721000" />
       <workItem from="1715126006150" duration="725000" />
-      <workItem from="1715160765927" duration="5625000" />
+      <workItem from="1715160765927" duration="6255000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
