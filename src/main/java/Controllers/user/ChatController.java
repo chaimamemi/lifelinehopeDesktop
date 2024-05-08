@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import models.Message;
 
+import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,6 +25,9 @@ public class ChatController {
     @FXML
     private Button sendButton;
 
+    @FXML
+    private Button reloadButton;
+
     private ObservableList<Message> chatHistory = FXCollections.observableArrayList();
     private int currentUserId = 62;  // Exemple ID de l'utilisateur actuel (docteur ou propriétaire)
     private int otherUserId = 63;  // Exemple ID de l'autre utilisateur
@@ -31,6 +35,13 @@ public class ChatController {
 
     public ChatController() {
         // Constructeur vide
+    }
+
+    @FXML
+    void reloadChat(ActionEvent event) {
+        chatHistory.clear();  // Clear the existing messages
+        loadMessages();       // Reload messages from the database
+        messageList.setItems(chatHistory); // Refresh the ListView with new messages
     }
 
     @FXML
@@ -53,21 +64,43 @@ public class ChatController {
     }
 
     private void loadMessages() {
-        // Simuler le chargement des messages précédents
-        Message welcomeMessage = new Message(0, otherUserId, currentUserId, "Welcome to the chat!", LocalDateTime.now());
-        chatHistory.add(welcomeMessage);
+        String sql = "SELECT * FROM messages WHERE (sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?) ORDER BY timestamp ASC";
+        try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
+            pstmt.setInt(1, currentUserId);
+            pstmt.setInt(2, otherUserId);
+            pstmt.setInt(3, otherUserId);
+            pstmt.setInt(4, currentUserId);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                int senderId = rs.getInt("sender_id");
+                int receiverId = rs.getInt("receiver_id");
+                String message = rs.getString("message");
+                LocalDateTime timestamp = rs.getTimestamp("timestamp").toLocalDateTime();
+
+                Message msg = new Message(id, senderId, receiverId, message, timestamp);
+                chatHistory.add(msg);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error loading messages: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
+
     private void saveMessageToDatabase(Message message) {
-        String sql = "INSERT INTO messages (sender_id, receiver_id, text, timestamp) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO messages (sender_id, receiver_id, message, timestamp) VALUES (?, ?, ?, ?)";
         try (PreparedStatement pstmt = cnx.prepareStatement(sql)) {
             pstmt.setInt(1, message.getSenderId());
             pstmt.setInt(2, message.getReceiverId());
-            pstmt.setString(3, message.getText());
+            pstmt.setString(3, message.getMessage());  // Correct column name is 'message'
             pstmt.setTimestamp(4, java.sql.Timestamp.valueOf(message.getTimestamp()));
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Erreur lors de l'enregistrement du message : " + e.getMessage());
+            System.out.println("Error saving message: " + e.getMessage());
+            e.printStackTrace();  // Provides a detailed stack trace for diagnosing the issue.
         }
     }
+
 }

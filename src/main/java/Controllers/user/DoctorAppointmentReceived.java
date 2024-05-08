@@ -1,6 +1,8 @@
 package Controllers.user;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -22,12 +25,13 @@ import org.controlsfx.control.Notifications;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.*;
-import javafx.scene.layout.HBox;
+import java.util.stream.Collectors;
 
 public class DoctorAppointmentReceived {
 
     private final AppointmentService appointmentService = new AppointmentService();
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    private ObservableList<Appointment> filteredAppointments = FXCollections.observableArrayList();
 
     @FXML
     private Button accept;
@@ -44,7 +48,8 @@ public class DoctorAppointmentReceived {
     @FXML
     private void initialize() {
         List<Appointment> pendingAppointments = appointmentService.getAllPendingAppointments();
-        appointmentReceived.getItems().addAll(pendingAppointments);
+        filteredAppointments.addAll(pendingAppointments);
+        appointmentReceived.getItems().addAll(filteredAppointments);
 
         appointmentReceived.setCellFactory(listView -> new ListCell<Appointment>() {
             @Override
@@ -54,11 +59,11 @@ public class DoctorAppointmentReceived {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    HBox hbox = new HBox(10); // Espace entre les éléments dans HBox
+                    HBox hbox = new HBox(10);
                     TextFlow textFlow = createTextFlow(item);
 
                     Button chatButton = new Button("Chat");
-                    chatButton.setOnAction(e -> openChatWindow(item)); // Assurez-vous que la méthode openChatWindow est définie ailleurs
+                    chatButton.setOnAction(e -> openChatWindow(item));
                     hbox.getChildren().addAll(textFlow, chatButton);
                     setGraphic(hbox);
                 }
@@ -66,6 +71,29 @@ public class DoctorAppointmentReceived {
         });
 
         scheduler.scheduleAtFixedRate(this::checkForNewAppointments, 0, 1, TimeUnit.MINUTES);
+
+        // Setting up the search functionality
+        searchfx.textProperty().addListener((obs, oldVal, newVal) -> {
+            filterAppointments(newVal);
+        });
+    }
+
+    private void filterAppointments(String filter) {
+        if (filter == null || filter.isEmpty()) {
+            appointmentReceived.setItems(filteredAppointments);
+        } else {
+            String lowerCaseFilter = filter.toLowerCase();
+            List<Appointment> matchedAppointments = filteredAppointments.stream()
+                    .filter(app -> {
+                        boolean matchesPatientName = appointmentService.getPatientNameById(app.getPatientId()).toLowerCase().contains(lowerCaseFilter);
+                        boolean matchesDescription = app.getDescription() != null && app.getDescription().toLowerCase().contains(lowerCaseFilter);
+                        boolean matchesDateTime = app.getDateTime().toString().toLowerCase().contains(lowerCaseFilter);
+                        boolean matchesUrgency = Boolean.toString(app.getIsUrgent()).toLowerCase().contains(lowerCaseFilter);
+                        return matchesPatientName || matchesDescription || matchesDateTime || matchesUrgency;
+                    })
+                    .collect(Collectors.toList());
+            appointmentReceived.setItems(FXCollections.observableArrayList(matchedAppointments));
+        }
     }
 
     private void openChatWindow(Appointment appointment) {

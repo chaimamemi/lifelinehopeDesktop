@@ -14,7 +14,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="502.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.user.ChatController">
    <children>
       <AnchorPane layoutX="154.0" layoutY="22.0" prefHeight="94.0" prefWidth="713.0" style="-fx-background-color: #1E7FCB;" styleClass="chosen-fruit-card" stylesheets="@styleadd.css">
@@ -77,6 +76,19 @@
             <String fx:value="comboBox" />
             <String fx:value="shopping-online-card" />
             <String fx:value="mouse-noved" />
+         </styleClass>
+      </Button>
+      <Button fx:id="reloadButton" layoutX="36.0" layoutY="237.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="58.0" stylesheets="@styleadd.css">
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture%20d'écran%202024-04-24%20163725%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="transparent" />
          </styleClass>
       </Button>
    </children>

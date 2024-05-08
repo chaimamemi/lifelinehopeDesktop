@@ -8,17 +8,17 @@ public class Message {
     private int id;
     private int senderId;
     private int receiverId;
-    private String text;
+    private String message;
     private LocalDateTime timestamp;
 
     public Message() {
     }
 
-    public Message(int id, int senderId, int receiverId, String text, LocalDateTime timestamp) {
+    public Message(int id, int senderId, int receiverId, String message, LocalDateTime timestamp) {
         this.id = id;
         this.senderId = senderId;
         this.receiverId = receiverId;
-        this.text = text;
+        this.message = message;
         this.timestamp = timestamp;
     }
 
@@ -35,8 +35,8 @@ public class Message {
         return receiverId;
     }
 
-    public String getText() {
-        return text;
+    public String getMessage() {
+        return message;
     }
 
     public LocalDateTime getTimestamp() {
@@ -56,8 +56,8 @@ public class Message {
         this.receiverId = receiverId;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setMessage(String text) {
+        this.message = message;
     }
 
     public void setTimestamp(LocalDateTime timestamp) {
@@ -66,7 +66,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return  text
+        return  message
 
                 ;
     }

@@ -30,7 +30,7 @@ public class BraceletService {
                 Bracelet bracelet = new Bracelet();
                 bracelet.setId(rs.getInt("id"));
                 bracelet.setBiologicalDataId((Integer) rs.getObject("biological_data_id"));
-                bracelet.setAlertId((Integer) rs.getObject("alert_id"));
+
                 bracelet.setIdentificationCode(rs.getString("identification_code"));
                 bracelet.setBloodPressure(rs.getString("blood_pressure"));
                 bracelet.setMovement(rs.getString("movement"));
@@ -111,7 +111,7 @@ public class BraceletService {
                 bracelet = new Bracelet();
                 bracelet.setId(rs.getInt("id"));
                 bracelet.setBiologicalDataId(rs.getObject("biological_data_id") != null ? rs.getInt("biological_data_id") : null);
-                bracelet.setAlertId(rs.getObject("alert_id") != null ? rs.getInt("alert_id") : null);
+
                 bracelet.setIdentificationCode(rs.getString("identification_code"));
                 bracelet.setTemperature(rs.getObject("temperature") != null ? rs.getDouble("temperature") : null);
                 bracelet.setBloodPressure(rs.getString("blood_pressure"));
