@@ -110,7 +110,7 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainAdmin">
+  <component name="RunManager" selected="Application.MainBio">
     <configuration name="MainAdmin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.test.MainAdmin" />
       <module name="PIDEvv" />
