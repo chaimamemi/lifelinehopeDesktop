@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <!-- Keep only one mapping for Git -->
+    <mapping directory="$PROJECT_DIR$" vcs="Git" /> <!-- Use the project directory for Git -->
   </component>
 </project>
