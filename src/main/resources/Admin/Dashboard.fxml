@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -101,12 +102,24 @@
             <Image url="@../img/medo.png" />
          </image>
       </ImageView>
-      <ListView id="list" fx:id="listb" layoutX="196.0" layoutY="213.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@../styles.css">
+      <ListView id="listm" fx:id="listm" layoutX="186.0" layoutY="220.0" prefHeight="319.0" prefWidth="569.0" stylesheets="@../styles.css">
          <styleClass>
             <String fx:value="nav-button" />
             <String fx:value="shadow" />
             <String fx:value="bold-text" />
          </styleClass>
       </ListView>
+      <TextField fx:id="searchm" layoutX="563.0" layoutY="175.0" prefHeight="26.0" prefWidth="180.0" promptText="search medication" stylesheets="@../style2.css">
+         <styleClass>
+            <String fx:value="search-box" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </TextField>
+      <Button layoutX="686.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" styleClass="search-button" stylesheets="@../style2.css" text="Button" />
+      <ImageView fitHeight="115.0" fitWidth="135.0" layoutX="546.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/admin.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -1,5 +1,8 @@
 package org.example.Controllers.admin;
 
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 import javafx.stage.Stage;
@@ -22,9 +27,16 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static org.example.Main.filterMedications;
+
 public class Dashboard implements Initializable {
     @FXML
     private HBox cardLayout;
+    @FXML
+    private TextField searchm;
+
+    @FXML
+    private ListView<Medication> listm;
     @FXML
     private Button btnstat;
     @FXML
@@ -37,16 +49,62 @@ public class Dashboard implements Initializable {
 
     @FXML
     private Button btnpdf;
-    @FXML
-    private List<Medication> listm;
+
+    private ServiceMedication serviceMedication;
+    private List<Medication> allMedications;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         btnstat.setOnAction(event -> showStatistics());
         btnpdf.setOnAction(event -> generatePDF());
-        btnm.setOnAction(event->fetchdata());
 
+        serviceMedication = new ServiceMedication();
+        allMedications = serviceMedication.getAll();
+        refreshListView();;
+        searchm.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterMedications(newValue);
+        });
+
+    }
+
+
+    private void filterMedications(String searchText) {
+        // Créez une FilteredList pour filtrer les médications en fonction de la saisie de l'utilisateur
+        FilteredList<Medication> filteredList = new FilteredList<>(FXCollections.observableArrayList(allMedications));
+
+        // Définissez le prédicat de filtrage pour rechercher le texte saisi dans le nom de la médication
+        filteredList.setPredicate(medication -> {
+            // Si le champ de recherche est vide, affichez toutes les médications
+            if (searchText == null || searchText.isEmpty()) {
+                return true;
+            }
+            // Recherche insensible à la casse
+            return medication.getNameMedication().toLowerCase().contains(searchText.toLowerCase());
+        });
+
+        // Créez une SortedList à partir de la FilteredList pour trier les résultats
+        SortedList<Medication> sortedList = new SortedList<>(filteredList);
+
+        // Liez la SortedList à la ListView pour afficher les résultats filtrés et triés
+        listm.setItems(sortedList);
+    }
+
+    // ...
+
+
+    @FXML
+    private void refreshListView() {
+        List<Medication> medicationList = serviceMedication.getAll();
+        listm.setItems(FXCollections.observableArrayList(medicationList));
+
+        listm.setItems(FXCollections.observableArrayList(medicationList));
+    }
+
+
+    public void setMedications(List<Medication> all) {
+        allMedications = all;
+        refreshListView();
     }
 
 
@@ -86,31 +144,8 @@ public class Dashboard implements Initializable {
     }
 
 
-    @FXML
-    private void listMedication(ActionEvent actionEvent) {
-        // Vérifiez d'abord si afficherMedication est null
-        if (afficherMedication == null) {
-            // Créez une nouvelle instance de AfficherMedication
-            afficherMedication = new AfficherMedication();
-        }
 
-        // Obtenez la liste des médicaments à partir de la méthode fetchData() déjà définie
-        List<Medication> medicationList = fetchdata();
 
-        // Appelez la méthode setMedications() sur l'instance afficherMedication pour définir les médicaments
-        afficherMedication.setMedications(medicationList);
-    }
-    @FXML
-    private List<Medication> fetchdata() {
-        // Créez une instance du service de médicaments
-        ServiceMedication serviceMedication = new ServiceMedication();
-
-        // Utilisez le service pour récupérer la liste des médicaments
-        listm = serviceMedication.getAll();
-
-        // Retournez la liste des médicaments
-        return listm;
-    }
     @FXML
     private void showMostUsedMedicationDetails(ActionEvent actionEvent) {
         // Récupérer le médicament le plus utilisé

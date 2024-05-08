@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biological_data_details.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/biological_data_details.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/admin/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/admin/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherBiological.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/user/AfficherBiological.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Admin/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Admin/Dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,6 +224,8 @@
       <workItem from="1715074892595" duration="4799000" />
       <workItem from="1715079748281" duration="1319000" />
       <workItem from="1715103061623" duration="20721000" />
+      <workItem from="1715126006150" duration="725000" />
+      <workItem from="1715160765927" duration="2679000" />
     </task>
     <task id="LOCAL-00001" summary="add library pdf genrator">
       <option name="closed" value="true" />
