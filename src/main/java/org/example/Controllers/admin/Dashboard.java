@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -52,21 +53,53 @@ public class Dashboard implements Initializable {
 
     private ServiceMedication serviceMedication;
     private List<Medication> allMedications;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         btnstat.setOnAction(event -> showStatistics());
         btnpdf.setOnAction(event -> generatePDF());
 
         serviceMedication = new ServiceMedication();
         allMedications = serviceMedication.getAll();
-        refreshListView();;
+        refreshListView();
         searchm.textProperty().addListener((observable, oldValue, newValue) -> {
             filterMedications(newValue);
         });
 
+        // Définition d'un cell factory pour personnaliser l'affichage des éléments
+        listm.setCellFactory(lv -> new ListCell<Medication>() {
+            @Override
+            protected void updateItem(Medication medication, boolean empty) {
+                super.updateItem(medication, empty);
+                if (medication == null || empty) {
+                    setText(null);
+                } else {
+                    // Affichage personnalisé avec espaces et mise en forme des titres
+                    String formattedText = "Name Medication: " + medication.getNameMedication() +
+                            "\nDescription: " + medication.getDescription() +
+                            "\nMedical Note: " + medication.getMedicalNote() +
+                            "\nDosage: " + medication.getDosage();
+
+                    setText(formattedText);
+
+                    // Appliquer le style en gras et en noir pour les titres
+                    setStyle("-fx-font-weight: bold; -fx-text-fill: black;");
+
+                    // Appliquer le style rouge uniquement aux valeurs récupérées par les getters spécifiques
+                    if (getText().contains("Name Medication:") ||
+                            getText().contains("Description:") ||
+                            getText().contains("Medical Note:") ||
+                            getText().contains("Dosage:")) {
+                        // Appliquer le style rouge pour les commentaires
+                        setStyle("-fx-text-fill: red;");
+                    }
+                }
+            }
+        });
     }
+
+
+
+
 
 
     private void filterMedications(String searchText) {
@@ -97,9 +130,8 @@ public class Dashboard implements Initializable {
     private void refreshListView() {
         List<Medication> medicationList = serviceMedication.getAll();
         listm.setItems(FXCollections.observableArrayList(medicationList));
-
-        listm.setItems(FXCollections.observableArrayList(medicationList));
     }
+
 
 
     public void setMedications(List<Medication> all) {
