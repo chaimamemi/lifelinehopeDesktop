@@ -14,7 +14,29 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 import javafx.stage.Stage;
 import org.example.Controllers.PDFGenerator;
 import org.example.Controllers.user.AfficherBiological;
@@ -23,12 +45,7 @@ import org.example.Services.ServiceMedication;
 import org.example.models.BiologicalData;
 import org.example.models.Medication;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
-import static org.example.Main.filterMedications;
 
 public class Dashboard implements Initializable {
     @FXML
@@ -65,33 +82,46 @@ public class Dashboard implements Initializable {
             filterMedications(newValue);
         });
 
-        // Définition d'un cell factory pour personnaliser l'affichage des éléments
+        // Définition d'un cell factory pour personnaliser l'affichage des éléments avec TextFlow
         listm.setCellFactory(lv -> new ListCell<Medication>() {
             @Override
             protected void updateItem(Medication medication, boolean empty) {
                 super.updateItem(medication, empty);
                 if (medication == null || empty) {
-                    setText(null);
+                    setGraphic(null);
                 } else {
-                    // Affichage personnalisé avec espaces et mise en forme des titres
-                    String formattedText = "Name Medication: " + medication.getNameMedication() +
-                            "\nDescription: " + medication.getDescription() +
-                            "\nMedical Note: " + medication.getMedicalNote() +
-                            "\nDosage: " + medication.getDosage();
+                    // Textes pour les titres en bleu
+                    Text titleNameMedication = new Text("Name Medication: ");
+                    titleNameMedication.setFill(Color.BLUE);
+                    Text titleDescription = new Text("Description: ");
+                    titleDescription.setFill(Color.BLUE);
+                    Text titleMedicalNote = new Text("Medical Note: ");
+                    titleMedicalNote.setFill(Color.BLUE);
+                    Text titleDosage = new Text("Dosage: ");
+                    titleDosage.setFill(Color.BLUE);
 
-                    setText(formattedText);
+                    // Textes pour les valeurs en rouge gras
+                    Text nameMedication = new Text(medication.getNameMedication() + "\n");
+                    nameMedication.setFill(Color.RED);
+                    nameMedication.setStyle("-fx-font-weight: bold;");
+                    Text description = new Text(medication.getDescription() + "\n");
+                    description.setFill(Color.RED);
+                    description.setStyle("-fx-font-weight: bold;");
+                    Text medicalNote = new Text(medication.getMedicalNote() + "\n");
+                    medicalNote.setFill(Color.RED);
+                    medicalNote.setStyle("-fx-font-weight: bold;");
+                    Text dosage = new Text(medication.getDosage() + "\n");
+                    dosage.setFill(Color.RED);
+                    dosage.setStyle("-fx-font-weight: bold;");
 
-                    // Appliquer le style en gras et en noir pour les titres
-                    setStyle("-fx-font-weight: bold; -fx-text-fill: black;");
-
-                    // Appliquer le style rouge uniquement aux valeurs récupérées par les getters spécifiques
-                    if (getText().contains("Name Medication:") ||
-                            getText().contains("Description:") ||
-                            getText().contains("Medical Note:") ||
-                            getText().contains("Dosage:")) {
-                        // Appliquer le style rouge pour les commentaires
-                        setStyle("-fx-text-fill: red;");
-                    }
+                    // Combinaison des Text dans un TextFlow
+                    TextFlow textFlow = new TextFlow(
+                            titleNameMedication, nameMedication,
+                            titleDescription, description,
+                            titleMedicalNote, medicalNote,
+                            titleDosage, dosage
+                    );
+                    setGraphic(textFlow);
                 }
             }
         });

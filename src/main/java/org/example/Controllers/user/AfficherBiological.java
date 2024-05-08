@@ -69,6 +69,7 @@ public class AfficherBiological {
             }
         });
 
+
         // Ajouter un gestionnaire d'événements pour le bouton "Delete"
         btndel.setOnAction(event -> deleteSelectedItems());
         btnupd.setOnAction(event -> updateSelectedItem());
@@ -139,7 +140,7 @@ public class AfficherBiological {
 
     @FXML
     private void searchBiologicalData() {
-        // Obtenir le texte de recherche et le convertir en minuscules
+        // Obtenir le texte de recherche et le convertir en minuscules une seule fois
         String searchText = searchField.getText().toLowerCase().trim();
 
         // Obtenir toutes les données biologiques
@@ -150,12 +151,13 @@ public class AfficherBiological {
                 .filter(data ->
                         data.getPatientLastName().toLowerCase().contains(searchText) ||
                                 data.getPatientName().toLowerCase().contains(searchText) ||
-                                String.valueOf(data.getPatientAge()).toLowerCase().contains(searchText))
+                                String.valueOf(data.getPatientAge()).contains(searchText))
                 .collect(Collectors.toList());
 
         // Mettre à jour la liste avec les données filtrées
         listView.setItems(FXCollections.observableArrayList(filteredData));
     }
+
 
     @FXML
     private void CalculAverage() {
