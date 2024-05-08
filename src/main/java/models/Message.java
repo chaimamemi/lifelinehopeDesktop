@@ -1,6 +1,8 @@
 package models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Message {
     private int id;
@@ -68,4 +70,12 @@ public class Message {
 
                 ;
     }
+
+    public List<Message> getMessagesForConversation(int senderId, int receiverId) {
+        List<Message> messages = new ArrayList<>();
+        // Code pour exécuter une requête SQL qui récupère tous les messages où
+        // senderId et receiverId correspondent aux ID passés en paramètre
+        return messages;
+    }
+
 }

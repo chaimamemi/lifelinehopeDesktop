@@ -141,5 +141,18 @@
             <Image url="@searchh.png" />
          </image>
       </ImageView>
+      <Button fx:id="chat" layoutX="63.0" layoutY="399.0" mnemonicParsing="false" onAction="#chat" prefHeight="49.0" prefWidth="66.0" stylesheets="@styleadd.css">
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagesBracelet/20113400.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="transparent" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package Controllers.user;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,10 +36,13 @@ public class AfficheAppointementController {
     private Button update;
 
     @FXML
-    private Button calander;
+    private Button calendar;
 
     @FXML
     private TextField searchfx;
+
+    @FXML
+    private Button chat;
 
     private final AppointmentService appointmentService = new AppointmentService();
     private ObservableList<String> allAppointments; // Stores all appointment strings for searching
@@ -46,10 +50,11 @@ public class AfficheAppointementController {
     @FXML
     private void initialize() {
         displayAppointments();
-        setupSearchFilter(); // Call method to display appointments when the controller starts
+        setupSearchFilter();
         add.setOnAction(this::addapp);
         delete.setOnAction(this::deleteapp);
         update.setOnAction(this::updateapp);
+        chat.setOnAction(this::chat);
     }
 
     private void displayAppointments() {
@@ -67,7 +72,6 @@ public class AfficheAppointementController {
                     TextFlow textFlow = new TextFlow();
                     String[] parts = item.split(", ");
                     for (String part : parts) {
-                        // Split label and content
                         String[] labelAndContent = part.split(": ", 2);
                         Text labelText = new Text(labelAndContent[0] + ": ");
                         labelText.setFont(Font.font("Arial", FontWeight.BOLD, 12));
@@ -75,80 +79,43 @@ public class AfficheAppointementController {
                         Text contentText = new Text(labelAndContent.length > 1 ? labelAndContent[1] : "");
                         contentText.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 
-                        // Specific condition for status color
-                        if (labelAndContent[0].equals("Status")) {
-                            String statusValue = labelAndContent[1].trim();
-                            if ("Accepted".equalsIgnoreCase(statusValue)) {
-                                contentText.setFill(Color.GREEN);
-                            } else {
-                                contentText.setFill(Color.RED);
-                            }
+                        if ("Status".equals(labelAndContent[0])) {
+                            contentText.setFill("Accepted".equalsIgnoreCase(labelAndContent[1].trim()) ? Color.GREEN : Color.RED);
                         } else {
-                            // For other values, apply blue color
                             contentText.setFill(Color.BLUE);
                         }
 
-                        // Add Text to TextFlow
-                        textFlow.getChildren().addAll(labelText, contentText);
-
-                        // Separator after each part
-                        Text separator = new Text(", ");
-                        separator.setFont(Font.font("Arial", FontWeight.NORMAL, 12));
-                        textFlow.getChildren().add(separator);
+                        textFlow.getChildren().addAll(labelText, contentText, new Text(", "));
                     }
-
-                    // Remove the last separator
                     if (!textFlow.getChildren().isEmpty()) {
                         textFlow.getChildren().remove(textFlow.getChildren().size() - 1);
                     }
-
                     setGraphic(textFlow);
                 }
             }
         });
 
         for (Appointment appointment : appointments) {
-            String patientName = appointmentService.getPatientNameById(appointment.getPatientId());
-            String doctorEmail = appointmentService.getDoctorEmailById(appointment.getDoctorId());
-            String status = appointment.getStatus();
-            String description = appointment.getDescription(); // Add description
-
-            // Modify the order of elements in the appointmentInfo string
-            String appointmentInfo = String.format("Name Patient: %s, Date & Time: %s, Doctor Email: %s, Description: %s, Status: %s",
-                    patientName, appointment.getDateTime(), doctorEmail, description, status);
-
+            String appointmentInfo = formatAppointmentString(appointment);
             appointmentRequest.getItems().add(appointmentInfo);
         }
 
-        // Initialize allAppointments with the displayed appointments
-        allAppointments = appointmentRequest.getItems();
+        allAppointments = FXCollections.observableArrayList(appointmentRequest.getItems());
     }
 
     private String formatAppointmentString(Appointment appointment) {
-        return String.format("Patient: %s, Date: %s, Doctor: %s, Status: %s, Description: %s",
+        return String.format("Name Patient: %s, Date & Time: %s, Doctor Email: %s, Description: %s, Status: %s",
                 appointmentService.getPatientNameById(appointment.getPatientId()),
                 appointment.getDateTime(),
                 appointmentService.getDoctorEmailById(appointment.getDoctorId()),
-                appointment.getStatus(),
-                appointment.getDescription());
+                appointment.getDescription(),
+                appointment.getStatus());
     }
 
     private void setupSearchFilter() {
         searchfx.textProperty().addListener((observable, oldValue, newValue) -> {
-            // Assurez-vous que allAppointments est initialisée
             if (allAppointments != null) {
-                appointmentRequest.setItems(allAppointments.filtered(
-                        item -> {
-                            String lowerCaseItem = item.toLowerCase();
-                            String lowerCaseNewValue = newValue.toLowerCase();
-
-                            // Search for the new value in the item string
-                            if (lowerCaseItem.contains(lowerCaseNewValue)) {
-                                return true;
-                            }
-                            return false;
-                        }
-                ));
+                appointmentRequest.setItems(allAppointments.filtered(item -> item.toLowerCase().contains(newValue.toLowerCase())));
             }
         });
     }
@@ -266,12 +233,60 @@ public class AfficheAppointementController {
         }
     }
 
+    @FXML
+    void chat(ActionEvent event) {
+        String selectedAppointmentDetails = appointmentRequest.getSelectionModel().getSelectedItem();
+        if (selectedAppointmentDetails == null) {
+            showAlert("Error", "No Appointment Selected", "Please select an appointment before proceeding.");
+            return;
+        }
+
+        String status = extractStatusFromDetails(selectedAppointmentDetails);
+        if ("Accepted".equalsIgnoreCase(status)) {
+            openChatWindow(selectedAppointmentDetails);
+        } else {
+            showAlert("Error", "Unable to Chat", "It's not possible to chat at this moment because the appointment status is " + status + ".");
+        }
+    }
+
+    private String extractStatusFromDetails(String details) {
+        String[] parts = details.split(", ");
+        for (String part : parts) {
+            if (part.startsWith("Status: ")) {
+                return part.substring(8);
+            }
+        }
+        return "";
+    }
+
+    private void openChatWindow(String appointmentDetails) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/chatAppointment.fxml"));
+            Parent root = loader.load();
+            // Configure your chat controller here
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showAlert(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
     private void changeScene(String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             Scene scene = new Scene(root);
-            Stage stage = (Stage) add.getScene().getWindow();
+            Stage stage = (Stage) chat.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -279,3 +294,7 @@ public class AfficheAppointementController {
         }
     }
 }
+
+
+
+
